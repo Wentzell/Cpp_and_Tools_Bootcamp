@@ -107,7 +107,7 @@ print Myclass().get_sum()
 ```
 
 
-### Some useful options
+### Some useful options (c.f. `c++2py --help`)
 
 * `--target_file_only` --- No recursion into includes
 * `-N mynamespace` --- Filter by Namespace
@@ -124,31 +124,3 @@ print Myclass().get_sum()
 
 note: head app4triqs/python/app4triqs_module_desc.py
       c++2py -r  app4triqs_module_desc.py
-
-
-
-## Documentation Strings
-
-```c++
-/**
- * A brief description
- *
- * @head        Head of longer description
- * @tail        Tail of longer description
- *
- * @param   t   Doc of parameter
- * @tparam  T   Doc of template parameter
- * @return      Doc of return type
- * @example f   File with example [relative to doc/documentation/examples]
- *
- * [@warning     Warning]
- * [@note        Note]
- * [@figure f    An illustration]
- * [@include     File to include [default: the definition file]]
- */ 
- template <typename T>
- function(T t);
-```
-
-* Automatically picked up by `c++2rst` tool
-* Generation of rst-based API website
