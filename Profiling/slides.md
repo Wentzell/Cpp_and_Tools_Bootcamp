@@ -4,9 +4,10 @@ customTheme : "flatiron"
 
 ## Profiling
 
-* Premature optimization will lead to worse code
-* Optimize only after 
-* Example godbolt.org
+Premature optimization is the root of all evil -- *Donald Knuth*
+
+* Do **not** write complicated code because you think it is faster
+* Optimize only after proper measurements
 
 
 ## Google Perftools 
