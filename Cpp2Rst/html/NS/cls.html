@@ -1,0 +1,205 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>NS::cls &#8212; APP4TRIQS - An application skeleton  documentation</title>
+    <link rel="stylesheet" href="../_static/triqs.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="NS::cls::constructor" href="cls/constructor.html" />
+    <link rel="prev" title="NS" href="../NS.html" />
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+    <script src="../_static/cufon-yui.js" type="text/javascript"></script>
+    <script src="../_static/spaceman.cufonfonts.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      Cufon.replace('.triqs', { fontFamily: 'spaceman', hover: true }); 
+    </script>
+ 
+    <style type="text/css">
+      table.right { float: right; margin-left: 20px; }
+      table.right td { border: 1px solid #ccc; }
+      
+    </style>
+
+  </head><body>
+<div class="pageheader">
+  <ul>
+    
+    <li><a href="../install.html">Install</a></li>
+    
+    <li><a href="../documentation.html">Documentation</a></li>
+    
+    <li><a href="../issues.html">Issues</a></li>
+    
+    <li><a href="../about.html">About app4triqs</a></li>
+    
+  </ul>
+  <div>
+    <h1 style="padding:0; margin: 10px 0 0 0;"><a class="triqs" href="../index.html">app4triqs</a></h1>
+    <span style="font-size: 14px; margin: 0px; padding: 0px;">An example application using cpp2py</span>
+  </div>
+</div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="cls/constructor.html" title="NS::cls::constructor"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../NS.html" title="NS"
+             accesskey="P">previous</a> |</li>
+    <li><a href="../index.html">Home</a> &raquo;</li>
+
+          <li class="nav-item nav-item-1"><a href="../NS.html" accesskey="U">NS</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../contents.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">NS::cls</a><ul>
+<li><a class="reference internal" href="#template-parameters">Template parameters</a></li>
+<li><a class="reference internal" href="#public-members">Public members</a></li>
+<li><a class="reference internal" href="#member-functions">Member functions</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../NS.html"
+                        title="previous chapter">NS</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="cls/constructor.html"
+                        title="next chapter">NS::cls::constructor</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/NS/cls.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="ns-cls">
+<span id="id1"></span><h1>NS::cls<a class="headerlink" href="#ns-cls" title="Permalink to this headline">¶</a></h1>
+<p><em>#include &lt;File to include [default: the definition file]&gt;</em></p>
+<p class="cppsynopsis">template&lt;typename T&gt; class  <span class="red">cls</span></p>
+<p>A brief description</p>
+<p>A more detailed description</p>
+<div class="section" id="template-parameters">
+<h2>Template parameters<a class="headerlink" href="#template-parameters" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><strong>T</strong>:  Doc of template parameter</li>
+</ul>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Optional Note</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Optional Warning</p>
+</div>
+<div class="figure align-center">
+<img alt="Optional illustration" src="../_images/image.png" />
+</div>
+<p>Optional illustration</p>
+</div>
+<div class="section" id="public-members">
+<h2>Public members<a class="headerlink" href="#public-members" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="16%" />
+<col width="58%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>member</td>
+<td>int</td>
+<td>A public member</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="member-functions">
+<h2>Member functions<a class="headerlink" href="#member-functions" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="96%" />
+<col width="4%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="cls/constructor.html#ns-cls-constructor"><span class="std std-ref">(constructor)</span></a></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="cls/func.html#ns-cls-func"><span class="std std-ref">func</span></a></td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="cls/constructor.html" title="NS::cls::constructor"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../NS.html" title="NS"
+             >previous</a> |</li>
+    <li><a href="../index.html">Home</a> &raquo;</li>
+
+          <li class="nav-item nav-item-1"><a href="../NS.html" >NS</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017-2018 N. Wentzell, O. Parcollet 2018-2019 The Simons Foundation, authors: N. Wentzell, D. Simons, H. Strand, O. Parcollet.
+    </div>
+  </body>
+</html>
