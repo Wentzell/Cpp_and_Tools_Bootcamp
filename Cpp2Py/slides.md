@@ -25,12 +25,18 @@ source path_to_install/share/cpp2pyvars.sh
 
 ### An Example --- `simple.hpp`
 ```cpp
-/// A very useful class
-struct myclass {
-  int a = 39, b = 3;
+#include <vector>
 
-  /// The the sum of all members
-  int get_sum() const { return a + b; }
+/// A Simple class
+class myclass {
+
+  int a = 35, b = 3, c = 5;
+
+  public:
+  myclass() = default;
+
+  /// Return a vector with all members
+  std::vector<int> list_of_members() const { return {a, b, c}; }
 };
 ```
 
@@ -52,19 +58,18 @@ Generating simple_desc.py
 
 ```python
 # Generated automatically using the command :
-# c++2py simple.hpp
+# c++2py simple.cpp --target_file_only
 from cpp2py.wrap_generator import *
 
 # The module
 module = module_(full_name = "simple", doc = r"", app_name = "simple")
 
-# Imports
-
 # Add here all includes
-module.add_include("simple.hpp")
+module.add_include("simple.cpp")
 
 # Add here anything to add in the C++ code at the start, e.g. namespace using
 module.add_preamble("""
+#include <cpp2py/converters/vector.hpp>
 
 """)
 
@@ -76,18 +81,10 @@ c = class_(
         hdf5 = False,
 )
 
-c.add_member(c_name = "a",
-             c_type = "int",
-             read_only= False,
-             doc = r"""""")
+c.add_constructor("""()""", doc = r"""""")
 
-c.add_member(c_name = "b",
-             c_type = "int",
-             read_only= False,
-             doc = r"""""")
-
-c.add_method("""int get_sum ()""",
-             doc = r"""The the sum of all members""")
+c.add_method("""std::vector<int> list_of_members ()""",
+             doc = r"""Return a vector with all members""")
 
 module.add_class(c)
 
@@ -123,12 +120,11 @@ print Myclass().get_sum()
 * `-N mynamespace` --- Filter by Namespace
 * `-I somedir` --- Add include directories
 * `--cxxflags "flags"` --- Add compile flags
+* `-C pytriqs` --- Include converters for TRIQS objects
 * `-r my_desc.py` --- Regenerate a file
-
 
 
 ## Real-World Examples
 
 * [app4triqs Skeleton --- github.com/triqs/app4triqs](https://github.com/triqs/app4triqs)
 * [TRIQS CTHyb --- triqs.github.io/cthyb](https://triqs.github.io/cthyb/2.1.x/guide/aim.html)
-* [IPython Cell Magic --- triqs.github.io/notebook](https://triqs.github.io/notebook)
