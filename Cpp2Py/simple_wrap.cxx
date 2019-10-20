@@ -25,6 +25,7 @@ using dcomplex = std::complex<double>;
 using namespace cpp2py;
 
 
+#include <cpp2py/converters/vector.hpp>
 
 
 
@@ -55,7 +56,7 @@ using namespace cpp2py;
 
 //--------------------- all functions/methods with args, kwds, including constructors -----------------------------
 
- static PyObject* Myclass_get_sum(PyObject *self, PyObject *args, PyObject *keywds);
+ static PyObject* Myclass_list_of_members(PyObject *self, PyObject *args, PyObject *keywds);
  static int Myclass___init__(PyObject *self, PyObject *args, PyObject *keywds);
 
 // ------------------------------- Loop on all classes ----------------------------------------------------
@@ -154,7 +155,7 @@ static PyGetSetDef Myclass_getseters[] = {
 //--------------------- Register the methods for the types  -----------------------------
 
 static PyMethodDef Myclass_methods[] = {
-    {"get_sum", (PyCFunction)Myclass_get_sum, METH_VARARGS| METH_KEYWORDS , "Signature : () -> int\n   The the sum of all members" },
+    {"list_of_members", (PyCFunction)Myclass_list_of_members, METH_VARARGS| METH_KEYWORDS , "Signature : () -> list[int]\n   Return a vector with all members" },
     {"__reduce__", (PyCFunction)Myclass___reduce__, METH_VARARGS, "Internal  " },
     {"__write_hdf5__", (PyCFunction)Myclass___write_hdf5__, METH_VARARGS, "Internal : hdf5 writing via C++ " },
 {NULL}  /* Sentinel */
@@ -215,7 +216,7 @@ static PyTypeObject MyclassType = {
 //--------------------- define all functions/methods with args, kwds, including constructors -----------------------------
 
 
- static PyObject* Myclass_get_sum(PyObject *self, PyObject *args, PyObject *keywds) {
+ static PyObject* Myclass_list_of_members(PyObject *self, PyObject *args, PyObject *keywds) {
 
   static constexpr int n_overloads = 1;
 
@@ -224,7 +225,7 @@ static PyTypeObject MyclassType = {
   std::array<pyref,n_overloads> errors;
 
   // If no overload, we avoid the err_list and let the error go through (to save some code).
-    {// overload get_sum() -> int
+    {// overload list_of_members() -> std::vector<int>
      // define the variable to be filled by the parsing method
      // wrapped types are converted to a pointer, other converted types to a value or a view
      static char *kwlist[] = {NULL};
@@ -238,11 +239,11 @@ static PyTypeObject MyclassType = {
       auto & self_c = convert_from_python<myclass>(self);
       try {
         
-        int result =  self_c.get_sum(); // the call is here. It sets up "result" : sets up in the python layer.
+        std::vector<int> result =  self_c.list_of_members(); // the call is here. It sets up "result" : sets up in the python layer.
          py_result = convert_to_python(std::move(result));
         return py_result;
       }
-      CATCH_AND_RETURN(".. calling C++ overload \n.. get_sum() -> int \n.. in implementation of method Myclass.get_sum", NULL);
+      CATCH_AND_RETURN(".. calling C++ overload \n.. list_of_members() -> std::vector<int> \n.. in implementation of method Myclass.list_of_members", NULL);
      }
      else { // the overload does not parse the arguments. Keep the error set by python, for later use, and clear it.
       PyObject * ptype,  *ptraceback, *err; // unused.
@@ -250,14 +251,14 @@ static PyTypeObject MyclassType = {
       errors[0] = pyref{err};
       Py_XDECREF(ptype); Py_XDECREF(ptraceback);
      }
-    } // end overload get_sum() -> int
+    } // end overload list_of_members() -> std::vector<int>
 
-   static const char * overloads_signatures[] = {"get_sum() -> int"};
+   static const char * overloads_signatures[] = {"list_of_members() -> std::vector<int>"};
 
    // FIXME Factorize this
    // finally, no overload was successful. Composing a detailed error message, with the reason of failure of each overload
    {
-    std::string err_list = "Error: no suitable C++ overload found in implementation of method Myclass.get_sum\n";
+    std::string err_list = "Error: no suitable C++ overload found in implementation of method Myclass.list_of_members\n";
     for (int i =0; i < errors.size(); ++i) { 
       err_list = err_list + "\n" + overloads_signatures[i] + " \n failed with the error : \n  ";
       if (errors[i]) err_list += PyString_AsString((PyObject*)errors[i]);
@@ -278,31 +279,23 @@ static PyTypeObject MyclassType = {
   std::array<pyref,n_overloads> errors;
 
   // If no overload, we avoid the err_list and let the error go through (to save some code).
-    {// overload (no C++ name)(int _a, int _b) -> 
+    {// overload (no C++ name)() -> 
      // define the variable to be filled by the parsing method
      // wrapped types are converted to a pointer, other converted types to a value or a view
-     using _type_0 = std::conditional_t<is_wrapped_v<int>, int *, int>;
-     _type_0 ___a =  39; // not default for wrapped type please
-     using _type_1 = std::conditional_t<is_wrapped_v<int>, int *, int>;
-     _type_1 ___b =  3; // not default for wrapped type please
-     static char *kwlist[] = {"_a","_b",NULL};
-     static const char * format = "|ii";
+     static char *kwlist[] = {NULL};
+     static const char * format = "";
      if (PyArg_ParseTupleAndKeywords(args, keywds, format, kwlist
-       	 ,&___a ,&___b))
+       	))
      {
       // redefine the references to remove the * for wrapped type. Allows to use them naturally in C code.
-       decltype(auto) _a = deref_is_wrapped(___a);
-       static_assert(std::is_reference<decltype(_a)>::value || std::is_pointer<decltype(_a)>::value, "internal error");
-       decltype(auto) _b = deref_is_wrapped(___b);
-       static_assert(std::is_reference<decltype(_b)>::value || std::is_pointer<decltype(_b)>::value, "internal error");
      
       // FIXME : calling_pattern ---> lambda -> auto , plus de self. 
       try {
         
-        ((Myclass *)self)->_c = new myclass (_a,_b);; // the call is here. It sets up "result" : sets up in the python layer.
+        ((Myclass *)self)->_c = new myclass ();; // the call is here. It sets up "result" : sets up in the python layer.
         return 0;
       }
-      CATCH_AND_RETURN (".. in calling C++ overload of constructor :\n.. (no C++ name)(int _a, int _b) -> ",-1);
+      CATCH_AND_RETURN (".. in calling C++ overload of constructor :\n.. (no C++ name)() -> ",-1);
      }
      else { // the overload does not parse the arguments. Keep the error set by python, for later use, and clear it.
       PyObject * ptype,  *ptraceback, *err; // unused.
@@ -310,9 +303,9 @@ static PyTypeObject MyclassType = {
       errors[0] = pyref{err};
       Py_XDECREF(ptype); Py_XDECREF(ptraceback);
      }
-    } // end overload (no C++ name)(int _a, int _b) -> 
+    } // end overload (no C++ name)() -> 
 
-   static const char * overloads_signatures[] = {"(no C++ name)(int _a, int _b) -> "};
+   static const char * overloads_signatures[] = {"(no C++ name)() -> "};
 
    // FIXME Factorize this
    // finally, no overload was successful. Composing a detailed error message, with the reason of failure of each overload

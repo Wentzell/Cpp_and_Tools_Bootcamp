@@ -1,12 +1,13 @@
+#include <vector>
 
 /// A Simple class
 class myclass {
 
-  int a, b;
+  int a = 35, b = 3, c = 5;
 
   public:
-  myclass(int _a = 39, int _b = 3): a(_a), b(_b) {}
+  myclass() = default;
 
-  /// The the sum of all members
-  int get_sum() const { return a + b; }
+  /// Return a vector with all members
+  std::vector<int> list_of_members() const { return {a, b, c}; }
 };

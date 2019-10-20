@@ -1,5 +1,11 @@
-c++2py simple.cpp
-python simple_desc.py
+# Generate the descriptor file
+c++2py simple.cpp --target_file_only
+
+# Generate the wrapping code
+python simple_desc.py simple_wrap.cxx
+
+# Compile the wrapping code
 g++ -shared -o simple.so -lcpp2py -lpython2.7
-head app4triqs/python/app4triqs_module_desc.py
-c++2py -r app4triqs_module_desc.py
+
+# Test the wrapping code
+python -c "from simple import Myclass; print Myclass().list_of_members()"

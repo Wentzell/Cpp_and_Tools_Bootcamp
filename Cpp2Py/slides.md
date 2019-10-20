@@ -7,17 +7,23 @@ customTheme : "flatiron"
 [Cpp2Py - github.com/TRIQS/cpp2py](https://github.com/TRIQS/cpp2py)
 
 
-### Setup
+### Cpp2Py Setup
 
 ```bash
-$ git clone https://github.com/TRIQS/cpp2py cpp2py.src
-$ mkdir cpp2py.build && cd cpp2py.build
-$ cmake ../cpp2py.src -DCMAKE_INSTALL_PREFIX=path_to_install
-$ make install
+# Clone the repository
+git clone https://github.com/TRIQS/cpp2py cpp2py.src
+
+# Build and install
+mkdir cpp2py.build && cd cpp2py.build
+cmake ../cpp2py.src -DCMAKE_INSTALL_PREFIX=path_to_install
+make install
+
+# Load installation into environment
+source path_to_install/share/cpp2pyvars.sh
 ```
 
 
-### A simple Example --- `simple.hpp`
+### An Example --- `simple.hpp`
 ```cpp
 /// A very useful class
 struct myclass {
@@ -92,9 +98,13 @@ module.generate_code()
 ### Compile the module
 
 ```bash
-$ python simple_desc.py simple_wrap.hxx
+# Generate the wrapper code from the desc file
+python simple_desc.py simple_wrap.hxx
+
+# Compile the wrapper code into a module
 $ g++ -shared -o simple.so -lcpp2py -lpython2.7
 ```
+
 
 ### Import and use
 
@@ -116,11 +126,9 @@ print Myclass().get_sum()
 * `-r my_desc.py` --- Regenerate a file
 
 
+
 ## Real-World Examples
 
 * [app4triqs Skeleton --- github.com/triqs/app4triqs](https://github.com/triqs/app4triqs)
 * [TRIQS CTHyb --- triqs.github.io/cthyb](https://triqs.github.io/cthyb/2.1.x/guide/aim.html)
 * [IPython Cell Magic --- triqs.github.io/notebook](https://triqs.github.io/notebook)
-
-note: head app4triqs/python/app4triqs_module_desc.py
-      c++2py -r  app4triqs_module_desc.py

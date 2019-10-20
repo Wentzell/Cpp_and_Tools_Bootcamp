@@ -1,5 +1,5 @@
 # Generated automatically using the command :
-# c++2py simple.cpp
+# c++2py simple.cpp --target_file_only
 from cpp2py.wrap_generator import *
 
 # The module
@@ -12,6 +12,7 @@ module.add_include("simple.cpp")
 
 # Add here anything to add in the C++ code at the start, e.g. namespace using
 module.add_preamble("""
+#include <cpp2py/converters/vector.hpp>
 
 """)
 
@@ -24,10 +25,10 @@ c = class_(
         hdf5 = False,
 )
 
-c.add_constructor("""(int _a = 39, int _b = 3)""", doc = r"""""")
+c.add_constructor("""()""", doc = r"""""")
 
-c.add_method("""int get_sum ()""",
-             doc = r"""The the sum of all members""")
+c.add_method("""std::vector<int> list_of_members ()""",
+             doc = r"""Return a vector with all members""")
 
 module.add_class(c)
 
