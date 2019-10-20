@@ -1,0 +1,7 @@
+Total: 1190 samples
+     620  52.1%  52.1%      620  52.1% sum_of_squares
+     570  47.9% 100.0%      570  47.9% sum_of_cubes
+       0   0.0% 100.0%     1190 100.0% __libc_start_main
+       0   0.0% 100.0%     1190 100.0% _start
+       0   0.0% 100.0%     1190 100.0% main
+       0   0.0% 100.0%      981  82.4% run_calculation (inline)

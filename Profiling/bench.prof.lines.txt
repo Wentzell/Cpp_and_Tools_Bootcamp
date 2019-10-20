@@ -1,0 +1,7 @@
+Total: 1190 samples
+     620  52.1%  52.1%      620  52.1% sum_of_squares /mnt/home/wentzell/Dropbox/Lehre/Cpp_and_Tools_Bootcamp/Profiling/bench.cpp:7
+     570  47.9% 100.0%      570  47.9% sum_of_cubes /mnt/home/wentzell/Dropbox/Lehre/Cpp_and_Tools_Bootcamp/Profiling/bench.cpp:14
+       0   0.0% 100.0%     1190 100.0% __libc_start_main ??:0
+       0   0.0% 100.0%     1190 100.0% _start ??:0
+       0   0.0% 100.0%     1190 100.0% main /mnt/home/wentzell/Dropbox/Lehre/Cpp_and_Tools_Bootcamp/Profiling/bench.cpp:22
+       0   0.0% 100.0%      981  82.4% run_calculation (inline) /mnt/home/wentzell/Dropbox/Lehre/Cpp_and_Tools_Bootcamp/Profiling/bench.cpp:18

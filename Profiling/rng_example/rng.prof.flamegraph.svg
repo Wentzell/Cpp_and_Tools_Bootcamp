@@ -1,0 +1,553 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" width="1200" height="310" onload="init(evt)" viewBox="0 0 1200 310" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<!-- Flame graph stack visualization. See https://github.com/brendangregg/FlameGraph for latest version, and http://www.brendangregg.com/flamegraphs.html for examples. -->
+<!-- NOTES:  -->
+<defs>
+	<linearGradient id="background" y1="0" y2="1" x1="0" x2="0" >
+		<stop stop-color="#eeeeee" offset="5%" />
+		<stop stop-color="#eeeeb0" offset="95%" />
+	</linearGradient>
+</defs>
+<style type="text/css">
+	text { font-family:Verdana; font-size:12px; fill:rgb(0,0,0); }
+	#search { opacity:0.1; cursor:pointer; }
+	#search:hover, #search.show { opacity:1; }
+	#subtitle { text-anchor:middle; font-color:rgb(160,160,160); }
+	#title { text-anchor:middle; font-size:17px}
+	#unzoom { cursor:pointer; }
+	#frames > *:hover { stroke:black; stroke-width:0.5; cursor:pointer; }
+	.hide { display:none; }
+	.parent { opacity:0.5; }
+</style>
+<script type="text/ecmascript">
+<![CDATA[
+	"use strict";
+	var details, searchbtn, unzoombtn, matchedtxt, svg, searching;
+	function init(evt) {
+		details = document.getElementById("details").firstChild;
+		searchbtn = document.getElementById("search");
+		unzoombtn = document.getElementById("unzoom");
+		matchedtxt = document.getElementById("matched");
+		svg = document.getElementsByTagName("svg")[0];
+		searching = 0;
+	}
+
+	window.addEventListener("click", function(e) {
+		var target = find_group(e.target);
+		if (target) {
+			if (target.nodeName == "a") {
+				if (e.ctrlKey === false) return;
+				e.preventDefault();
+			}
+			if (target.classList.contains("parent")) unzoom();
+			zoom(target);
+		}
+		else if (e.target.id == "unzoom") unzoom();
+		else if (e.target.id == "search") search_prompt();
+	}, false)
+
+	// mouse-over for info
+	// show
+	window.addEventListener("mouseover", function(e) {
+		var target = find_group(e.target);
+		if (target) details.nodeValue = "Function: " + g_to_text(target);
+	}, false)
+
+	// clear
+	window.addEventListener("mouseout", function(e) {
+		var target = find_group(e.target);
+		if (target) details.nodeValue = ' ';
+	}, false)
+
+	// ctrl-F for search
+	window.addEventListener("keydown",function (e) {
+		if (e.keyCode === 114 || (e.ctrlKey && e.keyCode === 70)) {
+			e.preventDefault();
+			search_prompt();
+		}
+	}, false)
+
+	// functions
+	function find_child(node, selector) {
+		var children = node.querySelectorAll(selector);
+		if (children.length) return children[0];
+		return;
+	}
+	function find_group(node) {
+		var parent = node.parentElement;
+		if (!parent) return;
+		if (parent.id == "frames") return node;
+		return find_group(parent);
+	}
+	function orig_save(e, attr, val) {
+		if (e.attributes["_orig_" + attr] != undefined) return;
+		if (e.attributes[attr] == undefined) return;
+		if (val == undefined) val = e.attributes[attr].value;
+		e.setAttribute("_orig_" + attr, val);
+	}
+	function orig_load(e, attr) {
+		if (e.attributes["_orig_"+attr] == undefined) return;
+		e.attributes[attr].value = e.attributes["_orig_" + attr].value;
+		e.removeAttribute("_orig_"+attr);
+	}
+	function g_to_text(e) {
+		var text = find_child(e, "title").firstChild.nodeValue;
+		return (text)
+	}
+	function g_to_func(e) {
+		var func = g_to_text(e);
+		// if there's any manipulation we want to do to the function
+		// name before it's searched, do it here before returning.
+		return (func);
+	}
+	function update_text(e) {
+		var r = find_child(e, "rect");
+		var t = find_child(e, "text");
+		var w = parseFloat(r.attributes.width.value) -3;
+		var txt = find_child(e, "title").textContent.replace(/\([^(]*\)$/,"");
+		t.attributes.x.value = parseFloat(r.attributes.x.value) + 3;
+
+		// Smaller than this size won't fit anything
+		if (w < 2 * 12 * 0.59) {
+			t.textContent = "";
+			return;
+		}
+
+		t.textContent = txt;
+		// Fit in full text width
+		if (/^ *$/.test(txt) || t.getSubStringLength(0, txt.length) < w)
+			return;
+
+		for (var x = txt.length - 2; x > 0; x--) {
+			if (t.getSubStringLength(0, x + 2) <= w) {
+				t.textContent = txt.substring(0, x) + "..";
+				return;
+			}
+		}
+		t.textContent = "";
+	}
+
+	// zoom
+	function zoom_reset(e) {
+		if (e.attributes != undefined) {
+			orig_load(e, "x");
+			orig_load(e, "width");
+		}
+		if (e.childNodes == undefined) return;
+		for (var i = 0, c = e.childNodes; i < c.length; i++) {
+			zoom_reset(c[i]);
+		}
+	}
+	function zoom_child(e, x, ratio) {
+		if (e.attributes != undefined) {
+			if (e.attributes.x != undefined) {
+				orig_save(e, "x");
+				e.attributes.x.value = (parseFloat(e.attributes.x.value) - x - 10) * ratio + 10;
+				if (e.tagName == "text")
+					e.attributes.x.value = find_child(e.parentNode, "rect[x]").attributes.x.value + 3;
+			}
+			if (e.attributes.width != undefined) {
+				orig_save(e, "width");
+				e.attributes.width.value = parseFloat(e.attributes.width.value) * ratio;
+			}
+		}
+
+		if (e.childNodes == undefined) return;
+		for (var i = 0, c = e.childNodes; i < c.length; i++) {
+			zoom_child(c[i], x - 10, ratio);
+		}
+	}
+	function zoom_parent(e) {
+		if (e.attributes) {
+			if (e.attributes.x != undefined) {
+				orig_save(e, "x");
+				e.attributes.x.value = 10;
+			}
+			if (e.attributes.width != undefined) {
+				orig_save(e, "width");
+				e.attributes.width.value = parseInt(svg.width.baseVal.value) - (10 * 2);
+			}
+		}
+		if (e.childNodes == undefined) return;
+		for (var i = 0, c = e.childNodes; i < c.length; i++) {
+			zoom_parent(c[i]);
+		}
+	}
+	function zoom(node) {
+		var attr = find_child(node, "rect").attributes;
+		var width = parseFloat(attr.width.value);
+		var xmin = parseFloat(attr.x.value);
+		var xmax = parseFloat(xmin + width);
+		var ymin = parseFloat(attr.y.value);
+		var ratio = (svg.width.baseVal.value - 2 * 10) / width;
+
+		// XXX: Workaround for JavaScript float issues (fix me)
+		var fudge = 0.0001;
+
+		unzoombtn.classList.remove("hide");
+
+		var el = document.getElementById("frames").children;
+		for (var i = 0; i < el.length; i++) {
+			var e = el[i];
+			var a = find_child(e, "rect").attributes;
+			var ex = parseFloat(a.x.value);
+			var ew = parseFloat(a.width.value);
+			var upstack;
+			// Is it an ancestor
+			if (0 == 0) {
+				upstack = parseFloat(a.y.value) > ymin;
+			} else {
+				upstack = parseFloat(a.y.value) < ymin;
+			}
+			if (upstack) {
+				// Direct ancestor
+				if (ex <= xmin && (ex+ew+fudge) >= xmax) {
+					e.classList.add("parent");
+					zoom_parent(e);
+					update_text(e);
+				}
+				// not in current path
+				else
+					e.classList.add("hide");
+			}
+			// Children maybe
+			else {
+				// no common path
+				if (ex < xmin || ex + fudge >= xmax) {
+					e.classList.add("hide");
+				}
+				else {
+					zoom_child(e, xmin, ratio);
+					update_text(e);
+				}
+			}
+		}
+	}
+	function unzoom() {
+		unzoombtn.classList.add("hide");
+		var el = document.getElementById("frames").children;
+		for(var i = 0; i < el.length; i++) {
+			el[i].classList.remove("parent");
+			el[i].classList.remove("hide");
+			zoom_reset(el[i]);
+			update_text(el[i]);
+		}
+	}
+
+	// search
+	function reset_search() {
+		var el = document.querySelectorAll("#frames rect");
+		for (var i = 0; i < el.length; i++) {
+			orig_load(el[i], "fill")
+		}
+	}
+	function search_prompt() {
+		if (!searching) {
+			var term = prompt("Enter a search term (regexp " +
+			    "allowed, eg: ^ext4_)", "");
+			if (term != null) {
+				search(term)
+			}
+		} else {
+			reset_search();
+			searching = 0;
+			searchbtn.classList.remove("show");
+			searchbtn.firstChild.nodeValue = "Search"
+			matchedtxt.classList.add("hide");
+			matchedtxt.firstChild.nodeValue = ""
+		}
+	}
+	function search(term) {
+		var re = new RegExp(term);
+		var el = document.getElementById("frames").children;
+		var matches = new Object();
+		var maxwidth = 0;
+		for (var i = 0; i < el.length; i++) {
+			var e = el[i];
+			var func = g_to_func(e);
+			var rect = find_child(e, "rect");
+			if (func == null || rect == null)
+				continue;
+
+			// Save max width. Only works as we have a root frame
+			var w = parseFloat(rect.attributes.width.value);
+			if (w > maxwidth)
+				maxwidth = w;
+
+			if (func.match(re)) {
+				// highlight
+				var x = parseFloat(rect.attributes.x.value);
+				orig_save(rect, "fill");
+				rect.attributes.fill.value = "rgb(230,0,230)";
+
+				// remember matches
+				if (matches[x] == undefined) {
+					matches[x] = w;
+				} else {
+					if (w > matches[x]) {
+						// overwrite with parent
+						matches[x] = w;
+					}
+				}
+				searching = 1;
+			}
+		}
+		if (!searching)
+			return;
+
+		searchbtn.classList.add("show");
+		searchbtn.firstChild.nodeValue = "Reset Search";
+
+		// calculate percent matched, excluding vertical overlap
+		var count = 0;
+		var lastx = -1;
+		var lastw = 0;
+		var keys = Array();
+		for (k in matches) {
+			if (matches.hasOwnProperty(k))
+				keys.push(k);
+		}
+		// sort the matched frames by their x location
+		// ascending, then width descending
+		keys.sort(function(a, b){
+			return a - b;
+		});
+		// Step through frames saving only the biggest bottom-up frames
+		// thanks to the sort order. This relies on the tree property
+		// where children are always smaller than their parents.
+		var fudge = 0.0001;	// JavaScript floating point
+		for (var k in keys) {
+			var x = parseFloat(keys[k]);
+			var w = matches[keys[k]];
+			if (x >= lastx + lastw - fudge) {
+				count += w;
+				lastx = x;
+				lastw = w;
+			}
+		}
+		// display matched percent
+		matchedtxt.classList.remove("hide");
+		var pct = 100 * count / maxwidth;
+		if (pct != 100) pct = pct.toFixed(1)
+		matchedtxt.firstChild.nodeValue = "Matched: " + pct + "%";
+	}
+]]>
+</script>
+<rect x="0.0" y="0" width="1200.0" height="310.0" fill="url(#background)"  />
+<text id="title" x="600.00" y="24" >Flame Graph</text>
+<text id="details" x="10.00" y="293" > </text>
+<text id="unzoom" x="10.00" y="24" class="hide">Reset Zoom</text>
+<text id="search" x="1090.00" y="24" >Search</text>
+<text id="matched" x="1090.00" y="293" > </text>
+<g id="frames">
+<g >
+<title>__gnu_cxx::__normal_iterator&lt;long*, std::vector&lt;long, std::allocator&lt;long&gt; &gt; &gt; std::__find_if&lt;__gnu_cxx::__normal_iterator&lt;long*, std::vector&lt;long, std::allocator&lt;long&gt; &gt; &gt;, __gnu_cxx::__ops::_Iter_pred&lt;task2(long)::$_2&gt; &gt;(__gnu_cxx::__normal_iterator&lt;long*, std::vector&lt;long, std::allocator&lt;long&gt; &gt; &gt;, __gnu_cxx::__normal_iterator&lt;long*, std::vector&lt;long, std::allocator&lt;long&gt; &gt; &gt;, __gnu_cxx::__ops::_Iter_pred&lt;task2(long)::$_2&gt;)[inline] (7 samples, 2.15%)</title><rect x="605.4" y="117" width="25.5" height="15.0" fill="rgb(205,54,0)" rx="2" ry="2" />
+<text  x="608.45" y="127.5" >_..</text>
+</g>
+<g >
+<title>long std::uniform_int_distribution&lt;long&gt;::operator()&lt;std::mersenne_twister_engine&lt;unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul&gt; &gt;(std::mersenne_twister_engine&lt;unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul&gt;&amp;)[inline] (132 samples, 40.62%)</title><rect x="126.2" y="117" width="479.2" height="15.0" fill="rgb(247,123,52)" rx="2" ry="2" />
+<text  x="129.18" y="127.5" >long std::uniform_int_distribution&lt;long&gt;::operator()&lt;std::mersenn..</text>
+</g>
+<g >
+<title>long std::uniform_int_distribution&lt;long&gt;::operator()&lt;std::mersenne_twister_engine&lt;unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul&gt; &gt;(std::mersenne_twister_engine&lt;unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul&gt;&amp;, std::uniform_int_distribution&lt;long&gt;::param_type const&amp;) (127 samples, 39.08%)</title><rect x="728.9" y="101" width="461.1" height="15.0" fill="rgb(221,116,4)" rx="2" ry="2" />
+<text  x="731.89" y="111.5" >long std::uniform_int_distribution&lt;long&gt;::operator()&lt;std::merse..</text>
+</g>
+<g >
+<title>__gnu_cxx::__normal_iterator&lt;long*, std::vector&lt;long, std::allocator&lt;long&gt; &gt; &gt; std::__find_if_not&lt;__gnu_cxx::__normal_iterator&lt;long*, std::vector&lt;long, std::allocator&lt;long&gt; &gt; &gt;, __gnu_cxx::__ops::_Iter_pred&lt;task1(long)::$_1&gt; &gt;(__gnu_cxx::__normal_iterator&lt;long*, std::vector&lt;long, std::allocator&lt;long&gt; &gt; &gt;, __gnu_cxx::__normal_iterator&lt;long*, std::vector&lt;long, std::allocator&lt;long&gt; &gt; &gt;, __gnu_cxx::__ops::_Iter_pred&lt;task1(long)::$_1&gt;)[inline] (7 samples, 2.15%)</title><rect x="10.0" y="133" width="25.4" height="15.0" fill="rgb(239,161,52)" rx="2" ry="2" />
+<text  x="13.00" y="143.5" >_..</text>
+</g>
+<g >
+<title>bool __gnu_cxx::operator!=&lt;long*, std::vector&lt;long, std::allocator&lt;long&gt; &gt; &gt;(__gnu_cxx::__normal_iterator&lt;long*, std::vector&lt;long, std::allocator&lt;long&gt; &gt; &gt; const&amp;, __gnu_cxx::__normal_iterator&lt;long*, std::vector&lt;long, std::allocator&lt;long&gt; &gt; &gt; const&amp;)[inline] (4 samples, 1.23%)</title><rect x="699.8" y="133" width="14.6" height="15.0" fill="rgb(205,0,13)" rx="2" ry="2" />
+<text  x="702.85" y="143.5" ></text>
+</g>
+<g >
+<title>task2(long)&lt;0000000000400ed0&gt; (161 samples, 49.54%)</title><rect x="605.4" y="181" width="584.6" height="15.0" fill="rgb(229,198,39)" rx="2" ry="2" />
+<text  x="608.45" y="191.5" >task2(long)&lt;0000000000400ed0&gt;</text>
+</g>
+<g >
+<title>std::mersenne_twister_engine&lt;unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul&gt;::_M_gen_rand()[inline] (12 samples, 3.69%)</title><rect x="1139.2" y="69" width="43.5" height="15.0" fill="rgb(205,197,28)" rx="2" ry="2" />
+<text  x="1142.17" y="79.5" >std:..</text>
+</g>
+<g >
+<title>long* std::__uninitialized_default_n_a&lt;long*, unsigned long, long&gt;(long*, unsigned long, std::allocator&lt;long&gt;&amp;)[inline] (19 samples, 5.85%)</title><rect x="630.9" y="117" width="68.9" height="15.0" fill="rgb(235,158,50)" rx="2" ry="2" />
+<text  x="633.86" y="127.5" >long* s..</text>
+</g>
+<g >
+<title>__gnu_cxx::__normal_iterator&lt;long*, std::vector&lt;long, std::allocator&lt;long&gt; &gt; &gt; std::__find_if&lt;__gnu_cxx::__normal_iterator&lt;long*, std::vector&lt;long, std::allocator&lt;long&gt; &gt; &gt;, __gnu_cxx::__ops::_Iter_pred&lt;task2(long)::$_2&gt; &gt;(__gnu_cxx::__normal_iterator&lt;long*, std::vector&lt;long, std::allocator&lt;long&gt; &gt; &gt;, __gnu_cxx::__normal_iterator&lt;long*, std::vector&lt;long, std::allocator&lt;long&gt; &gt; &gt;, __gnu_cxx::__ops::_Iter_pred&lt;task2(long)::$_2&gt;, std::random_access_iterator_tag)[inline] (7 samples, 2.15%)</title><rect x="605.4" y="101" width="25.5" height="15.0" fill="rgb(239,36,7)" rx="2" ry="2" />
+<text  x="608.45" y="111.5" >_..</text>
+</g>
+<g >
+<title>run_calculation()[inline] (325 samples, 100.00%)</title><rect x="10.0" y="197" width="1180.0" height="15.0" fill="rgb(253,149,36)" rx="2" ry="2" />
+<text  x="13.00" y="207.5" >run_calculation()[inline]</text>
+</g>
+<g >
+<title>__gnu_cxx::__normal_iterator&lt;long*, std::vector&lt;long, std::allocator&lt;long&gt; &gt; &gt; std::find_if&lt;__gnu_cxx::__normal_iterator&lt;long*, std::vector&lt;long, std::allocator&lt;long&gt; &gt; &gt;, task2(long)::$_2&gt;(__gnu_cxx::__normal_iterator&lt;long*, std::vector&lt;long, std::allocator&lt;long&gt; &gt; &gt;, __gnu_cxx::__normal_iterator&lt;long*, std::vector&lt;long, std::allocator&lt;long&gt; &gt; &gt;, task2(long)::$_2)[inline] (7 samples, 2.15%)</title><rect x="605.4" y="133" width="25.5" height="15.0" fill="rgb(206,134,29)" rx="2" ry="2" />
+<text  x="608.45" y="143.5" >_..</text>
+</g>
+<g >
+<title>task1(long)&lt;0000000000400d60&gt; (164 samples, 50.46%)</title><rect x="10.0" y="181" width="595.4" height="15.0" fill="rgb(254,168,27)" rx="2" ry="2" />
+<text  x="13.00" y="191.5" >task1(long)&lt;0000000000400d60&gt;</text>
+</g>
+<g >
+<title>_ZSt10__fill_n_aIPlmlEN9__gnu_cxx11__enable_ifIXsr11__is_scalarIT1_EE7__valueET_E6__typeES4_T0_RKS3_[inline] (19 samples, 5.85%)</title><rect x="630.9" y="53" width="68.9" height="15.0" fill="rgb(246,12,47)" rx="2" ry="2" />
+<text  x="633.86" y="63.5" >_ZSt10_..</text>
+</g>
+<g >
+<title>long* std::__uninitialized_default_n_1&lt;true&gt;::__uninit_default_n&lt;long*, unsigned long&gt;(long*, unsigned long)[inline] (19 samples, 5.85%)</title><rect x="630.9" y="85" width="68.9" height="15.0" fill="rgb(235,5,0)" rx="2" ry="2" />
+<text  x="633.86" y="95.5" >long* s..</text>
+</g>
+<g >
+<title>operator()[inline] (132 samples, 40.62%)</title><rect x="126.2" y="133" width="479.2" height="15.0" fill="rgb(209,77,54)" rx="2" ry="2" />
+<text  x="129.18" y="143.5" >operator()[inline]</text>
+</g>
+<g >
+<title>_start&lt;0000000000400a90&gt; (325 samples, 100.00%)</title><rect x="10.0" y="245" width="1180.0" height="15.0" fill="rgb(250,39,42)" rx="2" ry="2" />
+<text  x="13.00" y="255.5" >_start&lt;0000000000400a90&gt;</text>
+</g>
+<g >
+<title>long std::uniform_int_distribution&lt;long&gt;::operator()&lt;std::mersenne_twister_engine&lt;unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul&gt; &gt;(std::mersenne_twister_engine&lt;unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul&gt;&amp;)[inline] (131 samples, 40.31%)</title><rect x="714.4" y="117" width="475.6" height="15.0" fill="rgb(250,181,17)" rx="2" ry="2" />
+<text  x="717.37" y="127.5" >long std::uniform_int_distribution&lt;long&gt;::operator()&lt;std::mersenn..</text>
+</g>
+<g >
+<title>std::mersenne_twister_engine&lt;unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul&gt;::operator()() (29 samples, 8.92%)</title><rect x="1077.4" y="85" width="105.3" height="15.0" fill="rgb(235,216,0)" rx="2" ry="2" />
+<text  x="1080.45" y="95.5" >std::mersenn..</text>
+</g>
+<g >
+<title>std::mersenne_twister_engine&lt;unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul&gt;::operator()() (28 samples, 8.62%)</title><rect x="492.9" y="85" width="101.7" height="15.0" fill="rgb(208,158,15)" rx="2" ry="2" />
+<text  x="495.89" y="95.5" >std::mersenn..</text>
+</g>
+<g >
+<title>long std::uniform_int_distribution&lt;long&gt;::operator()&lt;std::mersenne_twister_engine&lt;unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul&gt; &gt;(std::mersenne_twister_engine&lt;unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul&gt;&amp;, std::uniform_int_distribution&lt;long&gt;::param_type const&amp;) (130 samples, 40.00%)</title><rect x="133.4" y="101" width="472.0" height="15.0" fill="rgb(231,136,40)" rx="2" ry="2" />
+<text  x="136.45" y="111.5" >long std::uniform_int_distribution&lt;long&gt;::operator()&lt;std::mersen..</text>
+</g>
+<g >
+<title>long* std::__uninitialized_default_n_1&lt;true&gt;::__uninit_default_n&lt;long*, unsigned long&gt;(long*, unsigned long)[inline] (22 samples, 6.77%)</title><rect x="35.4" y="85" width="79.9" height="15.0" fill="rgb(230,43,14)" rx="2" ry="2" />
+<text  x="38.42" y="95.5" >long* std..</text>
+</g>
+<g >
+<title>vector[inline] (22 samples, 6.77%)</title><rect x="35.4" y="149" width="79.9" height="15.0" fill="rgb(220,60,42)" rx="2" ry="2" />
+<text  x="38.42" y="159.5" >vector[in..</text>
+</g>
+<g >
+<title>operator()[inline] (131 samples, 40.31%)</title><rect x="714.4" y="133" width="475.6" height="15.0" fill="rgb(252,51,4)" rx="2" ry="2" />
+<text  x="717.37" y="143.5" >operator()[inline]</text>
+</g>
+<g >
+<title>long* std::__uninitialized_default_n&lt;long*, unsigned long&gt;(long*, unsigned long)[inline] (19 samples, 5.85%)</title><rect x="630.9" y="101" width="68.9" height="15.0" fill="rgb(217,101,8)" rx="2" ry="2" />
+<text  x="633.86" y="111.5" >long* s..</text>
+</g>
+<g >
+<title>random_vec(unsigned long, long, long)&lt;0000000000400b70&gt; (157 samples, 48.31%)</title><rect x="35.4" y="165" width="570.0" height="15.0" fill="rgb(222,31,41)" rx="2" ry="2" />
+<text  x="38.42" y="175.5" >random_vec(unsigned long, long, long)&lt;0000000000400b70&gt;</text>
+</g>
+<g >
+<title>bool std::none_of&lt;__gnu_cxx::__normal_iterator&lt;long*, std::vector&lt;long, std::allocator&lt;long&gt; &gt; &gt;, task2(long)::$_2&gt;(__gnu_cxx::__normal_iterator&lt;long*, std::vector&lt;long, std::allocator&lt;long&gt; &gt; &gt;, __gnu_cxx::__normal_iterator&lt;long*, std::vector&lt;long, std::allocator&lt;long&gt; &gt; &gt;, task2(long)::$_2)[inline] (7 samples, 2.15%)</title><rect x="605.4" y="149" width="25.5" height="15.0" fill="rgb(215,113,5)" rx="2" ry="2" />
+<text  x="608.45" y="159.5" >b..</text>
+</g>
+<g >
+<title>void std::generate&lt;__gnu_cxx::__normal_iterator&lt;long*, std::vector&lt;long, std::allocator&lt;long&gt; &gt; &gt;, random_vec(unsigned long, long, long)::$_0&gt;(__gnu_cxx::__normal_iterator&lt;long*, std::vector&lt;long, std::allocator&lt;long&gt; &gt; &gt;, __gnu_cxx::__normal_iterator&lt;long*, std::vector&lt;long, std::allocator&lt;long&gt; &gt; &gt;, random_vec(unsigned long, long, long)::$_0)[inline] (135 samples, 41.54%)</title><rect x="699.8" y="149" width="490.2" height="15.0" fill="rgb(253,34,44)" rx="2" ry="2" />
+<text  x="702.85" y="159.5" >void std::generate&lt;__gnu_cxx::__normal_iterator&lt;long*, std::vector&lt;..</text>
+</g>
+<g >
+<title>bool __gnu_cxx::__ops::_Iter_negate&lt;task1(long)::$_1&gt;::operator()&lt;__gnu_cxx::__normal_iterator&lt;long*, std::vector&lt;long, std::allocator&lt;long&gt; &gt; &gt; &gt;(__gnu_cxx::__normal_iterator&lt;long*, std::vector&lt;long, std::allocator&lt;long&gt; &gt; &gt;)[inline] (2 samples, 0.62%)</title><rect x="28.2" y="101" width="7.2" height="15.0" fill="rgb(229,98,42)" rx="2" ry="2" />
+<text  x="31.15" y="111.5" ></text>
+</g>
+<g >
+<title>main&lt;0000000000401060&gt; (325 samples, 100.00%)</title><rect x="10.0" y="213" width="1180.0" height="15.0" fill="rgb(250,14,8)" rx="2" ry="2" />
+<text  x="13.00" y="223.5" >main&lt;0000000000401060&gt;</text>
+</g>
+<g >
+<title>__gnu_cxx::__normal_iterator&lt;long*, std::vector&lt;long, std::allocator&lt;long&gt; &gt; &gt; std::find_if_not&lt;__gnu_cxx::__normal_iterator&lt;long*, std::vector&lt;long, std::allocator&lt;long&gt; &gt; &gt;, task1(long)::$_1&gt;(__gnu_cxx::__normal_iterator&lt;long*, std::vector&lt;long, std::allocator&lt;long&gt; &gt; &gt;, __gnu_cxx::__normal_iterator&lt;long*, std::vector&lt;long, std::allocator&lt;long&gt; &gt; &gt;, task1(long)::$_1)[inline] (7 samples, 2.15%)</title><rect x="10.0" y="149" width="25.4" height="15.0" fill="rgb(205,151,39)" rx="2" ry="2" />
+<text  x="13.00" y="159.5" >_..</text>
+</g>
+<g >
+<title>__gnu_cxx::__normal_iterator&lt;long*, std::vector&lt;long, std::allocator&lt;long&gt; &gt; &gt; std::__find_if&lt;__gnu_cxx::__normal_iterator&lt;long*, std::vector&lt;long, std::allocator&lt;long&gt; &gt; &gt;, __gnu_cxx::__ops::_Iter_negate&lt;task1(long)::$_1&gt; &gt;(__gnu_cxx::__normal_iterator&lt;long*, std::vector&lt;long, std::allocator&lt;long&gt; &gt; &gt;, __gnu_cxx::__normal_iterator&lt;long*, std::vector&lt;long, std::allocator&lt;long&gt; &gt; &gt;, __gnu_cxx::__ops::_Iter_negate&lt;task1(long)::$_1&gt;, std::random_access_iterator_tag)[inline] (7 samples, 2.15%)</title><rect x="10.0" y="117" width="25.4" height="15.0" fill="rgb(213,160,13)" rx="2" ry="2" />
+<text  x="13.00" y="127.5" >_..</text>
+</g>
+<g >
+<title>vector[inline] (19 samples, 5.85%)</title><rect x="630.9" y="149" width="68.9" height="15.0" fill="rgb(223,12,34)" rx="2" ry="2" />
+<text  x="633.86" y="159.5" >vector[..</text>
+</g>
+<g >
+<title>all (325 samples, 100%)</title><rect x="10.0" y="261" width="1180.0" height="15.0" fill="rgb(249,117,50)" rx="2" ry="2" />
+<text  x="13.00" y="271.5" ></text>
+</g>
+<g >
+<title>bool std::any_of&lt;__gnu_cxx::__normal_iterator&lt;long*, std::vector&lt;long, std::allocator&lt;long&gt; &gt; &gt;, task2(long)::$_2&gt;(__gnu_cxx::__normal_iterator&lt;long*, std::vector&lt;long, std::allocator&lt;long&gt; &gt; &gt;, __gnu_cxx::__normal_iterator&lt;long*, std::vector&lt;long, std::allocator&lt;long&gt; &gt; &gt;, task2(long)::$_2)[inline] (7 samples, 2.15%)</title><rect x="605.4" y="165" width="25.5" height="15.0" fill="rgb(206,11,12)" rx="2" ry="2" />
+<text  x="608.45" y="175.5" >b..</text>
+</g>
+<g >
+<title>__memset_sse2 (22 samples, 6.77%)</title><rect x="35.4" y="37" width="79.9" height="15.0" fill="rgb(242,215,36)" rx="2" ry="2" />
+<text  x="38.42" y="47.5" >__memset_..</text>
+</g>
+<g >
+<title>long* std::__uninitialized_default_n_a&lt;long*, unsigned long, long&gt;(long*, unsigned long, std::allocator&lt;long&gt;&amp;)[inline] (22 samples, 6.77%)</title><rect x="35.4" y="117" width="79.9" height="15.0" fill="rgb(226,188,39)" rx="2" ry="2" />
+<text  x="38.42" y="127.5" >long* std..</text>
+</g>
+<g >
+<title>long* std::fill_n&lt;long*, unsigned long, long&gt;(long*, unsigned long, long const&amp;)[inline] (19 samples, 5.85%)</title><rect x="630.9" y="69" width="68.9" height="15.0" fill="rgb(229,147,20)" rx="2" ry="2" />
+<text  x="633.86" y="79.5" >long* s..</text>
+</g>
+<g >
+<title>long* std::fill_n&lt;long*, unsigned long, long&gt;(long*, unsigned long, long const&amp;)[inline] (22 samples, 6.77%)</title><rect x="35.4" y="69" width="79.9" height="15.0" fill="rgb(237,132,33)" rx="2" ry="2" />
+<text  x="38.42" y="79.5" >long* std..</text>
+</g>
+<g >
+<title>bool std::all_of&lt;__gnu_cxx::__normal_iterator&lt;long*, std::vector&lt;long, std::allocator&lt;long&gt; &gt; &gt;, task1(long)::$_1&gt;(__gnu_cxx::__normal_iterator&lt;long*, std::vector&lt;long, std::allocator&lt;long&gt; &gt; &gt;, __gnu_cxx::__normal_iterator&lt;long*, std::vector&lt;long, std::allocator&lt;long&gt; &gt; &gt;, task1(long)::$_1)[inline] (7 samples, 2.15%)</title><rect x="10.0" y="165" width="25.4" height="15.0" fill="rgb(209,24,30)" rx="2" ry="2" />
+<text  x="13.00" y="175.5" >b..</text>
+</g>
+<g >
+<title>__libc_start_main&lt;00000000000223a0&gt; (325 samples, 100.00%)</title><rect x="10.0" y="229" width="1180.0" height="15.0" fill="rgb(229,179,53)" rx="2" ry="2" />
+<text  x="13.00" y="239.5" >__libc_start_main&lt;00000000000223a0&gt;</text>
+</g>
+<g >
+<title>std::vector&lt;long, std::allocator&lt;long&gt; &gt;::_M_default_initialize(unsigned long)[inline] (22 samples, 6.77%)</title><rect x="35.4" y="133" width="79.9" height="15.0" fill="rgb(244,73,13)" rx="2" ry="2" />
+<text  x="38.42" y="143.5" >std::vect..</text>
+</g>
+<g >
+<title>__memset_sse2 (19 samples, 5.85%)</title><rect x="630.9" y="37" width="68.9" height="15.0" fill="rgb(236,140,5)" rx="2" ry="2" />
+<text  x="633.86" y="47.5" >__memse..</text>
+</g>
+<g >
+<title>std::mersenne_twister_engine&lt;unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul&gt;::_M_gen_rand()[inline] (11 samples, 3.38%)</title><rect x="554.6" y="69" width="40.0" height="15.0" fill="rgb(216,79,31)" rx="2" ry="2" />
+<text  x="557.62" y="79.5" >std..</text>
+</g>
+<g >
+<title>long* std::__uninitialized_default_n&lt;long*, unsigned long&gt;(long*, unsigned long)[inline] (22 samples, 6.77%)</title><rect x="35.4" y="101" width="79.9" height="15.0" fill="rgb(236,158,23)" rx="2" ry="2" />
+<text  x="38.42" y="111.5" >long* std..</text>
+</g>
+<g >
+<title>_ZSt10__fill_n_aIPlmlEN9__gnu_cxx11__enable_ifIXsr11__is_scalarIT1_EE7__valueET_E6__typeES4_T0_RKS3_[inline] (22 samples, 6.77%)</title><rect x="35.4" y="53" width="79.9" height="15.0" fill="rgb(216,55,28)" rx="2" ry="2" />
+<text  x="38.42" y="63.5" >_ZSt10__f..</text>
+</g>
+<g >
+<title>std::uniform_int_distribution&lt;long&gt;::param_type::b() const[inline] (3 samples, 0.92%)</title><rect x="594.6" y="85" width="10.8" height="15.0" fill="rgb(221,117,45)" rx="2" ry="2" />
+<text  x="597.55" y="95.5" ></text>
+</g>
+<g >
+<title>random_vec(unsigned long, long, long)&lt;0000000000400b70&gt; (154 samples, 47.38%)</title><rect x="630.9" y="165" width="559.1" height="15.0" fill="rgb(215,210,30)" rx="2" ry="2" />
+<text  x="633.86" y="175.5" >random_vec(unsigned long, long, long)&lt;0000000000400b70&gt;</text>
+</g>
+<g >
+<title>bool __gnu_cxx::operator!=&lt;long*, std::vector&lt;long, std::allocator&lt;long&gt; &gt; &gt;(__gnu_cxx::__normal_iterator&lt;long*, std::vector&lt;long, std::allocator&lt;long&gt; &gt; &gt; const&amp;, __gnu_cxx::__normal_iterator&lt;long*, std::vector&lt;long, std::allocator&lt;long&gt; &gt; &gt; const&amp;)[inline] (3 samples, 0.92%)</title><rect x="115.3" y="133" width="10.9" height="15.0" fill="rgb(234,91,9)" rx="2" ry="2" />
+<text  x="118.29" y="143.5" ></text>
+</g>
+<g >
+<title>operator()[inline] (2 samples, 0.62%)</title><rect x="28.2" y="85" width="7.2" height="15.0" fill="rgb(233,204,42)" rx="2" ry="2" />
+<text  x="31.15" y="95.5" ></text>
+</g>
+<g >
+<title>std::vector&lt;long, std::allocator&lt;long&gt; &gt;::_M_default_initialize(unsigned long)[inline] (19 samples, 5.85%)</title><rect x="630.9" y="133" width="68.9" height="15.0" fill="rgb(240,182,24)" rx="2" ry="2" />
+<text  x="633.86" y="143.5" >std::ve..</text>
+</g>
+<g >
+<title>void std::generate&lt;__gnu_cxx::__normal_iterator&lt;long*, std::vector&lt;long, std::allocator&lt;long&gt; &gt; &gt;, random_vec(unsigned long, long, long)::$_0&gt;(__gnu_cxx::__normal_iterator&lt;long*, std::vector&lt;long, std::allocator&lt;long&gt; &gt; &gt;, __gnu_cxx::__normal_iterator&lt;long*, std::vector&lt;long, std::allocator&lt;long&gt; &gt; &gt;, random_vec(unsigned long, long, long)::$_0)[inline] (135 samples, 41.54%)</title><rect x="115.3" y="149" width="490.1" height="15.0" fill="rgb(224,151,8)" rx="2" ry="2" />
+<text  x="118.29" y="159.5" >void std::generate&lt;__gnu_cxx::__normal_iterator&lt;long*, std::vector&lt;..</text>
+</g>
+<g >
+<title>std::uniform_int_distribution&lt;long&gt;::param_type::b() const[inline] (2 samples, 0.62%)</title><rect x="1182.7" y="85" width="7.3" height="15.0" fill="rgb(234,102,32)" rx="2" ry="2" />
+<text  x="1185.74" y="95.5" ></text>
+</g>
+</g>
+</svg>

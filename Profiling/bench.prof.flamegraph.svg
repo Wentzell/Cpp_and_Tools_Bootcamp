@@ -342,32 +342,36 @@
 <text id="matched" x="1090.00" y="149" > </text>
 <g id="frames">
 <g >
-<title>run_calculation()[inline] (973 samples, 100.00%)</title><rect x="10.0" y="53" width="1180.0" height="15.0" fill="rgb(231,228,44)" rx="2" ry="2" />
-<text  x="13.00" y="63.5" >run_calculation()[inline]</text>
+<title>sum_of_cubes(long)&lt;0000000000400990&gt; (570 samples, 47.90%)</title><rect x="10.0" y="37" width="565.2" height="15.0" fill="rgb(239,152,22)" rx="2" ry="2" />
+<text  x="13.00" y="47.5" >sum_of_cubes(long)&lt;0000000000400990&gt;</text>
 </g>
 <g >
-<title>sum_of_cubes(long)&lt;00000000004009f0&gt; (567 samples, 58.27%)</title><rect x="10.0" y="37" width="687.6" height="15.0" fill="rgb(244,127,8)" rx="2" ry="2" />
-<text  x="13.00" y="47.5" >sum_of_cubes(long)&lt;00000000004009f0&gt;</text>
-</g>
-<g >
-<title>_start&lt;0000000000400800&gt; (973 samples, 100.00%)</title><rect x="10.0" y="101" width="1180.0" height="15.0" fill="rgb(207,200,46)" rx="2" ry="2" />
-<text  x="13.00" y="111.5" >_start&lt;0000000000400800&gt;</text>
-</g>
-<g >
-<title>all (973 samples, 100%)</title><rect x="10.0" y="117" width="1180.0" height="15.0" fill="rgb(237,61,39)" rx="2" ry="2" />
-<text  x="13.00" y="127.5" ></text>
-</g>
-<g >
-<title>sum_of_squares(long)&lt;00000000004008e0&gt; (406 samples, 41.73%)</title><rect x="697.6" y="37" width="492.4" height="15.0" fill="rgb(226,38,45)" rx="2" ry="2" />
-<text  x="700.63" y="47.5" >sum_of_squares(long)&lt;00000000004008e0&gt;</text>
-</g>
-<g >
-<title>__libc_start_main&lt;00000000000223a0&gt; (973 samples, 100.00%)</title><rect x="10.0" y="85" width="1180.0" height="15.0" fill="rgb(225,226,11)" rx="2" ry="2" />
+<title>__libc_start_main&lt;00000000000223a0&gt; (1,190 samples, 100.00%)</title><rect x="10.0" y="85" width="1180.0" height="15.0" fill="rgb(247,112,11)" rx="2" ry="2" />
 <text  x="13.00" y="95.5" >__libc_start_main&lt;00000000000223a0&gt;</text>
 </g>
 <g >
-<title>main&lt;0000000000400b50&gt; (973 samples, 100.00%)</title><rect x="10.0" y="69" width="1180.0" height="15.0" fill="rgb(241,116,49)" rx="2" ry="2" />
-<text  x="13.00" y="79.5" >main&lt;0000000000400b50&gt;</text>
+<title>sum_of_squares(long)&lt;00000000004008e0&gt; (411 samples, 34.54%)</title><rect x="575.2" y="37" width="407.6" height="15.0" fill="rgb(217,171,18)" rx="2" ry="2" />
+<text  x="578.21" y="47.5" >sum_of_squares(long)&lt;00000000004008e0&gt;</text>
+</g>
+<g >
+<title>all (1,190 samples, 100%)</title><rect x="10.0" y="117" width="1180.0" height="15.0" fill="rgb(223,209,40)" rx="2" ry="2" />
+<text  x="13.00" y="127.5" ></text>
+</g>
+<g >
+<title>run_calculation()[inline] (981 samples, 82.44%)</title><rect x="10.0" y="53" width="972.8" height="15.0" fill="rgb(219,222,15)" rx="2" ry="2" />
+<text  x="13.00" y="63.5" >run_calculation()[inline]</text>
+</g>
+<g >
+<title>main&lt;0000000000400a70&gt; (1,190 samples, 100.00%)</title><rect x="10.0" y="69" width="1180.0" height="15.0" fill="rgb(218,229,1)" rx="2" ry="2" />
+<text  x="13.00" y="79.5" >main&lt;0000000000400a70&gt;</text>
+</g>
+<g >
+<title>_start&lt;0000000000400800&gt; (1,190 samples, 100.00%)</title><rect x="10.0" y="101" width="1180.0" height="15.0" fill="rgb(250,147,28)" rx="2" ry="2" />
+<text  x="13.00" y="111.5" >_start&lt;0000000000400800&gt;</text>
+</g>
+<g >
+<title>sum_of_squares(long)&lt;00000000004008e0&gt; (209 samples, 17.56%)</title><rect x="982.8" y="53" width="207.2" height="15.0" fill="rgb(253,150,41)" rx="2" ry="2" />
+<text  x="985.76" y="63.5" >sum_of_squares(long)&lt;000000..</text>
 </g>
 </g>
 </svg>

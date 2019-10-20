@@ -1,0 +1,515 @@
+Total: 495 samples
+      85  17.2%  17.2%       85  17.2% std::__1::operator* /mnt/home/wentzell/opt/llvm_9.0.0/bin/../include/c++/v1/complex:597
+      72  14.5%  31.7%       72  14.5% std::__1::complex::real (inline) /mnt/home/wentzell/opt/llvm_9.0.0/bin/../include/c++/v1/complex:395
+      49   9.9%  41.6%       49   9.9% std::__1::operator* /mnt/home/wentzell/opt/llvm_9.0.0/bin/../include/c++/v1/complex:596
+      39   7.9%  49.5%       39   7.9% _ZNSt3__125__libcpp_isnan_or_builtinIdEENS_9enable_ifIXsr3std17is_floating_pointIT_EE5valueEbE4typeES2_ (inline) /mnt/home/wentzell/opt/llvm_9.0.0/bin/../include/c++/v1/cmath:555
+      35   7.1%  56.6%       35   7.1% std::__1::operator* /mnt/home/wentzell/opt/llvm_9.0.0/bin/../include/c++/v1/complex:600
+      13   2.6%  59.2%      179  36.2% operator /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/ctint_tutorial.src/c++/ctint_tutorial/solver.cpp:125
+      13   2.6%  61.8%       13   2.6% std::__1::operator* /mnt/home/wentzell/opt/llvm_9.0.0/bin/../include/c++/v1/complex:645
+      11   2.2%  64.0%       11   2.2% __ieee754_hypot :0
+      11   2.2%  66.3%      164  33.1% std::__1::complex::operator*= (inline) /mnt/home/wentzell/opt/llvm_9.0.0/bin/../include/c++/v1/complex:428
+      10   2.0%  68.3%       10   2.0% _init ??:0
+      10   2.0%  70.3%       10   2.0% complex (inline) /mnt/home/wentzell/opt/llvm_9.0.0/bin/../include/c++/v1/complex:389
+       8   1.6%  71.9%        8   1.6% __sin_avx :0
+       8   1.6%  73.5%       12   2.4% do_lookup_x dl-lookup.c:0
+       7   1.4%  74.9%        7   1.4% _xstat :0
+       7   1.4%  76.4%        7   1.4% std::__1::complex::operator+= (inline) /mnt/home/wentzell/opt/llvm_9.0.0/bin/../include/c++/v1/complex:416
+       5   1.0%  77.4%        5   1.0% std::__1::vector::operator[] (inline) /mnt/home/wentzell/opt/llvm_9.0.0/bin/../include/c++/v1/vector:1548
+       5   1.0%  78.4%        5   1.0% triqs::arrays::indexmaps::cuboid::map::_call_impl (inline) /mnt/home/wentzell/opt/triqs/include/triqs/arrays/indexmaps/cuboid/./map.hpp:125
+       5   1.0%  79.4%        5   1.0% triqs::gfs::mesh_pt_generator::equal (inline) /mnt/home/wentzell/opt/triqs/include/triqs/gfs/meshes/mesh_tools.hpp:88
+       4   0.8%  80.2%        4   0.8% __recvmsg_nocancel :0
+       4   0.8%  81.0%        8   1.6% triqs::mc_tools::RandomGenerators::RandMT::eval /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/triqs.src/triqs/mc_tools/MersenneRNG.cpp:35
+       3   0.6%  81.6%        3   0.6% __GI___exp :0
+       3   0.6%  82.2%        3   0.6% __memset_sse2 :0
+       3   0.6%  82.8%        3   0.6% _int_malloc malloc.c:0
+       3   0.6%  83.4%        4   0.8% check_match.9523 dl-lookup.c:0
+       3   0.6%  84.0%        7   1.4% zgemv_ ??:0
+       2   0.4%  84.4%        5   1.0% _ZN5triqs8mc_tools16random_generatorclIiEENSt3__19enable_ifIXsr11is_integralIT_EE5valueES5_E4typeES5_ (inline) /mnt/home/wentzell/opt/triqs/include/triqs/mc_tools/./random_generator.hpp:69
+       2   0.4%  84.8%       13   2.6% __hypot :0
+       2   0.4%  85.3%        2   0.4% __nanosleep_nocancel :0
+       2   0.4%  85.7%        2   0.4% __open_nocancel :0
+       2   0.4%  86.1%        2   0.4% __read_nocancel :0
+       2   0.4%  86.5%        2   0.4% g0bar_tau::operator (inline) /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/ctint_tutorial.src/c++/ctint_tutorial/solver.cpp:26
+       2   0.4%  86.9%        3   0.6% g0bar_tau::operator (inline) /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/ctint_tutorial.src/c++/ctint_tutorial/solver.cpp:33
+       2   0.4%  87.3%        2   0.4% strcmp :0
+       2   0.4%  87.7%        2   0.4% triqs::det_manip::det_manip::try_insert /mnt/home/wentzell/opt/triqs/include/triqs/det_manip/det_manip.hpp:489
+       1   0.2%  87.9%        1   0.2% 00007fa821d4ca80 
+       1   0.2%  88.1%        1   0.2% PyDict_Next /mnt/home/apataki/build/Python-2.7.16/Objects/dictobject.c:1034
+       1   0.2%  88.3%        1   0.2% PyEval_EvalFrameEx /mnt/home/apataki/build/Python-2.7.16/Python/ceval.c:1182
+       1   0.2%  88.5%        1   0.2% PyEval_EvalFrameEx /mnt/home/apataki/build/Python-2.7.16/Python/ceval.c:2690
+       1   0.2%  88.7%        1   0.2% PyEval_EvalFrameEx /mnt/home/apataki/build/Python-2.7.16/Python/ceval.c:2699
+       1   0.2%  88.9%        1   0.2% PyObject_Malloc /mnt/home/apataki/build/Python-2.7.16/Objects/obmalloc.c:810
+       1   0.2%  89.1%        1   0.2% PyString_FromStringAndSize /mnt/home/apataki/build/Python-2.7.16/Objects/stringobject.c:89
+       1   0.2%  89.3%        1   0.2% PyString_InternInPlace /mnt/home/apataki/build/Python-2.7.16/Objects/stringobject.c:4769
+       1   0.2%  89.5%        1   0.2% _PyType_Lookup /mnt/home/apataki/build/Python-2.7.16/Objects/typeobject.c:2600
+       1   0.2%  89.7%        1   0.2% _ZN5triqs6arrays4blas4gemvINS0_11matrix_viewINSt3__17complexIdEELc66ELb0EEENS0_11vector_viewIS6_Lc66ELb0EEES9_EENS4_9enable_ifIXsr13use_blas_gemvIT_T0_T1_EE5valueEvE4typeENSB_10value_typeERKSB_RKSC_SG_RSD_ /mnt/home/wentzell/opt/triqs/include/triqs/arrays/blas_lapack/gemv.hpp:47
+       1   0.2%  89.9%        1   0.2% __GI___fork :0
+       1   0.2%  90.1%        1   0.2% __GI___libc_free :0
+       1   0.2%  90.3%        1   0.2% __close_nocancel :0
+       1   0.2%  90.5%        1   0.2% __cos_avx :0
+       1   0.2%  90.7%        1   0.2% __getdents64 :0
+       1   0.2%  90.9%        1   0.2% __memcpy_ssse3_back :0
+       1   0.2%  91.1%        1   0.2% __mmap64 :0
+       1   0.2%  91.3%        1   0.2% __mprotect :0
+       1   0.2%  91.5%        2   0.4% _int_free malloc.c:0
+       1   0.2%  91.7%        1   0.2% ast_for_suite /mnt/home/apataki/build/Python-2.7.16/Python/ast.c:2743
+       1   0.2%  91.9%        1   0.2% freechildren (inline) /mnt/home/apataki/build/Python-2.7.16/Parser/node.c:143
+       1   0.2%  92.1%        1   0.2% g0bar_tau::operator (inline) /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/ctint_tutorial.src/c++/ctint_tutorial/solver.cpp:27
+       1   0.2%  92.3%        2   0.4% g0bar_tau::operator (inline) /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/ctint_tutorial.src/c++/ctint_tutorial/solver.cpp:32
+       1   0.2%  92.5%        1   0.2% indexmap_storage_pair (inline) /mnt/home/wentzell/opt/triqs/include/triqs/arrays/impl/indexmap_storage_pair.hpp:104
+       1   0.2%  92.7%        1   0.2% initgrp /mnt/home/apataki/build/Python-2.7.16/Modules/grpmodule.c:196
+       1   0.2%  92.9%        1   0.2% lookdict_string /mnt/home/apataki/build/Python-2.7.16/Objects/dictobject.c:457
+       1   0.2%  93.1%        1   0.2% malloc_consolidate malloc.c:0
+       1   0.2%  93.3%        1   0.2% memset :0
+       1   0.2%  93.5%        1   0.2% mkplan@4dc20 ct.c:0
+       1   0.2%  93.7%       27   5.5% move_insert::attempt /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/ctint_tutorial.src/c++/ctint_tutorial/solver.cpp:61
+       1   0.2%  93.9%        1   0.2% move_insert::attempt /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/ctint_tutorial.src/c++/ctint_tutorial/solver.cpp:62
+       1   0.2%  94.1%        1   0.2% move_remove::attempt /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/ctint_tutorial.src/c++/ctint_tutorial/solver.cpp:82
+       1   0.2%  94.3%        1   0.2% move_remove::attempt /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/ctint_tutorial.src/c++/ctint_tutorial/solver.cpp:88
+       1   0.2%  94.5%        1   0.2% std::__1::__function::__func::operator ??:0
+       1   0.2%  94.7%        2   0.4% std::__1::operator- (inline) /mnt/home/wentzell/opt/llvm_9.0.0/bin/../include/c++/v1/complex:742
+       1   0.2%  94.9%        1   0.2% std::__1::operator/ /mnt/home/wentzell/opt/llvm_9.0.0/bin/../include/c++/v1/complex:684
+       1   0.2%  95.2%        1   0.2% std::__1::vector::size (inline) /mnt/home/wentzell/opt/llvm_9.0.0/bin/../include/c++/v1/vector:656
+       1   0.2%  95.4%        1   0.2% t1fuv_10 t1fuv_10.c:0
+       1   0.2%  95.6%        1   0.2% triqs::arrays::indexmaps::cuboid_details::slice_calc::one_step (inline) /mnt/home/wentzell/opt/triqs/include/triqs/arrays/indexmaps/cuboid/slice.hpp:42
+       1   0.2%  95.8%        1   0.2% triqs::arrays::indexmaps::slicer::invoke (inline) /mnt/home/wentzell/opt/triqs/include/triqs/arrays/indexmaps/cuboid/slice.hpp:118
+       1   0.2%  96.0%        1   0.2% triqs::det_manip::det_manip::complete_operation /mnt/home/wentzell/opt/triqs/include/triqs/det_manip/det_manip.hpp:1203
+       1   0.2%  96.2%        1   0.2% triqs::det_manip::det_manip::complete_remove /mnt/home/wentzell/opt/triqs/include/triqs/det_manip/det_manip.hpp:732
+       1   0.2%  96.4%        1   0.2% triqs::det_manip::det_manip::try_insert (inline) ??:0
+       1   0.2%  96.6%        1   0.2% triqs::det_manip::det_manip::try_insert /mnt/home/wentzell/opt/triqs/include/triqs/det_manip/det_manip.hpp:454
+       1   0.2%  96.8%        1   0.2% triqs::det_manip::det_manip::try_remove /mnt/home/wentzell/opt/triqs/include/triqs/det_manip/det_manip.hpp:711
+       1   0.2%  97.0%        1   0.2% triqs::mc_tools::RandomGenerators::RandMT::eval /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/triqs.src/triqs/mc_tools/MersenneRNG.cpp:29
+       1   0.2%  97.2%        1   0.2% triqs::mc_tools::RandomGenerators::RandMT::loBits (inline) /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/triqs.src/triqs/mc_tools/MersenneRNG.hpp:115
+       1   0.2%  97.4%        1   0.2% triqs::mc_tools::RandomGenerators::RandMT::randomMT (inline) /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/triqs.src/triqs/mc_tools/MersenneRNG.hpp:215
+       1   0.2%  97.6%        1   0.2% triqs::mc_tools::RandomGenerators::RandMT::reloadMT /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/triqs.src/triqs/mc_tools/MersenneRNG.hpp:130
+       1   0.2%  97.8%        2   0.4% triqs::mc_tools::RandomGenerators::RandMT::reloadMT /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/triqs.src/triqs/mc_tools/MersenneRNG.hpp:132
+       1   0.2%  98.0%        1   0.2% triqs::mc_tools::mc_generic::run /mnt/home/wentzell/opt/triqs/include/triqs/mc_tools/mc_generic.hpp:225
+       1   0.2%  98.2%        1   0.2% triqs::mc_tools::mc_generic::run /mnt/home/wentzell/opt/triqs/include/triqs/mc_tools/mc_generic.hpp:246
+       1   0.2%  98.4%        1   0.2% triqs::mc_tools::move_set::attempt /mnt/home/wentzell/opt/triqs/include/triqs/mc_tools/./mc_move_set.hpp:190
+       1   0.2%  98.6%       40   8.1% triqs::mc_tools::move_set::attempt /mnt/home/wentzell/opt/triqs/include/triqs/mc_tools/./mc_move_set.hpp:201
+       1   0.2%  98.8%        1   0.2% update_refs (inline) /mnt/home/apataki/build/Python-2.7.16/Modules/gcmodule.c:332
+       1   0.2%  99.0%        1   0.2% visit_decref /mnt/home/apataki/build/Python-2.7.16/Modules/gcmodule.c:360
+       1   0.2%  99.2%        1   0.2% zaxpy_k ??:0
+       1   0.2%  99.4%        1   0.2% zgemv_t ??:0
+       1   0.2%  99.6%        2   0.4% zgeru_k ??:0
+       1   0.2%  99.8%        1   0.2% zgetf2_k ??:0
+       1   0.2% 100.0%        1   0.2% zscal_k ??:0
+       0   0.0% 100.0%      461  93.1% 000000000040069d 
+       0   0.0% 100.0%        1   0.2% 00007fa818afb7ee 
+       0   0.0% 100.0%        2   0.4% 00007fa818afbd7f 
+       0   0.0% 100.0%        1   0.2% 00007fa818afbef4 
+       0   0.0% 100.0%        3   0.6% 00007fa818b01140 
+       0   0.0% 100.0%        2   0.4% 00007fa818b1e832 
+       0   0.0% 100.0%        2   0.4% 00007fa818b229a8 
+       0   0.0% 100.0%        1   0.2% 00007fa818b22af7 
+       0   0.0% 100.0%        2   0.4% 00007fa818b22e13 
+       0   0.0% 100.0%        2   0.4% 00007fa818b230bc 
+       0   0.0% 100.0%        1   0.2% 00007fa818b23341 
+       0   0.0% 100.0%        1   0.2% 00007fa818b25822 
+       0   0.0% 100.0%        1   0.2% 00007fa818b259d6 
+       0   0.0% 100.0%        1   0.2% 00007fa818b25a1f 
+       0   0.0% 100.0%        1   0.2% 00007fa818b25db5 
+       0   0.0% 100.0%        1   0.2% 00007fa818b25dd3 
+       0   0.0% 100.0%        1   0.2% 00007fa8190cfa14 
+       0   0.0% 100.0%        1   0.2% 00007fa819899a14 
+       0   0.0% 100.0%        1   0.2% 00007fa8199c17ee 
+       0   0.0% 100.0%        1   0.2% 00007fa8199c1ef4 
+       0   0.0% 100.0%        1   0.2% 00007fa8199c7140 
+       0   0.0% 100.0%        1   0.2% 00007fa8199e8af7 
+       0   0.0% 100.0%        1   0.2% 00007fa8199e9341 
+       0   0.0% 100.0%        1   0.2% 00007fa819ef2dbc 
+       0   0.0% 100.0%        1   0.2% 00007fa81ab341c1 
+       0   0.0% 100.0%        1   0.2% 00007fa821d09a01 
+       0   0.0% 100.0%        1   0.2% 00007fa821d2f0df 
+       0   0.0% 100.0%        1   0.2% 00007fa822f555b5 
+       0   0.0% 100.0%        1   0.2% 00007fa822f55f0f 
+       0   0.0% 100.0%       12   2.4% MPI_Init_thread ??:0
+       0   0.0% 100.0%        1   0.2% PyAST_FromNode /mnt/home/apataki/build/Python-2.7.16/Python/ast.c:254
+       0   0.0% 100.0%        1   0.2% PyCode_New /mnt/home/apataki/build/Python-2.7.16/Objects/codeobject.c:119
+       0   0.0% 100.0%        1   0.2% PyDict_GetItem /mnt/home/apataki/build/Python-2.7.16/Objects/dictobject.c:743
+       0   0.0% 100.0%        1   0.2% PyDict_GetItemString /mnt/home/apataki/build/Python-2.7.16/Objects/dictobject.c:2509
+       0   0.0% 100.0%       51  10.3% PyEval_CallObjectWithKeywords /mnt/home/apataki/build/Python-2.7.16/Python/ceval.c:4245
+       0   0.0% 100.0%      492  99.4% PyEval_EvalCode /mnt/home/apataki/build/Python-2.7.16/Python/ceval.c:669
+       0   0.0% 100.0%      492  99.4% PyEval_EvalCodeEx /mnt/home/apataki/build/Python-2.7.16/Python/ceval.c:3608
+       0   0.0% 100.0%        1   0.2% PyEval_EvalFrameEx /mnt/home/apataki/build/Python-2.7.16/Python/ceval.c:1567
+       0   0.0% 100.0%        2   0.4% PyEval_EvalFrameEx /mnt/home/apataki/build/Python-2.7.16/Python/ceval.c:2122
+       0   0.0% 100.0%        2   0.4% PyEval_EvalFrameEx /mnt/home/apataki/build/Python-2.7.16/Python/ceval.c:2176
+       0   0.0% 100.0%       50  10.1% PyEval_EvalFrameEx /mnt/home/apataki/build/Python-2.7.16/Python/ceval.c:2647
+       0   0.0% 100.0%      450  90.9% PyEval_EvalFrameEx /mnt/home/apataki/build/Python-2.7.16/Python/ceval.c:3013
+       0   0.0% 100.0%        2   0.4% PyEval_EvalFrameEx /mnt/home/apataki/build/Python-2.7.16/Python/ceval.c:3052
+       0   0.0% 100.0%        1   0.2% PyGC_Collect /mnt/home/apataki/build/Python-2.7.16/Modules/gcmodule.c:1439
+       0   0.0% 100.0%        1   0.2% PyImport_Cleanup /mnt/home/apataki/build/Python-2.7.16/Python/import.c:543
+       0   0.0% 100.0%       52  10.5% PyImport_ExecCodeModuleEx /mnt/home/apataki/build/Python-2.7.16/Python/import.c:753
+       0   0.0% 100.0%       20   4.0% PyImport_Import /mnt/home/apataki/build/Python-2.7.16/Python/import.c:2933
+       0   0.0% 100.0%       20   4.0% PyImport_ImportModule /mnt/home/apataki/build/Python-2.7.16/Python/import.c:2173
+       0   0.0% 100.0%       52  10.5% PyImport_ImportModuleLevel /mnt/home/apataki/build/Python-2.7.16/Python/import.c:2334
+       0   0.0% 100.0%       12   2.4% PyMPI_OPENMPI_MPI_Init_thread (inline) /tmp/pip-install-0j4NGO/mpi4py/src/lib-mpi/compat/openmpi.h:119
+       0   0.0% 100.0%        3   0.6% PyMarshal_ReadLastObjectFromFile /mnt/home/apataki/build/Python-2.7.16/Python/marshal.c:1155
+       0   0.0% 100.0%        2   0.4% PyMarshal_ReadLongFromFile /mnt/home/apataki/build/Python-2.7.16/Python/marshal.c:1121
+       0   0.0% 100.0%        3   0.6% PyMarshal_ReadObjectFromString /mnt/home/apataki/build/Python-2.7.16/Python/marshal.c:1194
+       0   0.0% 100.0%        1   0.2% PyNode_Free /mnt/home/apataki/build/Python-2.7.16/Parser/node.c:124
+       0   0.0% 100.0%        1   0.2% PyNumber_Lshift /mnt/home/apataki/build/Python-2.7.16/Objects/abstract.c:1176
+       0   0.0% 100.0%       54  10.9% PyObject_Call /mnt/home/apataki/build/Python-2.7.16/Objects/abstract.c:2544
+       0   0.0% 100.0%       20   4.0% PyObject_CallFunction /mnt/home/apataki/build/Python-2.7.16/Objects/abstract.c:2600
+       0   0.0% 100.0%        3   0.6% PyObject_CallFunctionObjArgs /mnt/home/apataki/build/Python-2.7.16/Objects/abstract.c:2771
+       0   0.0% 100.0%        1   0.2% PyParser_ASTFromString /mnt/home/apataki/build/Python-2.7.16/Python/pythonrun.c:1488
+       0   0.0% 100.0%        1   0.2% PyParser_ASTFromString /mnt/home/apataki/build/Python-2.7.16/Python/pythonrun.c:1489
+       0   0.0% 100.0%      456  92.1% PyRun_FileExFlags /mnt/home/apataki/build/Python-2.7.16/Python/pythonrun.c:1371
+       0   0.0% 100.0%      456  92.1% PyRun_SimpleFileExFlags /mnt/home/apataki/build/Python-2.7.16/Python/pythonrun.c:957
+       0   0.0% 100.0%        2   0.4% PyRun_StringFlags /mnt/home/apataki/build/Python-2.7.16/Python/pythonrun.c:1346
+       0   0.0% 100.0%        1   0.2% PyString_FromStringAndSize /mnt/home/apataki/build/Python-2.7.16/Objects/stringobject.c:88
+       0   0.0% 100.0%        1   0.2% PyTuple_New /mnt/home/apataki/build/Python-2.7.16/Objects/tupleobject.c:90
+       0   0.0% 100.0%        1   0.2% PyTuple_Pack /mnt/home/apataki/build/Python-2.7.16/Objects/tupleobject.c:194
+       0   0.0% 100.0%        1   0.2% Py_Finalize /mnt/home/apataki/build/Python-2.7.16/Python/pythonrun.c:455
+       0   0.0% 100.0%        1   0.2% Py_Finalize /mnt/home/apataki/build/Python-2.7.16/Python/pythonrun.c:465
+       0   0.0% 100.0%        1   0.2% Py_Finalize /mnt/home/apataki/build/Python-2.7.16/Python/pythonrun.c:568
+       0   0.0% 100.0%        4   0.8% Py_InitializeEx /mnt/home/apataki/build/Python-2.7.16/Python/pythonrun.c:291
+       0   0.0% 100.0%        4   0.8% Py_Main /mnt/home/apataki/build/Python-2.7.16/Modules/main.c:551
+       0   0.0% 100.0%      455  91.9% Py_Main /mnt/home/apataki/build/Python-2.7.16/Modules/main.c:645
+       0   0.0% 100.0%        3   0.6% Py_Main /mnt/home/apataki/build/Python-2.7.16/Modules/main.c:670
+       0   0.0% 100.0%        1   0.2% Solver___init__ /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/ctint_tutorial.build/python/ctint_tutorial/ctint_tutorial_module_wrap.cxx:374
+       0   0.0% 100.0%      438  88.5% Solver_solve /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/ctint_tutorial.build/python/ctint_tutorial/ctint_tutorial_module_wrap.cxx:308
+       0   0.0% 100.0%        1   0.2% _IO_file_xsgetn :0
+       0   0.0% 100.0%        1   0.2% _IO_new_fclose :0
+       0   0.0% 100.0%        1   0.2% _IO_new_file_close_it :0
+       0   0.0% 100.0%        1   0.2% _IO_new_popen :0
+       0   0.0% 100.0%        1   0.2% _IO_new_proc_open :0
+       0   0.0% 100.0%        1   0.2% _IO_vasprintf :0
+       0   0.0% 100.0%        1   0.2% _IO_vfprintf_internal :0
+       0   0.0% 100.0%       14   2.8% _PyImport_GetDynLoadFunc /mnt/home/apataki/build/Python-2.7.16/Python/dynload_shlib.c:130
+       0   0.0% 100.0%       14   2.8% _PyImport_LoadDynamicModule /mnt/home/apataki/build/Python-2.7.16/./Python/importdl.c:42
+       0   0.0% 100.0%       18   3.6% _PyImport_LoadDynamicModule /mnt/home/apataki/build/Python-2.7.16/./Python/importdl.c:53
+       0   0.0% 100.0%        1   0.2% _PyModule_Clear /mnt/home/apataki/build/Python-2.7.16/Objects/moduleobject.c:133
+       0   0.0% 100.0%        1   0.2% _PyObject_GC_Malloc /mnt/home/apataki/build/Python-2.7.16/Modules/gcmodule.c:1511
+       0   0.0% 100.0%        1   0.2% _PyObject_GC_NewVar /mnt/home/apataki/build/Python-2.7.16/Modules/gcmodule.c:1531
+       0   0.0% 100.0%        1   0.2% _ZN5triqs6arrays14assign_foreachINS0_11array_proxyIRNS0_5arrayINSt3__17complexIdEELi2EEElEERKNS0_10array_exprINS_7utility4tags4plusENSA_ISD_NSA_ISD_NSA_INSC_10multipliesENS0_10array_viewIS6_Li1ELc66ELb0EEENS0_12_scalar_wrapIS6_Lb0EEEEENSA_ISE_NS0_18array_unary_m_exprIRKNS3_IS6_Li1EEEEENSH_IdLb0EEEEEEESQ_EESQ_EEEENS4_9enable_ifIXsr18MutableCuboidArrayIT_EE5valueEvE4typeERSX_OT0_ /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/triqs.src/triqs/arrays/indexmaps/cuboid/../../impl/../indexmaps/cuboid/foreach.hpp:123
+       0   0.0% 100.0%        2   0.4% _ZN5triqs6arrays4blas3gerINS0_11vector_viewINSt3__17complexIdEELc66ELb0EEES7_NS0_11matrix_viewIS6_Lc66ELb0EEEEENS4_9enable_ifIXaasr19is_blas_lapack_typeINT_10value_typeEEE5valuesr20have_same_value_typeISB_T0_T1_EE5valueEvE4typeESC_RKSB_RKSD_RSE_ /mnt/home/wentzell/opt/triqs/include/triqs/arrays/blas_lapack/ger.hpp:47
+       0   0.0% 100.0%        1   0.2% _ZN5triqs6arrays4blas4gemvINS0_11matrix_viewINSt3__17complexIdEELc66ELb0EEENS0_11vector_viewIS6_Lc66ELb0EEES9_EENS4_9enable_ifIXsr13use_blas_gemvIT_T0_T1_EE5valueEvE4typeENSB_10value_typeERKSB_RKSC_SG_RSD_ /mnt/home/wentzell/opt/triqs/include/triqs/arrays/blas_lapack/gemv.hpp:50
+       0   0.0% 100.0%        7   1.4% _ZN5triqs6arrays4blas4gemvINS0_11matrix_viewINSt3__17complexIdEELc66ELb0EEENS0_11vector_viewIS6_Lc66ELb0EEES9_EENS4_9enable_ifIXsr13use_blas_gemvIT_T0_T1_EE5valueEvE4typeENSB_10value_typeERKSB_RKSC_SG_RSD_ /mnt/home/wentzell/opt/triqs/include/triqs/arrays/blas_lapack/gemv.hpp:57
+       0   0.0% 100.0%        1   0.2% _ZN5triqs6arrays6lapack5getrfINS0_11matrix_viewINSt3__17complexIdEELc66ELb0EEEEENS4_9enable_ifIXsr19is_blas_lapack_typeINT_10value_typeEEE5valueEiE4typeERS9_RNS0_6vectorIiEEb /mnt/home/wentzell/opt/triqs/include/triqs/arrays/./expression_template/../linalg/../blas_lapack/getrf.hpp:46
+       0   0.0% 100.0%      358  72.3% _ZN5triqs6arrays7foreachINS0_11matrix_viewINSt3__17complexIdEELc66ELb1EEEZNS_9det_manip7foreachIZN9measure_M10accumulateES5_EUlRK5arg_tSC_S5_E_EEvRKNS7_9det_manipI9g0bar_tauEERKT_EUliiE_EENS3_9enable_ifIXsr20ImmutableCuboidArrayISJ_EE5valueEvE4typeESL_RKT0_ (inline) /mnt/home/wentzell/opt/triqs/include/triqs/arrays/indexmaps/cuboid/../../impl/../indexmaps/cuboid/foreach.hpp:110
+       0   0.0% 100.0%        1   0.2% _ZN5triqs6arrays9indexmaps14cuboid_details10slice_calc6invokeILi0ELi0ELi1EN9itertools5rangeEJmEEENSt3__19enable_ifIXooeqT1_Li1Entsr3std10is_base_ofINS0_8ellipsisET2_E4typeE5valueEvE4typeEPKmPKlPmPlPiRlRKSA_DpRKT3_ (inline) /mnt/home/wentzell/opt/triqs/include/triqs/arrays/indexmaps/cuboid/slice.hpp:69
+       0   0.0% 100.0%        1   0.2% _ZN5triqs6arrays9indexmaps14cuboid_details10slice_calc6invokeILi1ELi1ELi1EmJEEENSt3__19enable_ifIXooeqT1_Li1Entsr3std10is_base_ofINS0_8ellipsisET2_E4typeE5valueEvE4typeEPKmPKlPmPlPiRlRKS8_DpRKT3_ (inline) /mnt/home/wentzell/opt/triqs/include/triqs/arrays/indexmaps/cuboid/slice.hpp:68
+       0   0.0% 100.0%        1   0.2% _ZN5triqs6arrays9indexmaps6cuboid12foreach_implIZNS0_14assign_foreachINS0_11array_proxyIRNS0_5arrayINSt3__17complexIdEELi2EEElEERKNS0_10array_exprINS_7utility4tags4plusENSD_ISG_NSD_ISG_NSD_INSF_10multipliesENS0_10array_viewIS9_Li1ELc66ELb0EEENS0_12_scalar_wrapIS9_Lb0EEEEENSD_ISH_NS0_18array_unary_m_exprIRKNS6_IS9_Li1EEEEENSK_IdLb0EEEEEEEST_EEST_EEEENS7_9enable_ifIXsr18MutableCuboidArrayIT_EE5valueEvE4typeERS10_OT0_EUlTyDpRKT_E_EEvNS0_12_traversal_cERKNS2_8domain_tILi1EEERKNS0_15memory_layout_tILi1EEES10_ (inline) /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/triqs.src/triqs/arrays/indexmaps/cuboid/../../impl/../indexmaps/cuboid/foreach.hpp:74
+       0   0.0% 100.0%        1   0.2% _ZNK5triqs6arrays10array_exprINS_7utility4tags10multipliesENS0_18array_unary_m_exprIRKNS0_5arrayINSt3__17complexIdEELi1EEEEENS0_12_scalar_wrapIdLb0EEEEclIJRKlEEENS7_9enable_ifIXntsr4clef11is_any_lazyIDpT_EE5valueES9_E4typeEDpOSL_ (inline) /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/triqs.src/triqs/arrays/./expression_template/array_algebra.hpp:62
+       0   0.0% 100.0%        1   0.2% _ZNK5triqs6arrays10array_exprINS_7utility4tags4plusENS1_INS3_10multipliesENS0_10array_viewINSt3__17complexIdEELi1ELc66ELb0EEENS0_12_scalar_wrapIS9_Lb0EEEEENS1_IS5_NS0_18array_unary_m_exprIRKNS0_5arrayIS9_Li1EEEEENSB_IdLb0EEEEEEclIJRKlEEENS7_9enable_ifIXntsr4clef11is_any_lazyIDpT_EE5valueES9_E4typeEDpOSR_ (inline) /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/triqs.src/triqs/arrays/./expression_template/array_algebra.hpp:62
+       0   0.0% 100.0%        1   0.2% _ZNK5triqs6arrays10array_exprINS_7utility4tags4plusENS1_IS4_NS1_INS3_10multipliesENS0_10array_viewINSt3__17complexIdEELi1ELc66ELb0EEENS0_12_scalar_wrapIS9_Lb0EEEEENS1_IS5_NS0_18array_unary_m_exprIRKNS0_5arrayIS9_Li1EEEEENSB_IdLb0EEEEEEESL_EclIJRKlEEENS7_9enable_ifIXntsr4clef11is_any_lazyIDpT_EE5valueES9_E4typeEDpOSS_ (inline) /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/triqs.src/triqs/arrays/./expression_template/array_algebra.hpp:62
+       0   0.0% 100.0%        1   0.2% _ZNK5triqs6arrays10array_exprINS_7utility4tags4plusENS1_IS4_NS1_IS4_NS1_INS3_10multipliesENS0_10array_viewINSt3__17complexIdEELi1ELc66ELb0EEENS0_12_scalar_wrapIS9_Lb0EEEEENS1_IS5_NS0_18array_unary_m_exprIRKNS0_5arrayIS9_Li1EEEEENSB_IdLb0EEEEEEESL_EESL_EclIJRKlEEENS7_9enable_ifIXntsr4clef11is_any_lazyIDpT_EE5valueES9_E4typeEDpOST_ (inline) /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/triqs.src/triqs/arrays/./expression_template/array_algebra.hpp:62
+       0   0.0% 100.0%        1   0.2% _ZNK5triqs6arrays13details_proxy11_proxy_implIRKNS0_5arrayINSt3__17complexIdEELi3EEElLb1EEclIJiiEEENS4_9enable_ifIXntsr5triqs4clef11is_any_lazyIDpT_EE5valueERKS6_E4typeEDpOSD_ (inline) /mnt/home/wentzell/opt/triqs/include/triqs/arrays/proxy.hxx:95
+       0   0.0% 100.0%        4   0.8% _ZNK5triqs6arrays13details_proxy11_proxy_implIRNS0_5arrayINSt3__17complexIdEELi3EEElLb0EEclIJiiEEENS4_9enable_ifIXntsr5triqs4clef11is_any_lazyIDpT_EE5valueERS6_E4typeEDpOSC_ (inline) /mnt/home/wentzell/opt/triqs/include/triqs/arrays/proxy.hxx:95
+       0   0.0% 100.0%        1   0.2% _ZNKR5triqs6arrays21indexmap_storage_pairINS0_9indexmaps6cuboid3mapILi3EvEEN3nda3mem6handleINSt3__17complexIdEELc82EEELb0ELb0ELc66ENS0_3Tag10array_viewEEclIJliiEEENS9_9enable_ifIXaantsr4clef11is_any_lazyIDpT_EE5valueeqsr9indexmaps6slicerIS5_SJ_E6r_type11domain_typeE4rankLi0EERKSB_E4typeEDpRKSI_ (inline) /mnt/home/wentzell/opt/triqs/include/triqs/arrays/impl/indexmap_storage_pair.hpp:197
+       0   0.0% 100.0%        1   0.2% _ZNR5triqs6arrays21indexmap_storage_pairINS0_9indexmaps6cuboid3mapILi2EvEEN3nda3mem6handleINSt3__17complexIdEELc82EEELb0ELb0ELc66ENS0_3Tag11matrix_viewEEclIJN9itertools5rangeESI_EEEN5boost16lazy_enable_if_cIXaaaantsr4clef11is_any_lazyIDpT_EE5valuenesr9indexmaps6slicerIS5_SM_E6r_type11domain_typeE4rankLi0EntLb0EENSF_22result_of_call_as_viewILb0ELb1EJSM_EEEE4typeEDpRKSL_ (inline) /mnt/home/wentzell/opt/triqs/include/triqs/arrays/impl/indexmap_storage_pair.hpp:238
+       0   0.0% 100.0%        1   0.2% _ZNR5triqs6arrays21indexmap_storage_pairINS0_9indexmaps6cuboid3mapILi2EvEEN3nda3mem6handleINSt3__17complexIdEELc82EEELb0ELb0ELc66ENS0_3Tag11matrix_viewEEclIJN9itertools5rangeEmEEEN5boost16lazy_enable_if_cIXaaaantsr4clef11is_any_lazyIDpT_EE5valuenesr9indexmaps6slicerIS5_SM_E6r_type11domain_typeE4rankLi0EntLb0EENSF_22result_of_call_as_viewILb0ELb1EJSM_EEEE4typeEDpRKSL_ (inline) /mnt/home/wentzell/opt/triqs/include/triqs/arrays/impl/indexmap_storage_pair.hpp:238
+       0   0.0% 100.0%        4   0.8% _ZNR5triqs6arrays21indexmap_storage_pairINS0_9indexmaps6cuboid3mapILi3EvEEN3nda3mem6handleINSt3__17complexIdEELc82EEELb0ELb0ELc66ENS0_3Tag10array_viewEEclIJliiEEENS9_9enable_ifIXaaaantsr4clef11is_any_lazyIDpT_EE5valueeqsr9indexmaps6slicerIS5_SJ_E6r_type11domain_typeE4rankLi0EntLb0EERSB_E4typeEDpRKSI_ (inline) /mnt/home/wentzell/opt/triqs/include/triqs/arrays/impl/indexmap_storage_pair.hpp:190
+       0   0.0% 100.0%        5   1.0% _ZNSt3__118__apply_tuple_implIZN5triqs3gfs31triqs_gf_view_assign_delegationILi0ENS2_6imtimeENS2_13matrix_valuedENS2_6imfreqES5_JNS1_6arrays10array_viewINS_7complexIdEELi3ELc66ELb1EEEEEEvNS2_7gf_viewIT0_T1_EERKNS2_13_fourier_lazyIXT_ENS2_13gf_const_viewIT2_T3_EEJDpT4_EEEEUlTyDpOT_E_RKNS_5tupleIJSB_EEEJLm0EEEEDcOT_OSD_NS_15__tuple_indicesIJXspT1_EEEE (inline) /mnt/home/wentzell/opt/llvm_9.0.0/bin/../include/c++/v1/tuple:1376
+       0   0.0% 100.0%        5   1.0% _ZNSt3__118__invoke_constexprIZN5triqs3gfs31triqs_gf_view_assign_delegationILi0ENS2_6imtimeENS2_13matrix_valuedENS2_6imfreqES5_JNS1_6arrays10array_viewINS_7complexIdEELi3ELc66ELb1EEEEEEvNS2_7gf_viewIT0_T1_EERKNS2_13_fourier_lazyIXT_ENS2_13gf_const_viewIT2_T3_EEJDpT4_EEEEUlTyDpOT_E_JRKSB_EEEDTclclsr3std3__1E7forwardIT_Efp_Espclsr3std3__1E7forwardIT0_Efp0_EEEOSW_DpOSX_ (inline) /mnt/home/wentzell/opt/llvm_9.0.0/bin/../include/c++/v1/type_traits:3536
+       0   0.0% 100.0%        5   1.0% _ZNSt3__15applyIZN5triqs3gfs31triqs_gf_view_assign_delegationILi0ENS2_6imtimeENS2_13matrix_valuedENS2_6imfreqES5_JNS1_6arrays10array_viewINS_7complexIdEELi3ELc66ELb1EEEEEEvNS2_7gf_viewIT0_T1_EERKNS2_13_fourier_lazyIXT_ENS2_13gf_const_viewIT2_T3_EEJDpT4_EEEEUlTyDpOT_E_RKNS_5tupleIJSB_EEEEEDcOT_OSD_ (inline) /mnt/home/wentzell/opt/llvm_9.0.0/bin/../include/c++/v1/tuple:1385
+       0   0.0% 100.0%        9   1.8% _ZNSt3__18__invokeIRZN5triqs7utility17buffered_functionIdEC1INS1_8mc_tools16RandomGenerators6RandMTEEET_mEUlPS4_E_JSA_EEEDTclclsr3std3__1E7forwardIS9_Efp_Espclsr3std3__1E7forwardIT0_Efp0_EEEOS9_DpOSD_ (inline) /mnt/home/wentzell/opt/llvm_9.0.0/bin/../include/c++/v1/type_traits:3530
+       0   0.0% 100.0%        4   0.8% _ZNSt3__18__invokeIRZN5triqs8mc_tools4moveINS_7complexIdEEEC1I11move_insertEEbOT_EUlvE0_JEEEDTclclsr3std3__1E7forwardIS9_Efp_Espclsr3std3__1E7forwardIT0_Efp0_EEESA_DpOSD_ (inline) /mnt/home/wentzell/opt/llvm_9.0.0/bin/../include/c++/v1/type_traits:3530
+       0   0.0% 100.0%        6   1.2% _ZNSt3__18__invokeIRZN5triqs8mc_tools4moveINS_7complexIdEEEC1I11move_removeEEbOT_EUlvE0_JEEEDTclclsr3std3__1E7forwardIS9_Efp_Espclsr3std3__1E7forwardIT0_Efp0_EEESA_DpOSD_ (inline) /mnt/home/wentzell/opt/llvm_9.0.0/bin/../include/c++/v1/type_traits:3530
+       0   0.0% 100.0%        2   0.4% __GI__IO_default_uflow :0
+       0   0.0% 100.0%        1   0.2% __GI__IO_default_xsputn :0
+       0   0.0% 100.0%        1   0.2% __GI__IO_doallocbuf :0
+       0   0.0% 100.0%        1   0.2% __GI__IO_file_doallocate :0
+       0   0.0% 100.0%        2   0.4% __GI__IO_file_fopen :0
+       0   0.0% 100.0%        2   0.4% __GI__IO_file_underflow :0
+       0   0.0% 100.0%        1   0.2% __GI__IO_fread :0
+       0   0.0% 100.0%        1   0.2% __GI__IO_str_overflow :0
+       0   0.0% 100.0%        1   0.2% __GI___asprintf :0
+       0   0.0% 100.0%        3   0.6% __GI___libc_malloc :0
+       0   0.0% 100.0%        1   0.2% __GI___strdup :0
+       0   0.0% 100.0%        4   0.8% __GI_getifaddrs :0
+       0   0.0% 100.0%        1   0.2% __Pyx_Import (inline) /mnt/home/apataki/build/h5py-2.9.0/h5py/_errors.c:4533
+       0   0.0% 100.0%        1   0.2% __Pyx_InitCachedConstants (inline) /mnt/home/apataki/build/h5py-2.9.0/h5py/h5t.c:24658
+       0   0.0% 100.0%        1   0.2% __Pyx_PyFunction_FastCallDict.constprop.166 /mnt/home/apataki/build/h5py-2.9.0/h5py/h5t.c:30331
+       0   0.0% 100.0%        1   0.2% __Pyx_PyFunction_FastCallNoKw (inline) /mnt/home/apataki/build/h5py-2.9.0/h5py/h5t.c:30291
+       0   0.0% 100.0%        3   0.6% __Pyx_PyInt_As_int /mnt/home/apataki/build/h5py-2.9.0/h5py/h5t.c:34683
+       0   0.0% 100.0%        1   0.2% __Pyx_modinit_function_import_code (inline) /mnt/home/apataki/build/h5py-2.9.0/h5py/h5f.c:7537
+       0   0.0% 100.0%        2   0.4% __Pyx_modinit_type_import_code (inline) /mnt/home/apataki/build/h5py-2.9.0/h5py/_conv.c:8186
+       0   0.0% 100.0%       13   2.6% __Pyx_modinit_type_import_code (inline) /mnt/home/apataki/build/h5py-2.9.0/h5py/_errors.c:2806
+       0   0.0% 100.0%       18   3.6% __dlopen_check :0
+       0   0.0% 100.0%        2   0.4% __fopen_internal :0
+       0   0.0% 100.0%      461  93.1% __libc_start_main ??:0
+       0   0.0% 100.0%        4   0.8% __netlink_request :0
+       0   0.0% 100.0%        1   0.2% __pyx_f_6mpi4py_3MPI_atexit /tmp/pip-install-0j4NGO/mpi4py/src/mpi4py.MPI.c:7612
+       0   0.0% 100.0%       12   2.4% __pyx_f_6mpi4py_3MPI_bootstrap (inline) /tmp/pip-install-0j4NGO/mpi4py/src/mpi4py.MPI.c:7158
+       0   0.0% 100.0%        1   0.2% __readdir64 :0
+       0   0.0% 100.0%       18   3.6% _dl_catch_error :0
+       0   0.0% 100.0%        2   0.4% _dl_init_internal :0
+       0   0.0% 100.0%       12   2.4% _dl_lookup_symbol_x :0
+       0   0.0% 100.0%        4   0.8% _dl_map_object :0
+       0   0.0% 100.0%        3   0.6% _dl_map_object_from_fd dl-load.c:0
+       0   0.0% 100.0%        1   0.2% _dl_name_match_p :0
+       0   0.0% 100.0%        1   0.2% _dl_new_object :0
+       0   0.0% 100.0%       18   3.6% _dl_open :0
+       0   0.0% 100.0%       12   2.4% _dl_relocate_object :0
+       0   0.0% 100.0%       18   3.6% _dlerror_run :0
+       0   0.0% 100.0%        4   0.8% _fini ??:0
+       0   0.0% 100.0%        1   0.2% apply dftw-direct.c:0
+       0   0.0% 100.0%        1   0.2% array (inline) /mnt/home/wentzell/opt/triqs/include/triqs/arrays/./array.hpp:157
+       0   0.0% 100.0%        1   0.2% ast_for_classdef /mnt/home/apataki/build/Python-2.7.16/Python/ast.c:3240
+       0   0.0% 100.0%        1   0.2% binary_op (inline) /mnt/home/apataki/build/Python-2.7.16/Objects/abstract.c:997
+       0   0.0% 100.0%        1   0.2% binary_op1 (inline) /mnt/home/apataki/build/Python-2.7.16/Objects/abstract.c:945
+       0   0.0% 100.0%        1   0.2% block_gf /mnt/home/wentzell/opt/triqs/include/triqs/./gfs/block/block_gf.hxx:206
+       0   0.0% 100.0%        1   0.2% build_class (inline) /mnt/home/apataki/build/Python-2.7.16/Python/ceval.c:4987
+       0   0.0% 100.0%        1   0.2% build_class (inline) /mnt/home/apataki/build/Python-2.7.16/Python/ceval.c:5007
+       0   0.0% 100.0%       52  10.5% builtin___import__ /mnt/home/apataki/build/Python-2.7.16/Python/bltinmodule.c:49
+       0   0.0% 100.0%        1   0.2% builtin_map /mnt/home/apataki/build/Python-2.7.16/Python/bltinmodule.c:1061
+       0   0.0% 100.0%      443  89.5% call_function (inline) /mnt/home/apataki/build/Python-2.7.16/Python/ceval.c:4376
+       0   0.0% 100.0%       11   2.2% call_function (inline) /mnt/home/apataki/build/Python-2.7.16/Python/ceval.c:4396
+       0   0.0% 100.0%        1   0.2% call_function (inline) /mnt/home/apataki/build/Python-2.7.16/Python/ceval.c:4398
+       0   0.0% 100.0%       20   4.0% call_function_tail (inline) /mnt/home/apataki/build/Python-2.7.16/Objects/abstract.c:2576
+       0   0.0% 100.0%        1   0.2% call_ll_exitfuncs (inline) /mnt/home/apataki/build/Python-2.7.16/Python/pythonrun.c:1786
+       0   0.0% 100.0%        1   0.2% call_maybe.constprop.40 /mnt/home/apataki/build/Python-2.7.16/Objects/typeobject.c:1323
+       0   0.0% 100.0%        2   0.4% check_compiled_module (inline) /mnt/home/apataki/build/Python-2.7.16/Python/import.c:818
+       0   0.0% 100.0%        1   0.2% collect /mnt/home/apataki/build/Python-2.7.16/Modules/gcmodule.c:921
+       0   0.0% 100.0%        1   0.2% collect /mnt/home/apataki/build/Python-2.7.16/Modules/gcmodule.c:922
+       0   0.0% 100.0%        1   0.2% collect_generations (inline) /mnt/home/apataki/build/Python-2.7.16/Modules/gcmodule.c:1047
+       0   0.0% 100.0%        1   0.2% const_qcache (inline) /mnt/home/wentzell/opt/triqs/include/triqs/arrays/./blas_lapack/qcache.hpp:123
+       0   0.0% 100.0%        5   1.0% ctint_tutorial::solver::solve /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/ctint_tutorial.src/c++/ctint_tutorial/solver.cpp:165
+       0   0.0% 100.0%      432  87.3% ctint_tutorial::solver::solve /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/ctint_tutorial.src/c++/ctint_tutorial/solver.cpp:184
+       0   0.0% 100.0%        1   0.2% ctint_tutorial::solver::solve /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/ctint_tutorial.src/c++/ctint_tutorial/solver.cpp:188
+       0   0.0% 100.0%       18   3.6% dl_open_worker dl-open.c:0
+       0   0.0% 100.0%       18   3.6% dlopen_doit dlopen.c:0
+       0   0.0% 100.0%        1   0.2% dlopen_foreachfile dl_dlopen_module.c:0
+       0   0.0% 100.0%        4   0.8% dlopen_open dl_dlopen_module.c:0
+       0   0.0% 100.0%        1   0.2% do_call (inline) /mnt/home/apataki/build/Python-2.7.16/Python/ceval.c:4593
+       0   0.0% 100.0%       30   6.1% ensure_fromlist /mnt/home/apataki/build/Python-2.7.16/Python/import.c:2653
+       0   0.0% 100.0%        2   0.4% exec_statement (inline) /mnt/home/apataki/build/Python-2.7.16/Python/ceval.c:5129
+       0   0.0% 100.0%        1   0.2% ext_do_call (inline) /mnt/home/apataki/build/Python-2.7.16/Python/ceval.c:4687
+       0   0.0% 100.0%        1   0.2% ext_do_call (inline) /mnt/home/apataki/build/Python-2.7.16/Python/ceval.c:4690
+       0   0.0% 100.0%        9   1.8% fast_function (inline) /mnt/home/apataki/build/Python-2.7.16/Python/ceval.c:4461
+       0   0.0% 100.0%        9   1.8% fast_function (inline) /mnt/home/apataki/build/Python-2.7.16/Python/ceval.c:4471
+       0   0.0% 100.0%        1   0.2% fftw_mkapiplan ??:0
+       0   0.0% 100.0%        1   0.2% fftw_mkplan_d ??:0
+       0   0.0% 100.0%        1   0.2% fftw_plan_many_dft ??:0
+       0   0.0% 100.0%        2   0.4% fgetc ??:0
+       0   0.0% 100.0%        1   0.2% file_read /mnt/home/apataki/build/Python-2.7.16/Objects/fileobject.c:1105
+       0   0.0% 100.0%        1   0.2% find_init_module (inline) /mnt/home/apataki/build/Python-2.7.16/Python/import.c:1864
+       0   0.0% 100.0%        1   0.2% find_module /mnt/home/apataki/build/Python-2.7.16/Python/import.c:1503
+       0   0.0% 100.0%        3   0.6% find_module /mnt/home/apataki/build/Python-2.7.16/Python/import.c:1541
+       0   0.0% 100.0%        1   0.2% find_module /mnt/home/apataki/build/Python-2.7.16/Python/import.c:1543
+       0   0.0% 100.0%        2   0.4% find_module /mnt/home/apataki/build/Python-2.7.16/Python/import.c:1600
+       0   0.0% 100.0%        1   0.2% fixup_slot_dispatchers (inline) /mnt/home/apataki/build/Python-2.7.16/Objects/typeobject.c:6476
+       0   0.0% 100.0%        1   0.2% freechildren (inline) /mnt/home/apataki/build/Python-2.7.16/Parser/node.c:144
+       0   0.0% 100.0%        1   0.2% freechildren /mnt/home/apataki/build/Python-2.7.16/Parser/node.c:144
+       0   0.0% 100.0%        1   0.2% func_traverse /mnt/home/apataki/build/Python-2.7.16/Objects/funcobject.c:477
+       0   0.0% 100.0%        1   0.2% function_call /mnt/home/apataki/build/Python-2.7.16/Objects/funcobject.c:523
+       0   0.0% 100.0%        1   0.2% get_path_importer (inline) /mnt/home/apataki/build/Python-2.7.16/Python/import.c:1279
+       0   0.0% 100.0%        4   0.8% getifaddrs_internal ifaddrs.c:0
+       0   0.0% 100.0%        1   0.2% gf (inline) /mnt/home/wentzell/opt/triqs/include/triqs/./gfs/gf/./gf.hpp:242
+       0   0.0% 100.0%        2   0.4% handle (inline) /mnt/home/wentzell/opt/triqs/include/triqs/arrays/indexmaps/cuboid/../../impl/../storages/handle.hpp:114
+       0   0.0% 100.0%        1   0.2% handle (inline) /mnt/home/wentzell/opt/triqs/include/triqs/arrays/indexmaps/cuboid/../../impl/../storages/handle.hpp:144
+       0   0.0% 100.0%        1   0.2% handle (inline) /mnt/home/wentzell/opt/triqs/include/triqs/arrays/indexmaps/cuboid/../../impl/../storages/handle.hpp:184
+       0   0.0% 100.0%        1   0.2% handle (inline) /mnt/home/wentzell/opt/triqs/include/triqs/arrays/indexmaps/cuboid/../../impl/../storages/handle.hpp:187
+       0   0.0% 100.0%        2   0.4% imp_load_module /mnt/home/apataki/build/Python-2.7.16/Python/import.c:3229
+       0   0.0% 100.0%       52  10.5% import_module_level (inline) /mnt/home/apataki/build/Python-2.7.16/Python/import.c:2269
+       0   0.0% 100.0%       42   8.5% import_module_level (inline) /mnt/home/apataki/build/Python-2.7.16/Python/import.c:2278
+       0   0.0% 100.0%       30   6.1% import_module_level (inline) /mnt/home/apataki/build/Python-2.7.16/Python/import.c:2315
+       0   0.0% 100.0%        7   1.4% import_submodule /mnt/home/apataki/build/Python-2.7.16/Python/import.c:2736
+       0   0.0% 100.0%       52  10.5% import_submodule /mnt/home/apataki/build/Python-2.7.16/Python/import.c:2747
+       0   0.0% 100.0%        1   0.2% import_submodule /mnt/home/apataki/build/Python-2.7.16/Python/import.c:2750
+       0   0.0% 100.0%       12   2.4% initMPI /tmp/pip-install-0j4NGO/mpi4py/src/mpi4py.MPI.c:161663
+       0   0.0% 100.0%        2   0.4% init_conv /mnt/home/apataki/build/h5py-2.9.0/h5py/_conv.c:8486
+       0   0.0% 100.0%       13   2.6% init_errors /mnt/home/apataki/build/h5py-2.9.0/h5py/_errors.c:3063
+       0   0.0% 100.0%        1   0.2% init_errors /mnt/home/apataki/build/h5py-2.9.0/h5py/_errors.c:3086
+       0   0.0% 100.0%        1   0.2% inith5f /mnt/home/apataki/build/h5py-2.9.0/h5py/h5f.c:7751
+       0   0.0% 100.0%        1   0.2% inith5t /mnt/home/apataki/build/h5py-2.9.0/h5py/h5t.c:25391
+       0   0.0% 100.0%        1   0.2% inith5t /mnt/home/apataki/build/h5py-2.9.0/h5py/h5t.c:25729
+       0   0.0% 100.0%        4   0.8% initsite (inline) /mnt/home/apataki/build/Python-2.7.16/Python/pythonrun.c:735
+       0   0.0% 100.0%        1   0.2% instancemethod_call /mnt/home/apataki/build/Python-2.7.16/Objects/classobject.c:2600
+       0   0.0% 100.0%        1   0.2% intern_string_constants /mnt/home/apataki/build/Python-2.7.16/Objects/codeobject.c:57
+       0   0.0% 100.0%        3   0.6% isdir (inline) /mnt/home/apataki/build/Python-2.7.16/Python/import.c:133
+       0   0.0% 100.0%        5   1.0% itertools::iterator_facade::operator!= (inline) /mnt/home/wentzell/opt/triqs/include/itertools/itertools.hpp:74
+       0   0.0% 100.0%        5   1.0% itertools::iterator_facade::operator== (inline) /mnt/home/wentzell/opt/triqs/include/itertools/itertools.hpp:70
+       0   0.0% 100.0%        2   0.4% load_module (inline) /mnt/home/apataki/build/Python-2.7.16/Python/import.c:1950
+       0   0.0% 100.0%       52  10.5% load_next (inline) /mnt/home/apataki/build/Python-2.7.16/Python/import.c:2561
+       0   0.0% 100.0%       33   6.7% load_next (inline) /mnt/home/apataki/build/Python-2.7.16/Python/import.c:2565
+       0   0.0% 100.0%       47   9.5% load_package /mnt/home/apataki/build/Python-2.7.16/Python/import.c:1210
+       0   0.0% 100.0%        2   0.4% load_source_module /mnt/home/apataki/build/Python-2.7.16/Python/import.c:1114
+       0   0.0% 100.0%        3   0.6% load_source_module /mnt/home/apataki/build/Python-2.7.16/Python/import.c:1116
+       0   0.0% 100.0%       52  10.5% load_source_module /mnt/home/apataki/build/Python-2.7.16/Python/import.c:1143
+       0   0.0% 100.0%        1   0.2% matrix (inline) /mnt/home/wentzell/opt/triqs/include/triqs/arrays/./expression_template/../linalg/../matrix.hpp:151
+       0   0.0% 100.0%        1   0.2% matrix_view (inline) /mnt/home/wentzell/opt/triqs/include/triqs/arrays/./expression_template/../linalg/../matrix.hpp:73
+       0   0.0% 100.0%        4   0.8% mca_base_component_find ??:0
+       0   0.0% 100.0%        1   0.2% mca_base_component_repository_add ??:0
+       0   0.0% 100.0%        1   0.2% mca_base_component_repository_init ??:0
+       0   0.0% 100.0%        4   0.8% mca_base_component_repository_open ??:0
+       0   0.0% 100.0%        1   0.2% mca_base_framework_components_open ??:0
+       0   0.0% 100.0%        4   0.8% mca_base_framework_components_register ??:0
+       0   0.0% 100.0%        6   1.2% mca_base_framework_open ??:0
+       0   0.0% 100.0%        6   1.2% mca_base_framework_register ??:0
+       0   0.0% 100.0%        1   0.2% mca_base_open ??:0
+       0   0.0% 100.0%        1   0.2% mca_base_pvar_finalize ??:0
+       0   0.0% 100.0%        1   0.2% mca_base_var_finalize ??:0
+       0   0.0% 100.0%        1   0.2% mca_base_var_register_synonym ??:0
+       0   0.0% 100.0%        1   0.2% mca_bml_base_init ??:0
+       0   0.0% 100.0%        1   0.2% mca_btl_base_select ??:0
+       0   0.0% 100.0%        1   0.2% mca_pml_base_open pml_base_frame.c:0
+       0   0.0% 100.0%        3   0.6% mca_pml_base_select ??:0
+       0   0.0% 100.0%      358  72.3% measure_M::accumulate /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/ctint_tutorial.src/c++/ctint_tutorial/solver.cpp:130
+       0   0.0% 100.0%        1   0.2% mkplan@47c20 planner.c:0
+       0   0.0% 100.0%        1   0.2% mkplan@52450 vrank-geq1.c:0
+       0   0.0% 100.0%        4   0.8% move_insert::accept (inline) /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/ctint_tutorial.src/c++/ctint_tutorial/solver.cpp:66
+       0   0.0% 100.0%        2   0.4% move_insert::attempt /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/ctint_tutorial.src/c++/ctint_tutorial/solver.cpp:58
+       0   0.0% 100.0%        5   1.0% move_insert::attempt /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/ctint_tutorial.src/c++/ctint_tutorial/solver.cpp:59
+       0   0.0% 100.0%        6   1.2% move_remove::accept (inline) /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/ctint_tutorial.src/c++/ctint_tutorial/solver.cpp:91
+       0   0.0% 100.0%        2   0.4% move_remove::attempt /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/ctint_tutorial.src/c++/ctint_tutorial/solver.cpp:86
+       0   0.0% 100.0%        1   0.2% nda::allocators::mallocator::allocate (inline) /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/triqs.src/triqs/arrays/storages/./allocators.hpp:63
+       0   0.0% 100.0%        1   0.2% nda::mem::allocate /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/triqs.src/triqs/arrays/storages/handle.cpp:25
+       0   0.0% 100.0%        1   0.2% nda::mem::handle::decref (inline) /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/triqs.src/triqs/arrays/indexmaps/cuboid/../../impl/../storages/handle.hpp:103
+       0   0.0% 100.0%        1   0.2% nda::mem::handle::decref (inline) /mnt/home/wentzell/opt/triqs/include/triqs/arrays/indexmaps/cuboid/../../impl/../storages/handle.hpp:103
+       0   0.0% 100.0%        1   0.2% ompi_mpi_finalize ??:0
+       0   0.0% 100.0%       12   2.4% ompi_mpi_init ??:0
+       0   0.0% 100.0%        3   0.6% ompi_mtl_base_select ??:0
+       0   0.0% 100.0%        1   0.2% opal_finalize_util ??:0
+       0   0.0% 100.0%        1   0.2% opal_init_util ??:0
+       0   0.0% 100.0%        1   0.2% operator (inline) /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/triqs.src/triqs/arrays/indexmaps/cuboid/../../impl/../indexmaps/cuboid/foreach.hpp:124
+       0   0.0% 100.0%        9   1.8% operator (inline) /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/triqs.src/triqs/mc_tools/../utility/buffered_function.hpp:50
+       0   0.0% 100.0%      358  72.3% operator (inline) /mnt/home/wentzell/opt/triqs/include/triqs/det_manip/det_manip.hpp:426
+       0   0.0% 100.0%       10   2.0% operator (inline) /mnt/home/wentzell/opt/triqs/include/triqs/mc_tools/./mc_move_set.hpp:70
+       0   0.0% 100.0%        6   1.2% operator /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/ctint_tutorial.src/c++/ctint_tutorial/solver.cpp:122
+       0   0.0% 100.0%        4   0.8% operator /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/ctint_tutorial.src/c++/ctint_tutorial/solver.cpp:123
+       0   0.0% 100.0%        5   1.0% operator /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/ctint_tutorial.src/c++/ctint_tutorial/solver.cpp:124
+       0   0.0% 100.0%      164  33.1% operator /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/ctint_tutorial.src/c++/ctint_tutorial/solver.cpp:126
+       0   0.0% 100.0%        5   1.0% operator /mnt/home/wentzell/opt/triqs/include/triqs/./gfs/transform/fourier.hpp:315
+       0   0.0% 100.0%        1   0.2% orte_ess_base_app_setup ??:0
+       0   0.0% 100.0%        1   0.2% orte_ess_base_register ess_base_frame.c:0
+       0   0.0% 100.0%        3   0.6% orte_init ??:0
+       0   0.0% 100.0%        1   0.2% posix_do_stat (inline) /mnt/home/apataki/build/Python-2.7.16/./Modules/posixmodule.c:1676
+       0   0.0% 100.0%        1   0.2% posix_listdir /mnt/home/apataki/build/Python-2.7.16/./Modules/posixmodule.c:2546
+       0   0.0% 100.0%        1   0.2% posix_popen /mnt/home/apataki/build/Python-2.7.16/./Modules/posixmodule.c:5961
+       0   0.0% 100.0%        1   0.2% posix_stat /mnt/home/apataki/build/Python-2.7.16/./Modules/posixmodule.c:2832
+       0   0.0% 100.0%        2   0.4% r_long (inline) /mnt/home/apataki/build/Python-2.7.16/Python/marshal.c:530
+       0   0.0% 100.0%        2   0.4% r_object /mnt/home/apataki/build/Python-2.7.16/Python/marshal.c:1030
+       0   0.0% 100.0%        1   0.2% r_object /mnt/home/apataki/build/Python-2.7.16/Python/marshal.c:1036
+       0   0.0% 100.0%        1   0.2% r_object /mnt/home/apataki/build/Python-2.7.16/Python/marshal.c:1052
+       0   0.0% 100.0%        1   0.2% r_object /mnt/home/apataki/build/Python-2.7.16/Python/marshal.c:1056
+       0   0.0% 100.0%        2   0.4% r_object /mnt/home/apataki/build/Python-2.7.16/Python/marshal.c:820
+       0   0.0% 100.0%        2   0.4% r_object /mnt/home/apataki/build/Python-2.7.16/Python/marshal.c:897
+       0   0.0% 100.0%        3   0.6% read_compiled_module (inline) /mnt/home/apataki/build/Python-2.7.16/Python/import.c:845
+       0   0.0% 100.0%        1   0.2% register_variable mca_base_var.c:0
+       0   0.0% 100.0%      456  92.1% run_mod (inline) /mnt/home/apataki/build/Python-2.7.16/Python/pythonrun.c:1385
+       0   0.0% 100.0%        1   0.2% search0 planner.c:0
+       0   0.0% 100.0%        1   0.2% slot_nb_lshift /mnt/home/apataki/build/Python-2.7.16/Objects/typeobject.c:5376
+       0   0.0% 100.0%        1   0.2% solver /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/ctint_tutorial.src/c++/ctint_tutorial/solver.cpp:153
+       0   0.0% 100.0%        6   1.2% stat64 (inline) /usr/include/sys/stat.h:456
+       0   0.0% 100.0%       19   3.8% std::__1::__function::__alloc_func::operator (inline) /mnt/home/wentzell/opt/llvm_9.0.0/bin/../include/c++/v1/functional:1533
+       0   0.0% 100.0%       19   3.8% std::__1::__function::__func::operator /mnt/home/wentzell/opt/llvm_9.0.0/bin/../include/c++/v1/functional:1707
+       0   0.0% 100.0%      412  83.2% std::__1::__function::__value_func::operator (inline) /mnt/home/wentzell/opt/llvm_9.0.0/bin/../include/c++/v1/functional:1860
+       0   0.0% 100.0%       10   2.0% std::__1::__invoke_void_return_wrapper::__call (inline) /mnt/home/wentzell/opt/llvm_9.0.0/bin/../include/c++/v1/__functional_base:317
+       0   0.0% 100.0%        9   1.8% std::__1::__invoke_void_return_wrapper::__call (inline) /mnt/home/wentzell/opt/llvm_9.0.0/bin/../include/c++/v1/__functional_base:348
+       0   0.0% 100.0%       14   2.8% std::__1::abs (inline) /mnt/home/wentzell/opt/llvm_9.0.0/bin/../include/c++/v1/complex:859
+       0   0.0% 100.0%        1   0.2% std::__1::allocator::construct /mnt/home/wentzell/opt/llvm_9.0.0/bin/../include/c++/v1/memory:1825
+       0   0.0% 100.0%        1   0.2% std::__1::allocator_traits::__construct (inline) /mnt/home/wentzell/opt/llvm_9.0.0/bin/../include/c++/v1/memory:1717
+       0   0.0% 100.0%        1   0.2% std::__1::allocator_traits::construct (inline) /mnt/home/wentzell/opt/llvm_9.0.0/bin/../include/c++/v1/memory:1560
+       0   0.0% 100.0%        1   0.2% std::__1::complex::operator/= (inline) /mnt/home/wentzell/opt/llvm_9.0.0/bin/../include/c++/v1/complex:433
+       0   0.0% 100.0%        2   0.4% std::__1::exp (inline) /mnt/home/wentzell/opt/llvm_9.0.0/bin/../include/c++/v1/complex:1079
+       0   0.0% 100.0%        9   1.8% std::__1::exp (inline) /mnt/home/wentzell/opt/llvm_9.0.0/bin/../include/c++/v1/complex:1080
+       0   0.0% 100.0%      412  83.2% std::__1::function::operator (inline) /mnt/home/wentzell/opt/llvm_9.0.0/bin/../include/c++/v1/functional:2419
+       0   0.0% 100.0%       16   3.2% std::__1::operator* /mnt/home/wentzell/opt/llvm_9.0.0/bin/../include/c++/v1/complex:592
+       0   0.0% 100.0%       55  11.1% std::__1::operator* /mnt/home/wentzell/opt/llvm_9.0.0/bin/../include/c++/v1/complex:594
+       0   0.0% 100.0%       39   7.9% std::__1::operator* /mnt/home/wentzell/opt/llvm_9.0.0/bin/../include/c++/v1/complex:602
+       0   0.0% 100.0%        1   0.2% std::__1::operator/ (inline) /mnt/home/wentzell/opt/llvm_9.0.0/bin/../include/c++/v1/complex:725
+       0   0.0% 100.0%        1   0.2% std::__1::vector::__construct_at_end (inline) /mnt/home/wentzell/opt/llvm_9.0.0/bin/../include/c++/v1/vector:1056
+       0   0.0% 100.0%        1   0.2% std::operator/ (inline) /mnt/home/wentzell/opt/triqs/include/triqs/./gfs/../utility/complex_ops.hpp:17
+       0   0.0% 100.0%        1   0.2% subtract_refs (inline) /mnt/home/apataki/build/Python-2.7.16/Modules/gcmodule.c:385
+       0   0.0% 100.0%        1   0.2% triqs::arrays::array_proxy::operator= (inline) /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/triqs.src/triqs/arrays/proxy.hxx:176
+       0   0.0% 100.0%        1   0.2% triqs::arrays::array_unary_m_expr::operator (inline) /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/triqs.src/triqs/arrays/./expression_template/array_algebra.hpp:91
+       0   0.0% 100.0%        1   0.2% triqs::arrays::assignment::impl::invoke (inline) /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/triqs.src/triqs/arrays/impl/assignment.hpp:174
+       0   0.0% 100.0%        7   1.4% triqs::arrays::blas::f77::gemv /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/triqs.src/triqs/arrays/blas_lapack/f77/cxx_interface.cpp:64
+       0   0.0% 100.0%        2   0.4% triqs::arrays::blas::f77::ger /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/triqs.src/triqs/arrays/blas_lapack/f77/cxx_interface.cpp:73
+       0   0.0% 100.0%        9   1.8% triqs::arrays::blas::gemv (inline) /mnt/home/wentzell/opt/triqs/include/triqs/arrays/blas_lapack/gemv.hpp:84
+       0   0.0% 100.0%        2   0.4% triqs::arrays::blas::ger (inline) /mnt/home/wentzell/opt/triqs/include/triqs/arrays/blas_lapack/ger.hpp:69
+       0   0.0% 100.0%        1   0.2% triqs::arrays::det_and_inverse_worker::_step1 /mnt/home/wentzell/opt/triqs/include/triqs/arrays/linalg/det_and_inverse.hpp:102
+       0   0.0% 100.0%        1   0.2% triqs::arrays::det_and_inverse_worker::inverse /mnt/home/wentzell/opt/triqs/include/triqs/arrays/linalg/det_and_inverse.hpp:84
+       0   0.0% 100.0%        1   0.2% triqs::arrays::determinant /mnt/home/wentzell/opt/triqs/include/triqs/arrays/linalg/det_and_inverse.hpp:192
+       0   0.0% 100.0%      358  72.3% triqs::arrays::indexmaps::cuboid::foreach_impl (inline) /mnt/home/wentzell/opt/triqs/include/triqs/arrays/indexmaps/cuboid/../../impl/../indexmaps/cuboid/foreach.hpp:74
+       0   0.0% 100.0%        5   1.0% triqs::arrays::indexmaps::cuboid::map::operator (inline) /mnt/home/wentzell/opt/triqs/include/triqs/arrays/indexmaps/cuboid/./map.hpp:120
+       0   0.0% 100.0%        1   0.2% triqs::arrays::indexmaps::slicer::invoke (inline) /mnt/home/wentzell/opt/triqs/include/triqs/arrays/indexmaps/cuboid/slice.hpp:115
+       0   0.0% 100.0%        1   0.2% triqs::arrays::lapack::f77::getrf /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/triqs.src/triqs/arrays/blas_lapack/f77/cxx_interface.cpp:109
+       0   0.0% 100.0%        1   0.2% triqs::arrays::matrix::operator= (inline) /mnt/home/wentzell/opt/triqs/include/triqs/arrays/./expression_template/../linalg/../matrix.hpp:256
+       0   0.0% 100.0%        1   0.2% triqs::arrays::matrix_view::operator= (inline) /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/triqs.src/triqs/arrays/./expression_template/../linalg/../matrix.hpp:100
+       0   0.0% 100.0%        1   0.2% triqs::arrays::triqs_arrays_assign_delegation (inline) /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/triqs.src/triqs/arrays/impl/assignment.hpp:42
+       0   0.0% 100.0%        1   0.2% triqs::arrays::triqs_arrays_assign_delegation /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/triqs.src/triqs/arrays/linalg/det_and_inverse.hpp:184
+       0   0.0% 100.0%        1   0.2% triqs::arrays::triqs_arrays_assign_delegation /mnt/home/wentzell/opt/triqs/include/triqs/arrays/linalg/det_and_inverse.hpp:183
+       0   0.0% 100.0%        1   0.2% triqs::clef::operator<<  (inline) /mnt/home/wentzell/opt/triqs/include/triqs/./clef/adapters/../clef.hpp:443
+       0   0.0% 100.0%        1   0.2% triqs::clef::operator<<  (inline) /mnt/home/wentzell/opt/triqs/include/triqs/./clef/adapters/../clef.hpp:503
+       0   0.0% 100.0%        1   0.2% triqs::clef::triqs_clef_auto_assign (inline) /mnt/home/wentzell/opt/triqs/include/triqs/./clef/adapters/../clef.hpp:427
+       0   0.0% 100.0%        1   0.2% triqs::clef::triqs_clef_auto_assign_subscript (inline) /mnt/home/wentzell/opt/triqs/include/triqs/./clef/adapters/../clef.hpp:482
+       0   0.0% 100.0%        1   0.2% triqs::det_manip::det_manip::_regenerate_with_check /mnt/home/wentzell/opt/triqs/include/triqs/det_manip/det_manip.hpp:1144
+       0   0.0% 100.0%        1   0.2% triqs::det_manip::det_manip::_regenerate_with_check /mnt/home/wentzell/opt/triqs/include/triqs/det_manip/det_manip.hpp:1149
+       0   0.0% 100.0%        1   0.2% triqs::det_manip::det_manip::complete_insert /mnt/home/wentzell/opt/triqs/include/triqs/det_manip/det_manip.hpp:539
+       0   0.0% 100.0%        1   0.2% triqs::det_manip::det_manip::complete_insert /mnt/home/wentzell/opt/triqs/include/triqs/det_manip/det_manip.hpp:569
+       0   0.0% 100.0%        1   0.2% triqs::det_manip::det_manip::complete_operation /mnt/home/wentzell/opt/triqs/include/triqs/det_manip/det_manip.hpp:1204
+       0   0.0% 100.0%        2   0.4% triqs::det_manip::det_manip::complete_operation /mnt/home/wentzell/opt/triqs/include/triqs/det_manip/det_manip.hpp:1206
+       0   0.0% 100.0%        3   0.6% triqs::det_manip::det_manip::complete_operation /mnt/home/wentzell/opt/triqs/include/triqs/det_manip/det_manip.hpp:1207
+       0   0.0% 100.0%        2   0.4% triqs::det_manip::det_manip::complete_operation ??:0
+       0   0.0% 100.0%        1   0.2% triqs::det_manip::det_manip::complete_remove /mnt/home/wentzell/opt/triqs/include/triqs/det_manip/det_manip.hpp:749
+       0   0.0% 100.0%        1   0.2% triqs::det_manip::det_manip::complete_remove /mnt/home/wentzell/opt/triqs/include/triqs/det_manip/det_manip.hpp:762
+       0   0.0% 100.0%        1   0.2% triqs::det_manip::det_manip::is_singular (inline) /mnt/home/wentzell/opt/triqs/include/triqs/det_manip/det_manip.hpp:0
+       0   0.0% 100.0%        3   0.6% triqs::det_manip::det_manip::try_insert /mnt/home/wentzell/opt/triqs/include/triqs/det_manip/det_manip.hpp:471
+       0   0.0% 100.0%        4   0.8% triqs::det_manip::det_manip::try_insert /mnt/home/wentzell/opt/triqs/include/triqs/det_manip/det_manip.hpp:479
+       0   0.0% 100.0%        3   0.6% triqs::det_manip::det_manip::try_insert /mnt/home/wentzell/opt/triqs/include/triqs/det_manip/det_manip.hpp:480
+       0   0.0% 100.0%       10   2.0% triqs::det_manip::det_manip::try_insert /mnt/home/wentzell/opt/triqs/include/triqs/det_manip/det_manip.hpp:484
+       0   0.0% 100.0%        1   0.2% triqs::det_manip::det_manip::try_insert /mnt/home/wentzell/opt/triqs/include/triqs/det_manip/det_manip.hpp:486
+       0   0.0% 100.0%      358  72.3% triqs::det_manip::foreach (inline) /mnt/home/wentzell/opt/triqs/include/triqs/det_manip/det_manip.hpp:426
+       0   0.0% 100.0%        5   1.0% triqs::gfs::_fourier /mnt/home/wentzell/opt/triqs/include/triqs/./gfs/transform/fourier.hpp:111
+       0   0.0% 100.0%        1   0.2% triqs::gfs::_fourier_base /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/triqs.src/triqs/gfs/transform/fourier_common.cpp:31
+       0   0.0% 100.0%        1   0.2% triqs::gfs::_fourier_base /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/triqs.src/triqs/gfs/transform/fourier_common.cpp:44
+       0   0.0% 100.0%        1   0.2% triqs::gfs::_fourier_impl (inline) ??:0
+       0   0.0% 100.0%        5   1.0% triqs::gfs::_fourier_impl /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/triqs.src/triqs/gfs/transform/fourier_matsubara.cpp:215
+       0   0.0% 100.0%        2   0.4% triqs::gfs::_fourier_impl /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/triqs.src/triqs/gfs/transform/fourier_matsubara.cpp:260
+       0   0.0% 100.0%        3   0.6% triqs::gfs::_fourier_impl /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/triqs.src/triqs/gfs/transform/fourier_matsubara.cpp:266
+       0   0.0% 100.0%        1   0.2% triqs::gfs::_gf_invert_data_in_place /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/triqs.src/triqs/./gfs/functions/functions2.hpp:199
+       0   0.0% 100.0%        3   0.6% triqs::gfs::block_gf::operator[] (inline) /mnt/home/wentzell/opt/triqs/include/triqs/./gfs/block/block_gf.hxx:309
+       0   0.0% 100.0%        5   1.0% triqs::gfs::gf_view::operator= /mnt/home/wentzell/opt/triqs/include/triqs/./gfs/gf/gf_view.hpp:267
+       0   0.0% 100.0%        1   0.2% triqs::gfs::make_block_gf /mnt/home/wentzell/opt/triqs/include/triqs/./gfs/block/block_gf.hxx:2073
+       0   0.0% 100.0%        1   0.2% triqs::gfs::triqs_bgf_clef_auto_assign_impl_aux_assign /mnt/home/wentzell/opt/triqs/include/triqs/./gfs/block/auto_assign.hpp:63
+       0   0.0% 100.0%        1   0.2% triqs::gfs::triqs_clef_auto_assign (inline) /mnt/home/wentzell/opt/triqs/include/triqs/./gfs/block/auto_assign.hpp:33
+       0   0.0% 100.0%        1   0.2% triqs::gfs::triqs_clef_auto_assign (inline) /mnt/home/wentzell/opt/triqs/include/triqs/./gfs/gf/auto_assign.hpp:32
+       0   0.0% 100.0%        1   0.2% triqs::gfs::triqs_clef_auto_assign_impl (inline) /mnt/home/wentzell/opt/triqs/include/triqs/./gfs/gf/auto_assign.hpp:58
+       0   0.0% 100.0%        1   0.2% triqs::gfs::triqs_clef_auto_assign_subscript (inline) /mnt/home/wentzell/opt/triqs/include/triqs/./gfs/block/auto_assign.hpp:55
+       0   0.0% 100.0%        5   1.0% triqs::gfs::triqs_gf_view_assign_delegation (inline) /mnt/home/wentzell/opt/triqs/include/triqs/./gfs/transform/fourier.hpp:315
+       0   0.0% 100.0%        1   0.2% triqs::mc_tools::RandomGenerators::RandMT::mixBits (inline) /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/triqs.src/triqs/mc_tools/MersenneRNG.hpp:119
+       0   0.0% 100.0%        9   1.8% triqs::mc_tools::RandomGenerators::RandMT::operator (inline) /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/triqs.src/triqs/mc_tools/./MersenneRNG.hpp:220
+       0   0.0% 100.0%        3   0.6% triqs::mc_tools::RandomGenerators::RandMT::randomMT (inline) /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/triqs.src/triqs/mc_tools/MersenneRNG.hpp:211
+       0   0.0% 100.0%      428  86.5% triqs::mc_tools::mc_generic::accumulate /mnt/home/wentzell/opt/triqs/include/triqs/mc_tools/mc_generic.hpp:176
+       0   0.0% 100.0%       57  11.5% triqs::mc_tools::mc_generic::run /mnt/home/wentzell/opt/triqs/include/triqs/mc_tools/mc_generic.hpp:227
+       0   0.0% 100.0%        4   0.8% triqs::mc_tools::mc_generic::run /mnt/home/wentzell/opt/triqs/include/triqs/mc_tools/mc_generic.hpp:228
+       0   0.0% 100.0%       11   2.2% triqs::mc_tools::mc_generic::run /mnt/home/wentzell/opt/triqs/include/triqs/mc_tools/mc_generic.hpp:230
+       0   0.0% 100.0%      358  72.3% triqs::mc_tools::mc_generic::run /mnt/home/wentzell/opt/triqs/include/triqs/mc_tools/mc_generic.hpp:242
+       0   0.0% 100.0%        4   0.8% triqs::mc_tools::mc_generic::warmup /mnt/home/wentzell/opt/triqs/include/triqs/mc_tools/mc_generic.hpp:131
+       0   0.0% 100.0%        4   0.8% triqs::mc_tools::mc_generic::warmup_and_accumulate /mnt/home/wentzell/opt/triqs/include/triqs/mc_tools/mc_generic.hpp:180
+       0   0.0% 100.0%      428  86.5% triqs::mc_tools::mc_generic::warmup_and_accumulate /mnt/home/wentzell/opt/triqs/include/triqs/mc_tools/mc_generic.hpp:181
+       0   0.0% 100.0%      358  72.3% triqs::mc_tools::measure::accumulate (inline) /mnt/home/wentzell/opt/triqs/include/triqs/mc_tools/./mc_measure_set.hpp:71
+       0   0.0% 100.0%      358  72.3% triqs::mc_tools::measure_set::accumulate /mnt/home/wentzell/opt/triqs/include/triqs/mc_tools/./mc_measure_set.hpp:129
+       0   0.0% 100.0%       11   2.2% triqs::mc_tools::move::accept (inline) /mnt/home/wentzell/opt/triqs/include/triqs/mc_tools/./mc_move_set.hpp:93
+       0   0.0% 100.0%       39   7.9% triqs::mc_tools::move::attempt (inline) /mnt/home/wentzell/opt/triqs/include/triqs/mc_tools/./mc_move_set.hpp:89
+       0   0.0% 100.0%       11   2.2% triqs::mc_tools::move_set::accept (inline) /mnt/home/wentzell/opt/triqs/include/triqs/mc_tools/./mc_move_set.hpp:220
+       0   0.0% 100.0%        1   0.2% triqs::mc_tools::move_set::attempt /mnt/home/wentzell/opt/triqs/include/triqs/mc_tools/./mc_move_set.hpp:187
+       0   0.0% 100.0%        1   0.2% triqs::mc_tools::move_set::attempt /mnt/home/wentzell/opt/triqs/include/triqs/mc_tools/./mc_move_set.hpp:194
+       0   0.0% 100.0%        9   1.8% triqs::mc_tools::move_set::attempt /mnt/home/wentzell/opt/triqs/include/triqs/mc_tools/./mc_move_set.hpp:204
+       0   0.0% 100.0%        4   0.8% triqs::mc_tools::move_set::attempt /mnt/home/wentzell/opt/triqs/include/triqs/mc_tools/./mc_move_set.hpp:206
+       0   0.0% 100.0%        5   1.0% triqs::mc_tools::random_generator::operator (inline) /mnt/home/wentzell/opt/triqs/include/triqs/mc_tools/./random_generator.hpp:75
+       0   0.0% 100.0%        2   0.4% triqs::mc_tools::random_generator::operator (inline) /mnt/home/wentzell/opt/triqs/include/triqs/mc_tools/./random_generator.hpp:78
+       0   0.0% 100.0%       10   2.0% triqs::utility::buffered_function::operator (inline) /mnt/home/wentzell/opt/triqs/include/triqs/mc_tools/../utility/buffered_function.hpp:58
+       0   0.0% 100.0%        1   0.2% type_call /mnt/home/apataki/build/Python-2.7.16/Objects/typeobject.c:749
+       0   0.0% 100.0%        2   0.4% type_call /mnt/home/apataki/build/Python-2.7.16/Objects/typeobject.c:765
+       0   0.0% 100.0%        1   0.2% type_new /mnt/home/apataki/build/Python-2.7.16/Objects/typeobject.c:2521
+       0   0.0% 100.0%        1   0.2% update_one_slot /mnt/home/apataki/build/Python-2.7.16/Objects/typeobject.c:6331
+       0   0.0% 100.0%        2   0.4% usleep ??:0
+       0   0.0% 100.0%        1   0.2% vector /mnt/home/wentzell/opt/llvm_9.0.0/bin/../include/c++/v1/vector:1154
+       0   0.0% 100.0%        1   0.2% wrapped_aux__gf_invert_data_in_place /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/triqs.build/pytriqs/gf/wrapped_aux_wrap.cxx:4669
+       0   0.0% 100.0%        2   0.4% zgeru_ ??:0
+       0   0.0% 100.0%        1   0.2% zgetrf_ ??:0
+       0   0.0% 100.0%        1   0.2% zgetrf_single ??:0
+       0   0.0% 100.0%        1   0.2% zipimporter_init /mnt/home/apataki/build/Python-2.7.16/./Modules/zipimport.c:99
+       0   0.0% 100.0%        1   0.2% ~det_and_inverse_worker (inline) /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/triqs.src/triqs/arrays/linalg/det_and_inverse.hpp:58
+       0   0.0% 100.0%        1   0.2% ~handle (inline) /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/triqs.src/triqs/arrays/indexmaps/cuboid/../../impl/../storages/handle.hpp:109
+       0   0.0% 100.0%        1   0.2% ~handle (inline) /mnt/home/wentzell/opt/triqs/include/triqs/arrays/indexmaps/cuboid/../../impl/../storages/handle.hpp:109
+       0   0.0% 100.0%        1   0.2% ~indexmap_storage_pair (inline) /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/triqs.src/triqs/arrays/python/../impl/indexmap_storage_pair.hpp:83
+       0   0.0% 100.0%        1   0.2% ~indexmap_storage_pair (inline) /mnt/home/wentzell/opt/triqs/include/triqs/arrays/impl/indexmap_storage_pair.hpp:83
+       0   0.0% 100.0%        1   0.2% ~matrix (inline) /mnt/home/wentzell/opt/triqs/include/triqs/arrays/./expression_template/../linalg/../matrix.hpp:127
+       0   0.0% 100.0%        1   0.2% ~matrix_expr /mnt/home/wentzell/opt/triqs/include/triqs/arrays/./expression_template/matrix_algebra.hpp:64
+       0   0.0% 100.0%        1   0.2% ~vector (inline) /mnt/home/wentzell/Dropbox/Setup/triqs_2.2.x_prof/triqs.src/triqs/arrays/vector.hpp:115

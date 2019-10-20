@@ -1,0 +1,403 @@
+Total: 495 samples
+     182  36.8%  36.8%      292  59.0% std::__1::operator*
+      72  14.5%  51.3%       72  14.5% std::__1::complex::real (inline)
+      39   7.9%  59.2%       39   7.9% _ZNSt3__125__libcpp_isnan_or_builtinIdEENS_9enable_ifIXsr3std17is_floating_pointIT_EE5valueEbE4typeES2_ (inline)
+      13   2.6%  61.8%      363  73.3% operator
+      11   2.2%  64.0%       11   2.2% __ieee754_hypot
+      11   2.2%  66.3%      164  33.1% std::__1::complex::operator*= (inline)
+      10   2.0%  68.3%       10   2.0% _init
+      10   2.0%  70.3%       10   2.0% complex (inline)
+       8   1.6%  71.9%        8   1.6% __sin_avx
+       8   1.6%  73.5%       12   2.4% do_lookup_x
+       7   1.4%  74.9%        7   1.4% _xstat
+       7   1.4%  76.4%        7   1.4% std::__1::complex::operator+= (inline)
+       6   1.2%  77.6%        8   1.6% g0bar_tau::operator (inline)
+       5   1.0%  78.6%        5   1.0% std::__1::vector::operator[] (inline)
+       5   1.0%  79.6%        5   1.0% triqs::arrays::indexmaps::cuboid::map::_call_impl (inline)
+       5   1.0%  80.6%        5   1.0% triqs::gfs::mesh_pt_generator::equal (inline)
+       5   1.0%  81.6%        9   1.8% triqs::mc_tools::RandomGenerators::RandMT::eval
+       4   0.8%  82.4%        4   0.8% __recvmsg_nocancel
+       3   0.6%  83.0%      492  99.4% PyEval_EvalFrameEx
+       3   0.6%  83.6%        3   0.6% __GI___exp
+       3   0.6%  84.2%        3   0.6% __memset_sse2
+       3   0.6%  84.8%        3   0.6% _int_malloc
+       3   0.6%  85.5%        4   0.8% check_match.9523
+       3   0.6%  86.1%       24   4.8% triqs::det_manip::det_manip::try_insert
+       3   0.6%  86.7%        7   1.4% zgemv_
+       2   0.4%  87.1%        5   1.0% _ZN5triqs8mc_tools16random_generatorclIiEENSt3__19enable_ifIXsr11is_integralIT_EE5valueES5_E4typeES5_ (inline)
+       2   0.4%  87.5%       13   2.6% __hypot
+       2   0.4%  87.9%        2   0.4% __nanosleep_nocancel
+       2   0.4%  88.3%        2   0.4% __open_nocancel
+       2   0.4%  88.7%        2   0.4% __read_nocancel
+       2   0.4%  89.1%       35   7.1% move_insert::attempt
+       2   0.4%  89.5%        4   0.8% move_remove::attempt
+       2   0.4%  89.9%        2   0.4% strcmp
+       2   0.4%  90.3%        3   0.6% triqs::mc_tools::RandomGenerators::RandMT::reloadMT
+       2   0.4%  90.7%      432  87.3% triqs::mc_tools::mc_generic::run
+       2   0.4%  91.1%       56  11.3% triqs::mc_tools::move_set::attempt
+       1   0.2%  91.3%        1   0.2% 00007fa821d4ca80
+       1   0.2%  91.5%        1   0.2% PyDict_Next
+       1   0.2%  91.7%        1   0.2% PyObject_Malloc
+       1   0.2%  91.9%        2   0.4% PyString_FromStringAndSize
+       1   0.2%  92.1%        1   0.2% PyString_InternInPlace
+       1   0.2%  92.3%        1   0.2% _PyType_Lookup
+       1   0.2%  92.5%        9   1.8% _ZN5triqs6arrays4blas4gemvINS0_11matrix_viewINSt3__17complexIdEELc66ELb0EEENS0_11vector_viewIS6_Lc66ELb0EEES9_EENS4_9enable_ifIXsr13use_blas_gemvIT_T0_T1_EE5valueEvE4typeENSB_10value_typeERKSB_RKSC_SG_RSD_
+       1   0.2%  92.7%        1   0.2% __GI___fork
+       1   0.2%  92.9%        1   0.2% __GI___libc_free
+       1   0.2%  93.1%        1   0.2% __close_nocancel
+       1   0.2%  93.3%        1   0.2% __cos_avx
+       1   0.2%  93.5%        1   0.2% __getdents64
+       1   0.2%  93.7%        1   0.2% __memcpy_ssse3_back
+       1   0.2%  93.9%        1   0.2% __mmap64
+       1   0.2%  94.1%        1   0.2% __mprotect
+       1   0.2%  94.3%        2   0.4% _int_free
+       1   0.2%  94.5%        1   0.2% ast_for_suite
+       1   0.2%  94.7%        1   0.2% freechildren (inline)
+       1   0.2%  94.9%        1   0.2% indexmap_storage_pair (inline)
+       1   0.2%  95.2%        1   0.2% initgrp
+       1   0.2%  95.4%        1   0.2% lookdict_string
+       1   0.2%  95.6%        1   0.2% malloc_consolidate
+       1   0.2%  95.8%        1   0.2% memset
+       1   0.2%  96.0%        1   0.2% mkplan@4dc20
+       1   0.2%  96.2%       20   4.0% std::__1::__function::__func::operator
+       1   0.2%  96.4%        2   0.4% std::__1::operator- (inline)
+       1   0.2%  96.6%        1   0.2% std::__1::operator/
+       1   0.2%  96.8%        1   0.2% std::__1::vector::size (inline)
+       1   0.2%  97.0%        1   0.2% t1fuv_10
+       1   0.2%  97.2%        1   0.2% triqs::arrays::indexmaps::cuboid_details::slice_calc::one_step (inline)
+       1   0.2%  97.4%        2   0.4% triqs::arrays::indexmaps::slicer::invoke (inline)
+       1   0.2%  97.6%        9   1.8% triqs::det_manip::det_manip::complete_operation
+       1   0.2%  97.8%        3   0.6% triqs::det_manip::det_manip::complete_remove
+       1   0.2%  98.0%        1   0.2% triqs::det_manip::det_manip::try_insert (inline)
+       1   0.2%  98.2%        1   0.2% triqs::det_manip::det_manip::try_remove
+       1   0.2%  98.4%        1   0.2% triqs::mc_tools::RandomGenerators::RandMT::loBits (inline)
+       1   0.2%  98.6%        4   0.8% triqs::mc_tools::RandomGenerators::RandMT::randomMT (inline)
+       1   0.2%  98.8%        1   0.2% update_refs (inline)
+       1   0.2%  99.0%        1   0.2% visit_decref
+       1   0.2%  99.2%        1   0.2% zaxpy_k
+       1   0.2%  99.4%        1   0.2% zgemv_t
+       1   0.2%  99.6%        2   0.4% zgeru_k
+       1   0.2%  99.8%        1   0.2% zgetf2_k
+       1   0.2% 100.0%        1   0.2% zscal_k
+       0   0.0% 100.0%      461  93.1% 000000000040069d
+       0   0.0% 100.0%        1   0.2% 00007fa818afb7ee
+       0   0.0% 100.0%        2   0.4% 00007fa818afbd7f
+       0   0.0% 100.0%        1   0.2% 00007fa818afbef4
+       0   0.0% 100.0%        3   0.6% 00007fa818b01140
+       0   0.0% 100.0%        2   0.4% 00007fa818b1e832
+       0   0.0% 100.0%        2   0.4% 00007fa818b229a8
+       0   0.0% 100.0%        1   0.2% 00007fa818b22af7
+       0   0.0% 100.0%        2   0.4% 00007fa818b22e13
+       0   0.0% 100.0%        2   0.4% 00007fa818b230bc
+       0   0.0% 100.0%        1   0.2% 00007fa818b23341
+       0   0.0% 100.0%        1   0.2% 00007fa818b25822
+       0   0.0% 100.0%        1   0.2% 00007fa818b259d6
+       0   0.0% 100.0%        1   0.2% 00007fa818b25a1f
+       0   0.0% 100.0%        1   0.2% 00007fa818b25db5
+       0   0.0% 100.0%        1   0.2% 00007fa818b25dd3
+       0   0.0% 100.0%        1   0.2% 00007fa8190cfa14
+       0   0.0% 100.0%        1   0.2% 00007fa819899a14
+       0   0.0% 100.0%        1   0.2% 00007fa8199c17ee
+       0   0.0% 100.0%        1   0.2% 00007fa8199c1ef4
+       0   0.0% 100.0%        1   0.2% 00007fa8199c7140
+       0   0.0% 100.0%        1   0.2% 00007fa8199e8af7
+       0   0.0% 100.0%        1   0.2% 00007fa8199e9341
+       0   0.0% 100.0%        1   0.2% 00007fa819ef2dbc
+       0   0.0% 100.0%        1   0.2% 00007fa81ab341c1
+       0   0.0% 100.0%        1   0.2% 00007fa821d09a01
+       0   0.0% 100.0%        1   0.2% 00007fa821d2f0df
+       0   0.0% 100.0%        1   0.2% 00007fa822f555b5
+       0   0.0% 100.0%        1   0.2% 00007fa822f55f0f
+       0   0.0% 100.0%       12   2.4% MPI_Init_thread
+       0   0.0% 100.0%        1   0.2% PyAST_FromNode
+       0   0.0% 100.0%        1   0.2% PyCode_New
+       0   0.0% 100.0%        1   0.2% PyDict_GetItem
+       0   0.0% 100.0%        1   0.2% PyDict_GetItemString
+       0   0.0% 100.0%       51  10.3% PyEval_CallObjectWithKeywords
+       0   0.0% 100.0%      492  99.4% PyEval_EvalCode
+       0   0.0% 100.0%      492  99.4% PyEval_EvalCodeEx
+       0   0.0% 100.0%        1   0.2% PyGC_Collect
+       0   0.0% 100.0%        1   0.2% PyImport_Cleanup
+       0   0.0% 100.0%       52  10.5% PyImport_ExecCodeModuleEx
+       0   0.0% 100.0%       20   4.0% PyImport_Import
+       0   0.0% 100.0%       20   4.0% PyImport_ImportModule
+       0   0.0% 100.0%       52  10.5% PyImport_ImportModuleLevel
+       0   0.0% 100.0%       12   2.4% PyMPI_OPENMPI_MPI_Init_thread (inline)
+       0   0.0% 100.0%        3   0.6% PyMarshal_ReadLastObjectFromFile
+       0   0.0% 100.0%        2   0.4% PyMarshal_ReadLongFromFile
+       0   0.0% 100.0%        3   0.6% PyMarshal_ReadObjectFromString
+       0   0.0% 100.0%        1   0.2% PyNode_Free
+       0   0.0% 100.0%        1   0.2% PyNumber_Lshift
+       0   0.0% 100.0%       54  10.9% PyObject_Call
+       0   0.0% 100.0%       20   4.0% PyObject_CallFunction
+       0   0.0% 100.0%        3   0.6% PyObject_CallFunctionObjArgs
+       0   0.0% 100.0%        2   0.4% PyParser_ASTFromString
+       0   0.0% 100.0%      456  92.1% PyRun_FileExFlags
+       0   0.0% 100.0%      456  92.1% PyRun_SimpleFileExFlags
+       0   0.0% 100.0%        2   0.4% PyRun_StringFlags
+       0   0.0% 100.0%        1   0.2% PyTuple_New
+       0   0.0% 100.0%        1   0.2% PyTuple_Pack
+       0   0.0% 100.0%        3   0.6% Py_Finalize
+       0   0.0% 100.0%        4   0.8% Py_InitializeEx
+       0   0.0% 100.0%      462  93.3% Py_Main
+       0   0.0% 100.0%        1   0.2% Solver___init__
+       0   0.0% 100.0%      438  88.5% Solver_solve
+       0   0.0% 100.0%        1   0.2% _IO_file_xsgetn
+       0   0.0% 100.0%        1   0.2% _IO_new_fclose
+       0   0.0% 100.0%        1   0.2% _IO_new_file_close_it
+       0   0.0% 100.0%        1   0.2% _IO_new_popen
+       0   0.0% 100.0%        1   0.2% _IO_new_proc_open
+       0   0.0% 100.0%        1   0.2% _IO_vasprintf
+       0   0.0% 100.0%        1   0.2% _IO_vfprintf_internal
+       0   0.0% 100.0%       14   2.8% _PyImport_GetDynLoadFunc
+       0   0.0% 100.0%       31   6.3% _PyImport_LoadDynamicModule
+       0   0.0% 100.0%        1   0.2% _PyModule_Clear
+       0   0.0% 100.0%        1   0.2% _PyObject_GC_Malloc
+       0   0.0% 100.0%        1   0.2% _PyObject_GC_NewVar
+       0   0.0% 100.0%        1   0.2% _ZN5triqs6arrays14assign_foreachINS0_11array_proxyIRNS0_5arrayINSt3__17complexIdEELi2EEElEERKNS0_10array_exprINS_7utility4tags4plusENSA_ISD_NSA_ISD_NSA_INSC_10multipliesENS0_10array_viewIS6_Li1ELc66ELb0EEENS0_12_scalar_wrapIS6_Lb0EEEEENSA_ISE_NS0_18array_unary_m_exprIRKNS3_IS6_Li1EEEEENSH_IdLb0EEEEEEESQ_EESQ_EEEENS4_9enable_ifIXsr18MutableCuboidArrayIT_EE5valueEvE4typeERSX_OT0_
+       0   0.0% 100.0%        2   0.4% _ZN5triqs6arrays4blas3gerINS0_11vector_viewINSt3__17complexIdEELc66ELb0EEES7_NS0_11matrix_viewIS6_Lc66ELb0EEEEENS4_9enable_ifIXaasr19is_blas_lapack_typeINT_10value_typeEEE5valuesr20have_same_value_typeISB_T0_T1_EE5valueEvE4typeESC_RKSB_RKSD_RSE_
+       0   0.0% 100.0%        1   0.2% _ZN5triqs6arrays6lapack5getrfINS0_11matrix_viewINSt3__17complexIdEELc66ELb0EEEEENS4_9enable_ifIXsr19is_blas_lapack_typeINT_10value_typeEEE5valueEiE4typeERS9_RNS0_6vectorIiEEb
+       0   0.0% 100.0%      358  72.3% _ZN5triqs6arrays7foreachINS0_11matrix_viewINSt3__17complexIdEELc66ELb1EEEZNS_9det_manip7foreachIZN9measure_M10accumulateES5_EUlRK5arg_tSC_S5_E_EEvRKNS7_9det_manipI9g0bar_tauEERKT_EUliiE_EENS3_9enable_ifIXsr20ImmutableCuboidArrayISJ_EE5valueEvE4typeESL_RKT0_ (inline)
+       0   0.0% 100.0%        1   0.2% _ZN5triqs6arrays9indexmaps14cuboid_details10slice_calc6invokeILi0ELi0ELi1EN9itertools5rangeEJmEEENSt3__19enable_ifIXooeqT1_Li1Entsr3std10is_base_ofINS0_8ellipsisET2_E4typeE5valueEvE4typeEPKmPKlPmPlPiRlRKSA_DpRKT3_ (inline)
+       0   0.0% 100.0%        1   0.2% _ZN5triqs6arrays9indexmaps14cuboid_details10slice_calc6invokeILi1ELi1ELi1EmJEEENSt3__19enable_ifIXooeqT1_Li1Entsr3std10is_base_ofINS0_8ellipsisET2_E4typeE5valueEvE4typeEPKmPKlPmPlPiRlRKS8_DpRKT3_ (inline)
+       0   0.0% 100.0%        1   0.2% _ZN5triqs6arrays9indexmaps6cuboid12foreach_implIZNS0_14assign_foreachINS0_11array_proxyIRNS0_5arrayINSt3__17complexIdEELi2EEElEERKNS0_10array_exprINS_7utility4tags4plusENSD_ISG_NSD_ISG_NSD_INSF_10multipliesENS0_10array_viewIS9_Li1ELc66ELb0EEENS0_12_scalar_wrapIS9_Lb0EEEEENSD_ISH_NS0_18array_unary_m_exprIRKNS6_IS9_Li1EEEEENSK_IdLb0EEEEEEEST_EEST_EEEENS7_9enable_ifIXsr18MutableCuboidArrayIT_EE5valueEvE4typeERS10_OT0_EUlTyDpRKT_E_EEvNS0_12_traversal_cERKNS2_8domain_tILi1EEERKNS0_15memory_layout_tILi1EEES10_ (inline)
+       0   0.0% 100.0%        1   0.2% _ZNK5triqs6arrays10array_exprINS_7utility4tags10multipliesENS0_18array_unary_m_exprIRKNS0_5arrayINSt3__17complexIdEELi1EEEEENS0_12_scalar_wrapIdLb0EEEEclIJRKlEEENS7_9enable_ifIXntsr4clef11is_any_lazyIDpT_EE5valueES9_E4typeEDpOSL_ (inline)
+       0   0.0% 100.0%        1   0.2% _ZNK5triqs6arrays10array_exprINS_7utility4tags4plusENS1_INS3_10multipliesENS0_10array_viewINSt3__17complexIdEELi1ELc66ELb0EEENS0_12_scalar_wrapIS9_Lb0EEEEENS1_IS5_NS0_18array_unary_m_exprIRKNS0_5arrayIS9_Li1EEEEENSB_IdLb0EEEEEEclIJRKlEEENS7_9enable_ifIXntsr4clef11is_any_lazyIDpT_EE5valueES9_E4typeEDpOSR_ (inline)
+       0   0.0% 100.0%        1   0.2% _ZNK5triqs6arrays10array_exprINS_7utility4tags4plusENS1_IS4_NS1_INS3_10multipliesENS0_10array_viewINSt3__17complexIdEELi1ELc66ELb0EEENS0_12_scalar_wrapIS9_Lb0EEEEENS1_IS5_NS0_18array_unary_m_exprIRKNS0_5arrayIS9_Li1EEEEENSB_IdLb0EEEEEEESL_EclIJRKlEEENS7_9enable_ifIXntsr4clef11is_any_lazyIDpT_EE5valueES9_E4typeEDpOSS_ (inline)
+       0   0.0% 100.0%        1   0.2% _ZNK5triqs6arrays10array_exprINS_7utility4tags4plusENS1_IS4_NS1_IS4_NS1_INS3_10multipliesENS0_10array_viewINSt3__17complexIdEELi1ELc66ELb0EEENS0_12_scalar_wrapIS9_Lb0EEEEENS1_IS5_NS0_18array_unary_m_exprIRKNS0_5arrayIS9_Li1EEEEENSB_IdLb0EEEEEEESL_EESL_EclIJRKlEEENS7_9enable_ifIXntsr4clef11is_any_lazyIDpT_EE5valueES9_E4typeEDpOST_ (inline)
+       0   0.0% 100.0%        1   0.2% _ZNK5triqs6arrays13details_proxy11_proxy_implIRKNS0_5arrayINSt3__17complexIdEELi3EEElLb1EEclIJiiEEENS4_9enable_ifIXntsr5triqs4clef11is_any_lazyIDpT_EE5valueERKS6_E4typeEDpOSD_ (inline)
+       0   0.0% 100.0%        4   0.8% _ZNK5triqs6arrays13details_proxy11_proxy_implIRNS0_5arrayINSt3__17complexIdEELi3EEElLb0EEclIJiiEEENS4_9enable_ifIXntsr5triqs4clef11is_any_lazyIDpT_EE5valueERS6_E4typeEDpOSC_ (inline)
+       0   0.0% 100.0%        1   0.2% _ZNKR5triqs6arrays21indexmap_storage_pairINS0_9indexmaps6cuboid3mapILi3EvEEN3nda3mem6handleINSt3__17complexIdEELc82EEELb0ELb0ELc66ENS0_3Tag10array_viewEEclIJliiEEENS9_9enable_ifIXaantsr4clef11is_any_lazyIDpT_EE5valueeqsr9indexmaps6slicerIS5_SJ_E6r_type11domain_typeE4rankLi0EERKSB_E4typeEDpRKSI_ (inline)
+       0   0.0% 100.0%        1   0.2% _ZNR5triqs6arrays21indexmap_storage_pairINS0_9indexmaps6cuboid3mapILi2EvEEN3nda3mem6handleINSt3__17complexIdEELc82EEELb0ELb0ELc66ENS0_3Tag11matrix_viewEEclIJN9itertools5rangeESI_EEEN5boost16lazy_enable_if_cIXaaaantsr4clef11is_any_lazyIDpT_EE5valuenesr9indexmaps6slicerIS5_SM_E6r_type11domain_typeE4rankLi0EntLb0EENSF_22result_of_call_as_viewILb0ELb1EJSM_EEEE4typeEDpRKSL_ (inline)
+       0   0.0% 100.0%        1   0.2% _ZNR5triqs6arrays21indexmap_storage_pairINS0_9indexmaps6cuboid3mapILi2EvEEN3nda3mem6handleINSt3__17complexIdEELc82EEELb0ELb0ELc66ENS0_3Tag11matrix_viewEEclIJN9itertools5rangeEmEEEN5boost16lazy_enable_if_cIXaaaantsr4clef11is_any_lazyIDpT_EE5valuenesr9indexmaps6slicerIS5_SM_E6r_type11domain_typeE4rankLi0EntLb0EENSF_22result_of_call_as_viewILb0ELb1EJSM_EEEE4typeEDpRKSL_ (inline)
+       0   0.0% 100.0%        4   0.8% _ZNR5triqs6arrays21indexmap_storage_pairINS0_9indexmaps6cuboid3mapILi3EvEEN3nda3mem6handleINSt3__17complexIdEELc82EEELb0ELb0ELc66ENS0_3Tag10array_viewEEclIJliiEEENS9_9enable_ifIXaaaantsr4clef11is_any_lazyIDpT_EE5valueeqsr9indexmaps6slicerIS5_SJ_E6r_type11domain_typeE4rankLi0EntLb0EERSB_E4typeEDpRKSI_ (inline)
+       0   0.0% 100.0%        5   1.0% _ZNSt3__118__apply_tuple_implIZN5triqs3gfs31triqs_gf_view_assign_delegationILi0ENS2_6imtimeENS2_13matrix_valuedENS2_6imfreqES5_JNS1_6arrays10array_viewINS_7complexIdEELi3ELc66ELb1EEEEEEvNS2_7gf_viewIT0_T1_EERKNS2_13_fourier_lazyIXT_ENS2_13gf_const_viewIT2_T3_EEJDpT4_EEEEUlTyDpOT_E_RKNS_5tupleIJSB_EEEJLm0EEEEDcOT_OSD_NS_15__tuple_indicesIJXspT1_EEEE (inline)
+       0   0.0% 100.0%        5   1.0% _ZNSt3__118__invoke_constexprIZN5triqs3gfs31triqs_gf_view_assign_delegationILi0ENS2_6imtimeENS2_13matrix_valuedENS2_6imfreqES5_JNS1_6arrays10array_viewINS_7complexIdEELi3ELc66ELb1EEEEEEvNS2_7gf_viewIT0_T1_EERKNS2_13_fourier_lazyIXT_ENS2_13gf_const_viewIT2_T3_EEJDpT4_EEEEUlTyDpOT_E_JRKSB_EEEDTclclsr3std3__1E7forwardIT_Efp_Espclsr3std3__1E7forwardIT0_Efp0_EEEOSW_DpOSX_ (inline)
+       0   0.0% 100.0%        5   1.0% _ZNSt3__15applyIZN5triqs3gfs31triqs_gf_view_assign_delegationILi0ENS2_6imtimeENS2_13matrix_valuedENS2_6imfreqES5_JNS1_6arrays10array_viewINS_7complexIdEELi3ELc66ELb1EEEEEEvNS2_7gf_viewIT0_T1_EERKNS2_13_fourier_lazyIXT_ENS2_13gf_const_viewIT2_T3_EEJDpT4_EEEEUlTyDpOT_E_RKNS_5tupleIJSB_EEEEEDcOT_OSD_ (inline)
+       0   0.0% 100.0%        9   1.8% _ZNSt3__18__invokeIRZN5triqs7utility17buffered_functionIdEC1INS1_8mc_tools16RandomGenerators6RandMTEEET_mEUlPS4_E_JSA_EEEDTclclsr3std3__1E7forwardIS9_Efp_Espclsr3std3__1E7forwardIT0_Efp0_EEEOS9_DpOSD_ (inline)
+       0   0.0% 100.0%        4   0.8% _ZNSt3__18__invokeIRZN5triqs8mc_tools4moveINS_7complexIdEEEC1I11move_insertEEbOT_EUlvE0_JEEEDTclclsr3std3__1E7forwardIS9_Efp_Espclsr3std3__1E7forwardIT0_Efp0_EEESA_DpOSD_ (inline)
+       0   0.0% 100.0%        6   1.2% _ZNSt3__18__invokeIRZN5triqs8mc_tools4moveINS_7complexIdEEEC1I11move_removeEEbOT_EUlvE0_JEEEDTclclsr3std3__1E7forwardIS9_Efp_Espclsr3std3__1E7forwardIT0_Efp0_EEESA_DpOSD_ (inline)
+       0   0.0% 100.0%        2   0.4% __GI__IO_default_uflow
+       0   0.0% 100.0%        1   0.2% __GI__IO_default_xsputn
+       0   0.0% 100.0%        1   0.2% __GI__IO_doallocbuf
+       0   0.0% 100.0%        1   0.2% __GI__IO_file_doallocate
+       0   0.0% 100.0%        2   0.4% __GI__IO_file_fopen
+       0   0.0% 100.0%        2   0.4% __GI__IO_file_underflow
+       0   0.0% 100.0%        1   0.2% __GI__IO_fread
+       0   0.0% 100.0%        1   0.2% __GI__IO_str_overflow
+       0   0.0% 100.0%        1   0.2% __GI___asprintf
+       0   0.0% 100.0%        3   0.6% __GI___libc_malloc
+       0   0.0% 100.0%        1   0.2% __GI___strdup
+       0   0.0% 100.0%        4   0.8% __GI_getifaddrs
+       0   0.0% 100.0%        1   0.2% __Pyx_Import (inline)
+       0   0.0% 100.0%        1   0.2% __Pyx_InitCachedConstants (inline)
+       0   0.0% 100.0%        1   0.2% __Pyx_PyFunction_FastCallDict.constprop.166
+       0   0.0% 100.0%        1   0.2% __Pyx_PyFunction_FastCallNoKw (inline)
+       0   0.0% 100.0%        3   0.6% __Pyx_PyInt_As_int
+       0   0.0% 100.0%        1   0.2% __Pyx_modinit_function_import_code (inline)
+       0   0.0% 100.0%       15   3.0% __Pyx_modinit_type_import_code (inline)
+       0   0.0% 100.0%       18   3.6% __dlopen_check
+       0   0.0% 100.0%        2   0.4% __fopen_internal
+       0   0.0% 100.0%      461  93.1% __libc_start_main
+       0   0.0% 100.0%        4   0.8% __netlink_request
+       0   0.0% 100.0%        1   0.2% __pyx_f_6mpi4py_3MPI_atexit
+       0   0.0% 100.0%       12   2.4% __pyx_f_6mpi4py_3MPI_bootstrap (inline)
+       0   0.0% 100.0%        1   0.2% __readdir64
+       0   0.0% 100.0%       18   3.6% _dl_catch_error
+       0   0.0% 100.0%        2   0.4% _dl_init_internal
+       0   0.0% 100.0%       12   2.4% _dl_lookup_symbol_x
+       0   0.0% 100.0%        4   0.8% _dl_map_object
+       0   0.0% 100.0%        3   0.6% _dl_map_object_from_fd
+       0   0.0% 100.0%        1   0.2% _dl_name_match_p
+       0   0.0% 100.0%        1   0.2% _dl_new_object
+       0   0.0% 100.0%       18   3.6% _dl_open
+       0   0.0% 100.0%       12   2.4% _dl_relocate_object
+       0   0.0% 100.0%       18   3.6% _dlerror_run
+       0   0.0% 100.0%        4   0.8% _fini
+       0   0.0% 100.0%        1   0.2% apply
+       0   0.0% 100.0%        1   0.2% array (inline)
+       0   0.0% 100.0%        1   0.2% ast_for_classdef
+       0   0.0% 100.0%        1   0.2% binary_op (inline)
+       0   0.0% 100.0%        1   0.2% binary_op1 (inline)
+       0   0.0% 100.0%        1   0.2% block_gf
+       0   0.0% 100.0%        2   0.4% build_class (inline)
+       0   0.0% 100.0%       52  10.5% builtin___import__
+       0   0.0% 100.0%        1   0.2% builtin_map
+       0   0.0% 100.0%      450  90.9% call_function (inline)
+       0   0.0% 100.0%       20   4.0% call_function_tail (inline)
+       0   0.0% 100.0%        1   0.2% call_ll_exitfuncs (inline)
+       0   0.0% 100.0%        1   0.2% call_maybe.constprop.40
+       0   0.0% 100.0%        2   0.4% check_compiled_module (inline)
+       0   0.0% 100.0%        2   0.4% collect
+       0   0.0% 100.0%        1   0.2% collect_generations (inline)
+       0   0.0% 100.0%        1   0.2% const_qcache (inline)
+       0   0.0% 100.0%      438  88.5% ctint_tutorial::solver::solve
+       0   0.0% 100.0%       18   3.6% dl_open_worker
+       0   0.0% 100.0%       18   3.6% dlopen_doit
+       0   0.0% 100.0%        1   0.2% dlopen_foreachfile
+       0   0.0% 100.0%        4   0.8% dlopen_open
+       0   0.0% 100.0%        1   0.2% do_call (inline)
+       0   0.0% 100.0%       30   6.1% ensure_fromlist
+       0   0.0% 100.0%        2   0.4% exec_statement (inline)
+       0   0.0% 100.0%        2   0.4% ext_do_call (inline)
+       0   0.0% 100.0%       11   2.2% fast_function (inline)
+       0   0.0% 100.0%        1   0.2% fftw_mkapiplan
+       0   0.0% 100.0%        1   0.2% fftw_mkplan_d
+       0   0.0% 100.0%        1   0.2% fftw_plan_many_dft
+       0   0.0% 100.0%        2   0.4% fgetc
+       0   0.0% 100.0%        1   0.2% file_read
+       0   0.0% 100.0%        1   0.2% find_init_module (inline)
+       0   0.0% 100.0%        7   1.4% find_module
+       0   0.0% 100.0%        1   0.2% fixup_slot_dispatchers (inline)
+       0   0.0% 100.0%        1   0.2% freechildren
+       0   0.0% 100.0%        1   0.2% func_traverse
+       0   0.0% 100.0%        1   0.2% function_call
+       0   0.0% 100.0%        1   0.2% get_path_importer (inline)
+       0   0.0% 100.0%        4   0.8% getifaddrs_internal
+       0   0.0% 100.0%        1   0.2% gf (inline)
+       0   0.0% 100.0%        2   0.4% handle (inline)
+       0   0.0% 100.0%        2   0.4% imp_load_module
+       0   0.0% 100.0%       52  10.5% import_module_level (inline)
+       0   0.0% 100.0%       52  10.5% import_submodule
+       0   0.0% 100.0%       12   2.4% initMPI
+       0   0.0% 100.0%        2   0.4% init_conv
+       0   0.0% 100.0%       14   2.8% init_errors
+       0   0.0% 100.0%        1   0.2% inith5f
+       0   0.0% 100.0%        2   0.4% inith5t
+       0   0.0% 100.0%        4   0.8% initsite (inline)
+       0   0.0% 100.0%        1   0.2% instancemethod_call
+       0   0.0% 100.0%        1   0.2% intern_string_constants
+       0   0.0% 100.0%        3   0.6% isdir (inline)
+       0   0.0% 100.0%        5   1.0% itertools::iterator_facade::operator!= (inline)
+       0   0.0% 100.0%        5   1.0% itertools::iterator_facade::operator== (inline)
+       0   0.0% 100.0%        2   0.4% load_module (inline)
+       0   0.0% 100.0%       52  10.5% load_next (inline)
+       0   0.0% 100.0%       47   9.5% load_package
+       0   0.0% 100.0%       52  10.5% load_source_module
+       0   0.0% 100.0%        1   0.2% matrix (inline)
+       0   0.0% 100.0%        1   0.2% matrix_view (inline)
+       0   0.0% 100.0%        4   0.8% mca_base_component_find
+       0   0.0% 100.0%        1   0.2% mca_base_component_repository_add
+       0   0.0% 100.0%        1   0.2% mca_base_component_repository_init
+       0   0.0% 100.0%        4   0.8% mca_base_component_repository_open
+       0   0.0% 100.0%        1   0.2% mca_base_framework_components_open
+       0   0.0% 100.0%        4   0.8% mca_base_framework_components_register
+       0   0.0% 100.0%        6   1.2% mca_base_framework_open
+       0   0.0% 100.0%        6   1.2% mca_base_framework_register
+       0   0.0% 100.0%        1   0.2% mca_base_open
+       0   0.0% 100.0%        1   0.2% mca_base_pvar_finalize
+       0   0.0% 100.0%        1   0.2% mca_base_var_finalize
+       0   0.0% 100.0%        1   0.2% mca_base_var_register_synonym
+       0   0.0% 100.0%        1   0.2% mca_bml_base_init
+       0   0.0% 100.0%        1   0.2% mca_btl_base_select
+       0   0.0% 100.0%        1   0.2% mca_pml_base_open
+       0   0.0% 100.0%        3   0.6% mca_pml_base_select
+       0   0.0% 100.0%      358  72.3% measure_M::accumulate
+       0   0.0% 100.0%        1   0.2% mkplan@47c20
+       0   0.0% 100.0%        1   0.2% mkplan@52450
+       0   0.0% 100.0%        4   0.8% move_insert::accept (inline)
+       0   0.0% 100.0%        6   1.2% move_remove::accept (inline)
+       0   0.0% 100.0%        1   0.2% nda::allocators::mallocator::allocate (inline)
+       0   0.0% 100.0%        1   0.2% nda::mem::allocate
+       0   0.0% 100.0%        2   0.4% nda::mem::handle::decref (inline)
+       0   0.0% 100.0%        1   0.2% ompi_mpi_finalize
+       0   0.0% 100.0%       12   2.4% ompi_mpi_init
+       0   0.0% 100.0%        3   0.6% ompi_mtl_base_select
+       0   0.0% 100.0%        1   0.2% opal_finalize_util
+       0   0.0% 100.0%        1   0.2% opal_init_util
+       0   0.0% 100.0%      378  76.4% operator (inline)
+       0   0.0% 100.0%        1   0.2% orte_ess_base_app_setup
+       0   0.0% 100.0%        1   0.2% orte_ess_base_register
+       0   0.0% 100.0%        3   0.6% orte_init
+       0   0.0% 100.0%        1   0.2% posix_do_stat (inline)
+       0   0.0% 100.0%        1   0.2% posix_listdir
+       0   0.0% 100.0%        1   0.2% posix_popen
+       0   0.0% 100.0%        1   0.2% posix_stat
+       0   0.0% 100.0%        2   0.4% r_long (inline)
+       0   0.0% 100.0%        3   0.6% r_object
+       0   0.0% 100.0%        3   0.6% read_compiled_module (inline)
+       0   0.0% 100.0%        1   0.2% register_variable
+       0   0.0% 100.0%      456  92.1% run_mod (inline)
+       0   0.0% 100.0%        1   0.2% search0
+       0   0.0% 100.0%        1   0.2% slot_nb_lshift
+       0   0.0% 100.0%        1   0.2% solver
+       0   0.0% 100.0%        6   1.2% stat64 (inline)
+       0   0.0% 100.0%       19   3.8% std::__1::__function::__alloc_func::operator (inline)
+       0   0.0% 100.0%      412  83.2% std::__1::__function::__value_func::operator (inline)
+       0   0.0% 100.0%       19   3.8% std::__1::__invoke_void_return_wrapper::__call (inline)
+       0   0.0% 100.0%       14   2.8% std::__1::abs (inline)
+       0   0.0% 100.0%        1   0.2% std::__1::allocator::construct
+       0   0.0% 100.0%        1   0.2% std::__1::allocator_traits::__construct (inline)
+       0   0.0% 100.0%        1   0.2% std::__1::allocator_traits::construct (inline)
+       0   0.0% 100.0%        1   0.2% std::__1::complex::operator/= (inline)
+       0   0.0% 100.0%       11   2.2% std::__1::exp (inline)
+       0   0.0% 100.0%      412  83.2% std::__1::function::operator (inline)
+       0   0.0% 100.0%        1   0.2% std::__1::operator/ (inline)
+       0   0.0% 100.0%        1   0.2% std::__1::vector::__construct_at_end (inline)
+       0   0.0% 100.0%        1   0.2% std::operator/ (inline)
+       0   0.0% 100.0%        1   0.2% subtract_refs (inline)
+       0   0.0% 100.0%        1   0.2% triqs::arrays::array_proxy::operator= (inline)
+       0   0.0% 100.0%        1   0.2% triqs::arrays::array_unary_m_expr::operator (inline)
+       0   0.0% 100.0%        1   0.2% triqs::arrays::assignment::impl::invoke (inline)
+       0   0.0% 100.0%        7   1.4% triqs::arrays::blas::f77::gemv
+       0   0.0% 100.0%        2   0.4% triqs::arrays::blas::f77::ger
+       0   0.0% 100.0%        9   1.8% triqs::arrays::blas::gemv (inline)
+       0   0.0% 100.0%        2   0.4% triqs::arrays::blas::ger (inline)
+       0   0.0% 100.0%        1   0.2% triqs::arrays::det_and_inverse_worker::_step1
+       0   0.0% 100.0%        1   0.2% triqs::arrays::det_and_inverse_worker::inverse
+       0   0.0% 100.0%        1   0.2% triqs::arrays::determinant
+       0   0.0% 100.0%      358  72.3% triqs::arrays::indexmaps::cuboid::foreach_impl (inline)
+       0   0.0% 100.0%        5   1.0% triqs::arrays::indexmaps::cuboid::map::operator (inline)
+       0   0.0% 100.0%        1   0.2% triqs::arrays::lapack::f77::getrf
+       0   0.0% 100.0%        1   0.2% triqs::arrays::matrix::operator= (inline)
+       0   0.0% 100.0%        1   0.2% triqs::arrays::matrix_view::operator= (inline)
+       0   0.0% 100.0%        2   0.4% triqs::arrays::triqs_arrays_assign_delegation
+       0   0.0% 100.0%        1   0.2% triqs::arrays::triqs_arrays_assign_delegation (inline)
+       0   0.0% 100.0%        1   0.2% triqs::clef::operator<<  (inline)
+       0   0.0% 100.0%        1   0.2% triqs::clef::triqs_clef_auto_assign (inline)
+       0   0.0% 100.0%        1   0.2% triqs::clef::triqs_clef_auto_assign_subscript (inline)
+       0   0.0% 100.0%        2   0.4% triqs::det_manip::det_manip::_regenerate_with_check
+       0   0.0% 100.0%        2   0.4% triqs::det_manip::det_manip::complete_insert
+       0   0.0% 100.0%        1   0.2% triqs::det_manip::det_manip::is_singular (inline)
+       0   0.0% 100.0%      358  72.3% triqs::det_manip::foreach (inline)
+       0   0.0% 100.0%        5   1.0% triqs::gfs::_fourier
+       0   0.0% 100.0%        2   0.4% triqs::gfs::_fourier_base
+       0   0.0% 100.0%        5   1.0% triqs::gfs::_fourier_impl
+       0   0.0% 100.0%        1   0.2% triqs::gfs::_fourier_impl (inline)
+       0   0.0% 100.0%        1   0.2% triqs::gfs::_gf_invert_data_in_place
+       0   0.0% 100.0%        3   0.6% triqs::gfs::block_gf::operator[] (inline)
+       0   0.0% 100.0%        5   1.0% triqs::gfs::gf_view::operator=
+       0   0.0% 100.0%        1   0.2% triqs::gfs::make_block_gf
+       0   0.0% 100.0%        1   0.2% triqs::gfs::triqs_bgf_clef_auto_assign_impl_aux_assign
+       0   0.0% 100.0%        1   0.2% triqs::gfs::triqs_clef_auto_assign (inline)
+       0   0.0% 100.0%        1   0.2% triqs::gfs::triqs_clef_auto_assign_impl (inline)
+       0   0.0% 100.0%        1   0.2% triqs::gfs::triqs_clef_auto_assign_subscript (inline)
+       0   0.0% 100.0%        5   1.0% triqs::gfs::triqs_gf_view_assign_delegation (inline)
+       0   0.0% 100.0%        1   0.2% triqs::mc_tools::RandomGenerators::RandMT::mixBits (inline)
+       0   0.0% 100.0%        9   1.8% triqs::mc_tools::RandomGenerators::RandMT::operator (inline)
+       0   0.0% 100.0%      428  86.5% triqs::mc_tools::mc_generic::accumulate
+       0   0.0% 100.0%        4   0.8% triqs::mc_tools::mc_generic::warmup
+       0   0.0% 100.0%      432  87.3% triqs::mc_tools::mc_generic::warmup_and_accumulate
+       0   0.0% 100.0%      358  72.3% triqs::mc_tools::measure::accumulate (inline)
+       0   0.0% 100.0%      358  72.3% triqs::mc_tools::measure_set::accumulate
+       0   0.0% 100.0%       11   2.2% triqs::mc_tools::move::accept (inline)
+       0   0.0% 100.0%       39   7.9% triqs::mc_tools::move::attempt (inline)
+       0   0.0% 100.0%       11   2.2% triqs::mc_tools::move_set::accept (inline)
+       0   0.0% 100.0%        7   1.4% triqs::mc_tools::random_generator::operator (inline)
+       0   0.0% 100.0%       10   2.0% triqs::utility::buffered_function::operator (inline)
+       0   0.0% 100.0%        3   0.6% type_call
+       0   0.0% 100.0%        1   0.2% type_new
+       0   0.0% 100.0%        1   0.2% update_one_slot
+       0   0.0% 100.0%        2   0.4% usleep
+       0   0.0% 100.0%        1   0.2% vector
+       0   0.0% 100.0%        1   0.2% wrapped_aux__gf_invert_data_in_place
+       0   0.0% 100.0%        2   0.4% zgeru_
+       0   0.0% 100.0%        1   0.2% zgetrf_
+       0   0.0% 100.0%        1   0.2% zgetrf_single
+       0   0.0% 100.0%        1   0.2% zipimporter_init
+       0   0.0% 100.0%        1   0.2% ~det_and_inverse_worker (inline)
+       0   0.0% 100.0%        2   0.4% ~handle (inline)
+       0   0.0% 100.0%        2   0.4% ~indexmap_storage_pair (inline)
+       0   0.0% 100.0%        1   0.2% ~matrix (inline)
+       0   0.0% 100.0%        1   0.2% ~matrix_expr
+       0   0.0% 100.0%        1   0.2% ~vector (inline)

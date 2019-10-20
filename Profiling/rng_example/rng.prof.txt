@@ -1,0 +1,32 @@
+Total: 325 samples
+     195  60.0%  60.0%      257  79.1% std::uniform_int_distribution::operator
+      41  12.6%  72.6%       41  12.6% __memset_sse2
+      34  10.5%  83.1%       57  17.5% std::mersenne_twister_engine::operator
+      23   7.1%  90.2%       23   7.1% std::mersenne_twister_engine::_M_gen_rand (inline)
+      12   3.7%  93.8%       14   4.3% std::__find_if (inline)
+       7   2.2%  96.0%        7   2.2% __gnu_cxx::operator!= (inline)
+       6   1.8%  97.8%      263  80.9% std::uniform_int_distribution::operator (inline)
+       5   1.5%  99.4%        5   1.5% std::uniform_int_distribution::param_type::b (inline)
+       2   0.6% 100.0%      265  81.5% operator (inline)
+       0   0.0% 100.0%       41  12.6% _ZSt10__fill_n_aIPlmlEN9__gnu_cxx11__enable_ifIXsr11__is_scalarIT1_EE7__valueET_E6__typeES4_T0_RKS3_ (inline)
+       0   0.0% 100.0%        2   0.6% __gnu_cxx::__ops::_Iter_negate::operator (inline)
+       0   0.0% 100.0%      325 100.0% __libc_start_main
+       0   0.0% 100.0%      325 100.0% _start
+       0   0.0% 100.0%      325 100.0% main
+       0   0.0% 100.0%      311  95.7% random_vec
+       0   0.0% 100.0%      325 100.0% run_calculation (inline)
+       0   0.0% 100.0%        7   2.2% std::__find_if_not (inline)
+       0   0.0% 100.0%       41  12.6% std::__uninitialized_default_n (inline)
+       0   0.0% 100.0%       41  12.6% std::__uninitialized_default_n_1::__uninit_default_n (inline)
+       0   0.0% 100.0%       41  12.6% std::__uninitialized_default_n_a (inline)
+       0   0.0% 100.0%        7   2.2% std::all_of (inline)
+       0   0.0% 100.0%        7   2.2% std::any_of (inline)
+       0   0.0% 100.0%       41  12.6% std::fill_n (inline)
+       0   0.0% 100.0%        7   2.2% std::find_if (inline)
+       0   0.0% 100.0%        7   2.2% std::find_if_not (inline)
+       0   0.0% 100.0%      270  83.1% std::generate (inline)
+       0   0.0% 100.0%        7   2.2% std::none_of (inline)
+       0   0.0% 100.0%       41  12.6% std::vector::_M_default_initialize (inline)
+       0   0.0% 100.0%      164  50.5% task1
+       0   0.0% 100.0%      161  49.5% task2
+       0   0.0% 100.0%       41  12.6% vector (inline)
