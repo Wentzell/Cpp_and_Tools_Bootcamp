@@ -1,0 +1,24 @@
+# Example Profiling Output for a QMC run for the anderson impurity model
+
+# Software used
+# - https://github.com/gperftools/gperftools
+# - https://github.com/triqs/triqs @ 2.2.x
+# - https://github.com/triqs/ctint_tutorial @ 2.2.x
+
+# Generate the profiling data
+LD_PRELOAD=$HOME/opt/gperftools/lib/libprofiler.so CPUPROFILE=anderson.prof python anderson.py
+
+# Generate text output
+pprof --text anderson.py anderson.prof > anderson.prof.txt
+
+# Generate text output with line information
+pprof --text --lines anderson.py anderson.prof > anderson.prof.lines.txt
+
+# Generate a callgraph
+pprof --svg anderson.py anderson.prof > anderson.prof.svg
+
+# Generate a callgraph with line information
+pprof --svg --lines anderson.py anderson.prof > anderson.prof.lines.svg
+
+# Generate a flamegraph
+pprof --collapsed anderson.py anderson.prof | ./flamegraph.pl - > anderson.prof.flamegraph.svg

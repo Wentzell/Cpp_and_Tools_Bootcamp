@@ -1,0 +1,28 @@
+# Example Profiling Output for a minimal program
+
+# Software used
+# - https://github.com/gperftools/gperftools
+
+# Compile with optimization and debugging flags
+g++ -O3 -g bench.cpp -o bench
+
+# Generate the profiling data
+LD_PRELOAD=$HOME/opt/gperftools/lib/libprofiler.so CPUPROFILE=bench.prof ./bench
+
+# Generate text output
+pprof --text bench bench.prof > bench.prof.txt
+
+# Generate text output with line information
+pprof --text --lines bench bench.prof > bench.prof.lines.txt
+
+# Print annotated source code for routine
+pprof --list=sum_of_squares bench bench.prof
+
+# Generate a callgraph
+pprof --svg bench bench.prof > bench.prof.svg
+
+# Generate a callgraph with line information
+pprof --svg --lines bench bench.prof > bench.prof.lines.svg
+
+# Generate a flamegraph
+pprof --collapsed bench bench.prof | ./flamegraph.pl - > bench.prof.flamegraph.svg
