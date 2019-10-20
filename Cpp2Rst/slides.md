@@ -17,8 +17,6 @@ namespace NS {
    * @tparam T  Doc of template parameter
    * @param t   Doc of parameter
    * @return    Doc of returned value
-   *
-   * @example ex.cpp
    */
   template <typename T>
   T func(T t) {
@@ -31,8 +29,6 @@ namespace NS {
    * A more detailed description
    *
    * @tparam T  Doc of template parameter
-   *
-   * @example ex.cpp
    */
   template <typename T>
   struct cls {
