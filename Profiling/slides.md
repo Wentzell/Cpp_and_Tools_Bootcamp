@@ -5,8 +5,7 @@ customTheme : "flatiron"
 ## Google Perftools 
 https://github.com/gperftools/gperftools
 
-* Command line tools for easy CPU and Heap profiling
-* 
+### A Command line tools for easy profiling
 
 
 ## A simple example
@@ -77,6 +76,7 @@ Total: 951 samples
 
 
 ## Flamegraph
+
 `pprof --collapsed bench bench.prof | ./flamegraph.pl - > bench.prof.flamegraph.svg`
 
 ![Example Output](./bench.prof.flamegraph.svg)
