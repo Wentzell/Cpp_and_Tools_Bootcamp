@@ -10,7 +10,7 @@ Premature optimization is the root of all evil -- *Donald Knuth*
 * Optimize only after proper measurements
 
 
-## Google Perftools 
+## Google Perftools
 https://github.com/gperftools/gperftools
 
 * Performance and Memory (Heap) profiling
@@ -52,16 +52,11 @@ int main() {
 ## Profiling Steps
 
 1. Compile with optimization and debugging flags
-
-`g++ -O3 -g bench.cpp -o bench`
-
+   `g++ -O3 -g bench.cpp -o bench`
 2. Generate the profiling data
-
-`LD_PRELOAD=$HOME/opt/gperftools/lib/libprofiler.so CPUPROFILE=bench.prof ./bench`
-
-2. Analyze the profiling data, e.g.
-
-`pprof --text bench bench.prof`
+   `LD_PRELOAD=path_to_libprofiler.so CPUPROFILE=bench.prof ./bench`
+3. Analyze the profiling data, e.g.
+   `pprof --text bench bench.prof`
 
 ```
 Total: 1190 samples
