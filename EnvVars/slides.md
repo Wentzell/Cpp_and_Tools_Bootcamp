@@ -12,21 +12,12 @@ customTheme : "flatiron"
 
 A colon-separated list of directories (e.g. `/usr/bin`) searched for executable programs.
 
-### How to get the value
+* Get the value: `echo $PATH`
+* Set the value: `export PATH=/home/user/bin:/home/user/opt/bin`
+* Prepending: `export PATH=/home/user/bin:$PATH`
+* See your full environment: `printenv`
 
-`echo $PATH`
-
-### How to set the value (prepending)
-
-`export PATH=/home/user/bin:$PATH`
-
-### See your full environment
-
-`printenv`
-
-### Permanently setting variables
-
-Add the correpsonding lines to your `~/.bash_profile`
+To permanently set variables add the correpsonding lines to your `~/.bash_profile`
 
 
 ## Common environment variables
@@ -55,7 +46,6 @@ Add the correpsonding lines to your `~/.bash_profile`
 
 ## Environment variables affecting OpenMP
 
----
 **Note**
 
 These are of particular importance when using MPI + OpenMP.
