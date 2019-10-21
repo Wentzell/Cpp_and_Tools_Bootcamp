@@ -140,14 +140,16 @@ body {
 
 .reveal code {
   font-family: monospace;
-  text-transform: none; }
+  text-transform: none;
+  font-size: 70% }
 
 .reveal pre code {
   display: block;
   padding: 5px;
   overflow: auto;
   max-height: 400px;
-  word-wrap: normal; }
+  word-wrap: normal;
+  font-size: 90% }
 
 .reveal table {
   margin: auto;
