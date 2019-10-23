@@ -1,8 +1,3 @@
----
-layout: slides
-title: "Example slides"
----
-
 # Slide 1
 
 Normal markdown.
