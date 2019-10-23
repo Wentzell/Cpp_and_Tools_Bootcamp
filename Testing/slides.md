@@ -91,6 +91,6 @@ https://github.com/TRIQS/app4triqs
 
 ## Resources
 
- * github.com/google/googletest
- * github.com/TRIQS/app4triqs
- * triqs.github.io/app4triqs/unstable/install.html
+* github.com/google/googletest
+* github.com/TRIQS/app4triqs
+* triqs.github.io/app4triqs/unstable/install.html

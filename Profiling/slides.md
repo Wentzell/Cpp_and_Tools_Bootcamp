@@ -73,7 +73,7 @@ Total: 1190 samples
 
 `pprof --svg bench bench.prof > bench.prof.svg`
 
-![](./bench.prof.gif)
+<img src='bench.prof.gif' height='600'>
 
 
 ## Flamegraph
