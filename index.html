@@ -1,0 +1,18 @@
+---
+title: index
+---
+
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <h2>Slides</h2>
+    <ul>
+      {% for p in site.pages %}{% if p.title %}{% unless p.url contains '/reveal.js/' -%}
+      <li>
+        <a href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a>
+      </li>
+      {% endunless %}{% endif %}{% endfor -%}
+    </ul>
+  </body>
+</html>
