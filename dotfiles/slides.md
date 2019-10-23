@@ -1,8 +1,8 @@
-### Keeping dotfiles in git
+## Keeping dotfiles in git
 
 Keep your configuration files in a git repository!
 
-#### Examples
+### Examples
 
 * https://github.com/pappasam/dotfiles
 * https://github.com/Wentzell/dotfiles
@@ -10,13 +10,13 @@ Keep your configuration files in a git repository!
 * 127,323 others: https://github.com/search?q=dotfiles
 
 
-#### Advantages:
+### Advantages:
 
 * Versioning: try out new config changes, revert to old ones
 * Consistency: easily setup a new account/machine and propagate changes
 * Transparency: share your discoveries with the world (or, don't: no github/gitlab necessary)
 
-#### Disadvantages
+### Disadvantages
 
 * Extra work: commit changes (on occasion)
 
@@ -44,7 +44,7 @@ install: $(addprefix $(HOME)/.,$(files))
 ```
 
 
-## New machine
+### New machine
 
 1. Clone repo
 1. Branch for different environments (or make installer or config conditional)
