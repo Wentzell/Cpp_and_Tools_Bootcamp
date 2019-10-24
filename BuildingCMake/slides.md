@@ -196,7 +196,7 @@ Task: download, set-up project and compile with clang.
 
 ```txt
 https://github.com/Wentzell/Cpp_and_Tools_Bootcamp/blob/master/Cpp2Py/slides.md
-Install compdb. E.g. on mac ```brew install compdb```
+Install compdb. E.g. ```pip install compdb```
 ```
 
 ```bash
