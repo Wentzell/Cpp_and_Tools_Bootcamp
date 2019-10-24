@@ -216,6 +216,7 @@ make test
 cd ../cppbootcamp
 compdb -p ../build/ list > compile_commands.json
 ```
+(set up vscode-clangd. Arguments -clang-tidy, -background-index)
 
 ---
 
