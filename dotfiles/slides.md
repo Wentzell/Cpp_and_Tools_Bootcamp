@@ -31,7 +31,7 @@ Keep your configuration files in a git repository!
 1. Make a way to "install" files into home
    * Link, symlink, or copy
    * Simple script with loop
-   * [Makefile](Makefile)
+   * [Makefile](Makefile) (`https://wentzell.github.io/Cpp_and_Tools_Bootcamp/dotfiles/Makefile`)
 
 ```make
 $(HOME)/.%: %
