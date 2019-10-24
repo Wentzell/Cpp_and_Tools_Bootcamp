@@ -192,8 +192,6 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 --
 
-Task: download, set-up project and compile with clang.
-
 ```txt
 https://github.com/Wentzell/Cpp_and_Tools_Bootcamp/blob/master/Cpp2Py/slides.md
 Install compdb. E.g. ```pip install compdb```
@@ -208,7 +206,7 @@ cd cppbootcamp
 git add -A && git commit -m "Adjust app4triqs skeleton for cppbootcamp"
 # Build
 cd ..; mkdir build; cd build
-cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 ../cppbootcamp
+cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -DCMAKE_INSTALL_PREFIX=$PWD/../cppbootcamp.bin ../cppbootcamp
 # Make
 make -j8
 make test
@@ -216,7 +214,7 @@ make test
 cd ../cppbootcamp
 compdb -p ../build/ list > compile_commands.json
 ```
-(set up vscode-clangd. Arguments -clang-tidy, -background-index)
+(vscode-clangd. Arguments -clang-tidy, -background-index)
 
 ---
 
