@@ -1,0 +1,9 @@
+clang++ -c lib.cpp # -> lib.o
+nm lib.o # See symbols
+
+clang++ user.cpp # f(m,n) not defined
+clang++ user.cpp lib.o # -> a.out
+
+clang++ -c user.cpp # -> user.o
+nm user.o # -> see symbols
+clang++ user.o lib.o # -> a.out

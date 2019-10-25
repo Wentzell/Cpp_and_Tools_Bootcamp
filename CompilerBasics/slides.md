@@ -7,6 +7,8 @@ customTheme : "flatiron"
 * `-g` -- Compile with debugging flags
 * `-c` -- Compile only, do not link an executable
 * `-o file` -- Output file
+* `-Idir` -- Search headers in dir
+* `-Ldir` -- Search libraries in dir
 * `-Wall -Wextra -Wpedantic` -- Turn on compiler warnings
 * `-std=c++17` -- Set the C++ Standard to use
 * `-stdlib=libc++` -- Choose the clang stdlib implementation
@@ -23,10 +25,10 @@ customTheme : "flatiron"
 -Wextra
 -Wpedantic
 -Wno-sign-compare
--Wshadow=local                  # GCC Only
--Wno-unused-but-set-parameter   # GCC Only
--Wshadow                        # Clang Only
--Wno-gcc-compat>                # Clang Only
+-Wshadow=local                  # GCC
+-Wno-unused-but-set-parameter   # GCC
+-Wshadow                        # Clang
+-Wno-gcc-compat>                # Clang
 ```
 
 
@@ -41,16 +43,20 @@ customTheme : "flatiron"
 | template classes       |                      |
 
 
-## An Example
+## An Example Library
 
 ```cpp
-// file.hpp
+// -- lib.hpp
 
 // Declare a function
-int  f(int i, int j);
+int f(int m, int n);
 
 // Declare a Class
-struct A;
+struct A{
+  int i;
+  int j;
+  int get_sum();
+};
 
 // An inline function
 inline double short_f(double j) { return j * j; }
@@ -63,16 +69,27 @@ bool greater_zero(T t) { return t > 0; }
 template<typename T>
 struct templ_class {
   T t;
-}; 
+};
 ```
 
 ```cpp
-// file.cpp
+// -- lib.cpp
+# include "lib.hpp"
 
-int f(int i, int j) { return i + j; }
+int f(int m, int n) { return m - n; }
 
-struct A{
-  int i;
-  double j;
-};
+int A::get_sum() { return i + j; } 
+```
+
+
+## The user
+```cpp
+#include "lib.hpp"
+
+int main(){
+  int m = 0;
+  A a = A{1, 2};
+  greater_zero(a.i);
+  return f(m, a.i);
+}
 ```

@@ -1,10 +1,14 @@
-// file.hpp
+// -- lib.hpp
 
 // Declare a function
-int  f(int i, int j);
+int f(int m, int n);
 
 // Declare a Class
-struct A;
+struct A{
+  int i;
+  int j;
+  int get_sum();
+};
 
 // An inline function
 inline double short_f(double j) { return j * j; }
