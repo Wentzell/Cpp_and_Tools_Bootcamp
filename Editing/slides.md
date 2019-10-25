@@ -1,31 +1,12 @@
 ---
 customTheme : "flatiron"
-progress: false
-theme: solarized
-controlsTutorial: false
-help: false
-transition: 'fade'
-hideAddressBar: true
-showNotes: false
-titlebar: false
-viewDistance: 1
-highlightTheme: "Xcode"
-enableTitleFooter: false
-enableMenu: false
-enableChalkboard: false
-enableZoom: false
-enableSearch: false
-autoSlidePlayer: false
-slideNumber: false
-playback: false
-autoSlide: false
 ---
 
 # Editing & <br> Static Analysis
 
 ### Philipp T. Dumitrescu
 
----
+
 
 ## Integrate Development Environments (IDEs)
 
@@ -37,7 +18,6 @@ autoSlide: false
     - Feature Revealing?
 * Good Choices: VSCode, CLion, [maybe Vim with Extensions]
 
---
 
 ## VSCode
 
@@ -49,7 +29,7 @@ autoSlide: false
 * Test-bed for IDE development
 * Available on cluster / workstations: `nix/vscode/1.39.1`
 
----
+
 
 ## Static Analysis
 
@@ -64,7 +44,7 @@ autoSlide: false
     - Code improvements
 * Good code can be analyzed and optimized automatically <br> (This affects your coding style.)
 
----
+
 
 ## Clang-Format
 
@@ -77,7 +57,7 @@ autoSlide: false
     - LLVM: https://llvm.org/docs/CodingStandards.html
 * (Demo)
 
----
+
 
 ## Clang-Tidy / Language Server Protocol 
 
@@ -89,7 +69,7 @@ autoSlide: false
 * Need to pass information between different programs
 * LSP standardized by Microsoft: clangd for clang-tidy
 
----
+
 
 ## CppCoreGuidelines
 
@@ -100,7 +80,7 @@ autoSlide: false
 * clang-tidy can automatically recommend updates
 * Examples
 
----
+
 
 ##  Demo to set-up clangd in VSCode using cmake
 
@@ -112,7 +92,7 @@ compdb -p ../build/ list > compile_commands.json
 
 * (Examples)
 
----
+
 
 ## Resources
 

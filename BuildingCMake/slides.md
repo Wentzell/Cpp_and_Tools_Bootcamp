@@ -1,38 +1,12 @@
 ---
 customTheme : "flatiron"
-progress: false
-theme: solarized
-controlsTutorial: false
-help: false
-transition: 'fade'
-hideAddressBar: true
-showNotes: false
-titlebar: false
-viewDistance: 1
-highlightTheme: "Xcode"
-enableTitleFooter: false
-enableMenu: false
-enableChalkboard: false
-enableZoom: false
-enableSearch: false
-autoSlidePlayer: false
-slideNumber: false
-playback: false
-autoSlide: false
 ---
 
 # CMake & <br> App4Triqs
 
 ### Philipp T. Dumitrescu
 
----
 
-## Fast & Reliable Development
- 
-* Get **code ideas** into **science results** 
-* Requirements: Easy, Fast, Reliable, Portable
-
---
 
 ## Fast & Reliable Development
 
@@ -45,7 +19,6 @@ autoSlide: false
     - Hard to optimize to peak performance
     - Restrict ability to develop new directions
 
---
 
 ## Simple Builds
 
@@ -68,7 +41,8 @@ clang++ -I ~/googletest/include -I ~/googletest -Wall -Wshadow -Werror
 
 * Now do this for 203 .cpp files of TRIQS ... and link
 
----
+
+
 
 ## CMake
 
@@ -83,7 +57,6 @@ clang++ -I ~/googletest/include -I ~/googletest -Wall -Wshadow -Werror
   - Scaling to large projects
 * For you: Most of the work has been done in **App4Triqs**!
 
---
 
 ## CMake
 
@@ -107,7 +80,6 @@ endif()
 cmake ../path_to_project_folder
 ```
 
---
 
 ## CMake: Finding Packages
 
@@ -123,7 +95,6 @@ target_link_libraries(hello_world PUBLIC triqs PRIVATE GSL::gsl)
 * ``find_package`` exists for many common libraries <br>
 any cmake project you write can easily support this
 
---
 
 ## Basic CMake Building Blocks
 
@@ -145,7 +116,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 ```
 
---
 
 ## Relate your code to others
 
@@ -159,7 +129,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
   - ...
 * Automate all of this!
 
----
+
 
 ## App4Triqs
 
@@ -174,13 +144,11 @@ set(CMAKE_CXX_EXTENSIONS OFF)
   - Packaging (Docker & Debian packages)
 * Allows scalability of infrastructure updates
 
---
 
 ## Demonstration
 
 * Look at cmake structure
 
---
 
 ## Hands-On
 
@@ -190,7 +158,6 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 **Task: download app4triqs, set-up project and compile with clang.<br> Add a new dependancy (e.g. `gsl`, `protobuf`)**
 
---
 
 ```txt
 https://github.com/Wentzell/Cpp_and_Tools_Bootcamp/blob/master/Cpp2Py/slides.md
@@ -216,7 +183,7 @@ compdb -p ../build/ list > compile_commands.json
 ```
 (vscode-clangd. Arguments -clang-tidy, -background-index)
 
----
+
 
 ## Resources 
 
