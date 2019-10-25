@@ -42,7 +42,7 @@ class myclass {
 
 Just run c++2py on the source file
 ```bash
-$ c++2py simple.hpp
+$ c++2py simple.hpp --target_file_only
 Welcome to C++2py
 Parsing the C++ file (may take a few seconds) ...
 ... done.
