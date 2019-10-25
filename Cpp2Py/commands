@@ -5,7 +5,7 @@ c++2py simple.cpp --target_file_only
 python simple_desc.py simple_wrap.cxx
 
 # Compile the wrapping code
-g++ -shared -o simple.so -lcpp2py -lpython2.7
+clang++ simple_wrap.cxx -shared -o simple.so -lcpp2py -lpython2.7
 
 # Test the wrapping code
 python -c "from simple import Myclass; print Myclass().list_of_members()"

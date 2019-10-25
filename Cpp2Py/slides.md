@@ -124,6 +124,40 @@ print Myclass().get_sum()
 * `-r my_desc.py` --- Regenerate a file
 
 
+## An Excursion -- The AST
+
+Take the simple example
+
+```cpp
+int f() { return 0; }
+
+struct A{
+    double d;
+};
+```
+
+Generate the AST with
+```
+clang++  -Xclang -ast-dump -fsyntax-only ast.cpp
+
+TranslationUnitDecl 0x7fd8f0834208 <<invalid sloc>> <invalid sloc>
+|-FunctionDecl 0x7fc25106e550 <ast.cpp:1:1, col:21> col:5 f 'int ()'
+| `-CompoundStmt 0x7fd8f0874868 <col:9, col:21>
+|   `-ReturnStmt 0x7fd8f0874858 <col:11, col:18>
+|     `-IntegerLiteral 0x7fd8f0874838 <col:18> 'int' 0
+`-CXXRecordDecl 0x7fd8f0874880 <line:3:1, line:5:1> line:3:8 struct A definition
+  |-DefinitionData pass_in_registers aggregate standard_layout trivially_copyable pod trivial literal
+  | |-DefaultConstructor exists trivial needs_implicit
+  | |-CopyConstructor simple trivial has_const_param needs_implicit implicit_has_const_param
+  | |-MoveConstructor exists simple trivial needs_implicit
+  | |-CopyAssignment trivial has_const_param needs_implicit implicit_has_const_param
+  | |-MoveAssignment exists simple trivial needs_implicit
+  | `-Destructor simple irrelevant trivial needs_implicit
+  |-CXXRecordDecl 0x7fd8f0874998 <col:1, col:8> col:8 implicit struct A
+  `-FieldDecl 0x7fd8f0874a40 <line:4:5, col:12> col:12 d 'double'
+```
+
+
 ## Real-World Examples
 
 * [app4triqs Skeleton --- github.com/triqs/app4triqs](https://github.com/triqs/app4triqs)
