@@ -1,0 +1,81 @@
+//////////////
+//  git basics
+//  HANDS ON 
+//////////////
+
+
+#preparation:
+git config --global --edit
+alias gitl="git log --graph --abbrev-commit --decorate --format=format:'%C(blue)%h%C(reset) - %C(cyan)%aD%C(reset) %C(green)(%ar)%C(reset)%C(yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
+git status
+
+
+#create a tree:
+
+#slide 29
+git init
+git status
+
+#slide 30
+date >> file1
+git status
+git add file1
+git status
+
+# slide 30
+git commit -m "first commit"
+git status
+
+
+# slide 32,33
+date >> file1
+cat file1 
+git status
+git diff
+git add file1
+git status
+git diff
+
+git commit -m "second commit"
+
+
+# slide 34
+date >> file2
+git status
+git diff
+git add .
+git status
+git diff
+git commit -m "third commit"
+
+date >> file1
+git commit -am "4th commit"
+
+
+
+# slide 35,36
+git chekcout 76b75ae
+git checkout -b test1
+ls -a >> tmpList
+git add tmpList
+git commit -m "test branch"
+
+git log
+
+
+# slide 37
+git checkout d7421b2
+git status
+git checkout -b feature1
+date >> file1
+git add file1
+git commit -m "creating conflict"
+
+
+# slide 38
+git checkout master
+git merge feature1
+
+
+
+
