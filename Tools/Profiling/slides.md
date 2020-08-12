@@ -82,6 +82,11 @@ Total: 1190 samples
 
 ![](./bench.prof.flamegraph.svg)
 
+## Report by line
+
+By default, profiling data is shown as time spent in each function. You can switch to time spent in each source code line instead:
+
+`pprof --svg --lines bench bench.prof > bench.prof.svg`
 
 ## Resources
 
