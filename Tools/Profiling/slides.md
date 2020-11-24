@@ -88,6 +88,15 @@ By default, profiling data is shown as time spent in each function. You can swit
 
 `pprof --svg --lines bench bench.prof > bench.prof.svg`
 
+## Filtering nodes
+
+In order to exclude or focus on certain nodes one can use the additional options
+
+```
+--focus=<regexp>    Focus on nodes matching <regexp>
+--ignore=<regexp>   Ignore nodes matching <regexp>
+```
+
 ## Resources
 
 * https://github.com/gperftools/gperftools
